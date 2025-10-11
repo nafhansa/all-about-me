@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio Asesmen II-2100 — Centered Alignment</title>
+  <style>
+    :root {
+      --bg: #f6f7f8;
+      --panel: #ffffff;
+      --ink: #12202b;
+      --muted: #5f6b75;
+      --brand: #234C6A;
+      --accent: #1B3C53;
+      --beige: #D2C1B6;
+      --mid: #456882;
+      --line: #e6e8ec;
+      --ease: cubic-bezier(.22,.61,.36,1);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--ink); }
+
+    .wrap { display: grid; grid-template-columns: 320px 1fr; min-height: 100vh; }
+
+    aside { background: linear-gradient(180deg, #eef2f6, #ffffff); border-right: 1px solid var(--line); padding: 20px 18px; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+    .brand { font-weight: 700; font-size: 20px; margin-bottom: 18px; color: var(--accent); animation: softPulse 3s ease-in-out infinite; letter-spacing: .2px; }
+
+    .search input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: #f9fafb; transition: all .3s var(--ease); }
+    .search input:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 2px rgba(35,76,106,0.18); }
+
+    .toc { list-style: none; margin: 20px 0 0; padding: 0; }
+    .toc a { display: block; padding: 10px 12px; margin-bottom: 4px; border-radius: 8px; color: var(--ink); text-decoration: none; transition: all .25s var(--ease); }
+    .toc a:hover { background: rgba(27,60,83,0.08); transform: translateX(3px); }
+    .toc a.active { background: rgba(35,76,106,0.16); color: var(--accent); font-weight: 600; border-left: 3px solid var(--mid); }
+
+    main { padding: 40px 50px; background: var(--bg); animation: fadeIn .6s var(--ease); display: flex; flex-direction: column; align-items: center; }
+
+    .crumb { color: var(--muted); font-size: 14px; margin-bottom: 10px; align-self: flex-start; }
+    h1 { font-size: 32px; margin-bottom: 20px; color: var(--accent); text-align: center; }
+
+    article { max-width: 900px; animation: fadeUp .6s var(--ease); }
+    .meta { display: flex; gap: 24px; color: var(--muted); font-size: 14px; margin-bottom: 16px; justify-content: center; }
+    .divider { height: 1px; background: var(--line); margin: 20px auto; width: 80%; }
+
+    .hero-wrapper { display: flex; justify-content: center; width: 100%; }
+
+    .hero { display: flex; justify-content: center; align-items: center; background: var(--panel); border-radius: 20px; padding: 32px; box-shadow: 0 12px 35px rgba(0,0,0,0.06); transition: all .4s var(--ease); border: 1px solid var(--line); gap: 48px; width: 100%; max-width: 900px; margin: 0 auto; }
+    .hero:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
+
+    .hero .copy { flex: 1; text-align: left; display: flex; flex-direction: column; justify-content: center; padding-left: 40px; }
+    .hero h2 { margin: 0 0 8px; font-size: 28px; color: var(--brand); }
+    .hero p { margin: 0; color: var(--muted); }
+
+    .hero .img { flex: 1; display: flex; justify-content: center; align-items: center; aspect-ratio: 16/9; border-radius: 14px; background: linear-gradient(135deg, var(--mid), var(--brand)); color: #e7ecf1; font-size: 13px; font-style: italic; border: 1px solid rgba(27,60,83,.25); max-width: 360px; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes softPulse { 0%,100% { opacity: 1; } 50% { opacity: .8; } }
+
+    article p {text-align: justify;}
+
+
+    @media (max-width: 920px) {
+      .wrap { grid-template-columns: 1fr; }
+      aside { position: static; height: auto; }
+      main { padding: 24px; }
+      .hero { flex-direction: column; gap: 24px; width: 100%; text-align: center; }
+      .hero .copy { padding-left: 0; align-items: center; text-align: center; }
+    }
+
+    /* ========== SHAPE TABLE ========== */
+    .shape-wrap{max-width:950px;margin:28px auto 0;padding:0 4px}
+    .shape-table{
+    width:100%; border-collapse:separate; border-spacing:0;
+    background:var(--panel); color:var(--ink);
+    border:1px solid var(--line); border-radius:14px; overflow:hidden;
+    box-shadow:0 10px 28px rgba(0,0,0,.05);
+    }
+    .shape-table thead th{
+    background:linear-gradient(180deg, var(--accent), var(--brand));
+    color:#fff; text-align:left; padding:14px 16px; font-weight:600; letter-spacing:.2px;
+    }
+    .shape-table tbody td, .shape-table tbody th{
+    padding:14px 16px; vertical-align:top; border-top:1px solid var(--line);
+    }
+    .shape-table tbody th{ width:26%; color:var(--accent)}
+    .shape-table tbody tr:nth-child(even){ background:#fafbfc }
+    .shape-caption{
+    font-weight:700; color:var(--accent); margin:0 0 10px; display:flex; gap:8px; align-items:center;
+    }
+    .shape-caption::before{content:'📘'}
+    .shape-note{ color:var(--muted); font-size:13px; text-align:right; margin:6px 0 0 }
+    @media (max-width: 720px){
+    .shape-table thead{display:none}
+    .shape-table, .shape-table tbody, .shape-table tr, .shape-table td, .shape-table th{display:block;width:100%}
+    .shape-table tbody tr{border-top:1px solid var(--line)}
+    .shape-table tbody th{background:#f4f6f8}
+    .shape-table tbody td{padding-top:8px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <aside>
+      <div class="brand">Nafhan Shafy Aulia</div>
+      <div class="search"><input id="search" type="search" placeholder="Cari halaman…"></div>
+      <ul id="toc" class="toc"></ul>
+    </aside>
+
+    <main>
+      <div class="crumb">Portfolio Asesmen II-2100 KIPP</div>
+      <h1 id="page-title">Halo!! Aku Nafhan</h1>
+      <div id="page-content"></div>
+    </main>
+  </div>
+
+  <script>
+    const PAGES = [
+      { id: 'selamat-berjumpa', title: 'Halo!! Aku Nafhan', content: selamatBerjumpa() },
+      { id: 'kisah-identitas',
+        title: '1 All About Me',
+        content: `
+        <article>
+            <section style="max-width:800px;margin:auto;line-height:1.7;">
+            <h2 style="text-align:center;color:var(--brand);">Perkenalkan. Aku. Nafhan.</h2>
+            <p style="text-align:justify;">
+                Halo! Aku <b>Nafhan Shafy Aulia</b>, seorang mahasiswa yang selalu haus belajar dan senang menjelajahi hal baru di dunia teknologi, desain, dan kreativitas.
+                Dari membangun prototype aplikasi pembelajaran hingga menaklukkan tantangan <i>Capture The Flag</i> di dunia siber,
+                aku selalu tertarik pada proses memahami sistem dan menciptakan solusi nyata dari ide-ide sederhana.
+            </p>
+            <p style="text-align:justify;">
+                Selain itu, aku juga aktif di berbagai kegiatan kampus, mulai dari bergabung dengan Kabinet KM ITB dan aktif di HMIF ITB,
+                karena bagiku, keseimbangan antara akademik dan kegiatan non-akademik adalah kunci untuk berkembang.
+            </p>
+            <p style="text-align:justify;">
+                Aku percaya bahwa setiap langkah kecil — baik itu menulis kode, merancang antarmuka, atau belajar dari kesalahan —
+                adalah bagian dari perjalanan besar menuju versi terbaik dari diri sendiri.
+            </p>
+            </section>
+        </article>`
+        },
+      { id: 'my-songs', title: '2 My Song for You', content: placeholder('My Songs for You') },
+      { id: 'my-stories',
+        title: '3 My Stories for You',
+        content: `
+        <article>
+            <section style="max-width:800px;margin:auto;line-height:1.9">
+            <h2 style="text-align:center;color:var(--brand);margin-bottom:10px">
+                “Belajar Dari Masa Lalu” vs “Terbentuk Dari Masa Lalu”
+            </h2>
+            <p style="color:var(--muted);text-align:center;margin-top:0;margin-bottom:24px">
+                Ditulis oleh Nafhan Shafy Aulia
+            </p>
+
+            <p>Malam itu, selepas rapat besar pertamanya sebagai Dirjen Kementerian Kolaborasi Lembaga, di hadapan seratus lebih lembaga kampus, Nafhan berdiri dalam diam panjang. Di balik tepuk tangan dan sorotan lampu, ada kesadaran yang lahir, tentang luka, tentang kehilangan, tentang cinta yang pernah ia yakini tulus.</p>
+
+            <p>Ia sadar telah mencintai seseorang seutuhnya, sementara hatinya hanya dijadikan tempat singgah. Cinta yang ia jaga seolah tak berarti, seolah kasih bisa diukur dengan kenyamanan sesaat. Ia pernah menitipkan hatinya dengan keyakinan, menerima janji dengan sepenuh rasa, namun dibalas dengan pengabaian dan keegoisan.</p>
+
+            <p>Nafhan tidak marah karena ditinggalkan, melainkan karena kejujuran yang ia berikan tak pernah dihargai. Ia menyesal bukan karena cinta itu kandas, tetapi karena ia terlalu percaya pada seseorang yang belum sembuh dari masa lalunya. Ia memaafkan, tapi tidak lupa, ia mencintai, tapi tak lagi ingin diperbudak oleh harapan.</p>
+
+            <p>Kini, ia memilih berdamai. Menyadari cinta bukan tentang siapa yang datang duluan, tapi siapa yang bertahan dan memperjuangkan. Nafhan belajar, cinta tak seharusnya mengorbankan diri, melainkan menguatkan keduanya. Ia belajar bahwa ada perbedaan besar antara belajar dari masa lalu dan terbentuk oleh masa lalu.</p>
+
+            <p>Di antara rasa sakit dan kecewa, Nafhan menemukan kembali dirinya—seseorang yang berharga, yang layak dicintai dengan tanggung jawab, bukan dijadikan pembenaran untuk luka orang lain.
+            Dan di bawah langit malam itu, ia berjanji: akan mencintai lagi, tapi kali ini dengan kebijaksanaan, bukan keinginan. Ia pergi bukan karena benci, melainkan karena sudah cukup berjuang untuk dua orang.</p>
+
+            <p>Kadang Nafhan tertawa sendiri, mengingat betapa seriusnya ia dulu menanggapi “aku takut kehilangan kamu.” “Takut kehilangan, tapi malah ngegas pergi,” gumamnya sambil menepuk helm Vespa yang catnya mulai pudar. Ia bahkan sempat mikir, mungkin cinta itu kayak Wifi kampus, kuat di awal, hilang pas lagi butuh. Lucunya, dia masih sempat berdoa, “Tuhan, kalau memang jodoh tolong perbaiki dia.” Tapi setelah tiga kali network timeout, ia sadar, kayaknya Tuhan juga disconnect dulu sebentar biar Nafhan belajar sendiri arti sabar.</p>
+
+            <p><strong>Sebuah hati besar yang pernah hancur kini tumbuh lagi</strong>, kali ini tak untuk orang lain, melainkan untuk dirinya sendiri.</p>
+            </section>
+        </article>`
+        },
+
+      { id: 'my-shapes',
+        title: '4 My Shapes',
+        content: `
+        <article>
+            <!-- Narasi SHAPE -->
+            <section style="max-width:850px;margin:auto;line-height:1.8;text-align:justify;">
+            <h2 style="text-align:center;color:var(--brand);margin-bottom:8px">
+                🧭 MY SHAPE – Piagam Diri & Identitas Naratif
+            </h2>
+            <p style="text-align:center;color:var(--muted);margin-top:0;">
+                oleh: <b>Nafhan Shafy Aulia</b>
+            </p>
+
+            <h3 style="color:var(--accent);margin-top:32px;">S – Signature Strengths (Kekuatan Khas)</h3>
+            <p>Aku tumbuh sebagai seseorang yang selalu mencari makna di balik setiap sistem—baik sistem digital, sosial, maupun emosional. Kemampuan analitis dan rasa ingin tahu yang besar membuatku cepat memahami struktur di balik kerumitan. Dalam tim, aku sering menjadi penghubung antara ide dan eksekusi; antara rasionalitas dan empati.</p>
+            <p><b>Kekuatan khasku:</b> Analitis, Adaptif, Visioner, dan Reflektif.</p>
+
+            <h3 style="color:var(--accent);margin-top:28px;">H – Heart (Nilai & Gairah)</h3>
+            <p>Aku percaya pada nilai integritas, tanggung jawab, dan pertumbuhan. Di balik semua pencapaian teknis, hatiku selalu tertuju pada bagaimana teknologi bisa membuat manusia merasa lebih manusiawi. Aku bergairah menciptakan hal yang berdampak—entah lewat desain pembelajaran seperti <i>Studify</i>, atau lewat problem-solving di dunia CTF dan keamanan siber.</p>
+            <p>Aku hidup untuk belajar, tumbuh, dan meninggalkan sesuatu yang berguna.</p>
+
+            <h3 style="color:var(--accent);margin-top:28px;">A – Aptitudes & Acquired Skills (Bakat & Keterampilan)</h3>
+            <p>Secara alami aku cepat mempelajari sesuatu yang baru—terutama ketika harus memecahkan masalah atau membangun sesuatu dari nol. Aku menguasai bahasa pemrograman, sistem jaringan, hingga UI/UX; namun lebih dari itu, aku memiliki ketahanan untuk belajar dari kesalahan.</p>
+            <p><b>Hard Skills:</b> Web & Game Development (React, Supabase, Flask), Network & Security, Database Design.<br>
+                <b>Soft Skills:</b> Leadership, Empati, Problem Solving, Communication, Team Collaboration.</p>
+
+            <h3 style="color:var(--accent);margin-top:28px;">P – Personality (Profil Kepribadian)</h3>
+            <p>Aku seorang INTP-T dengan jiwa builder-thinker: logis tapi imajinatif, rasional tapi idealis. Aku nyaman bekerja di ruang yang memberi kebebasan berpikir dan eksplorasi. Namun, aku juga menyadari pentingnya keseimbangan—antara struktur dan spontanitas, antara bekerja untuk hasil dan bekerja untuk makna.</p>
+            <p><b>Gaya kerja:</b> independen namun kolaboratif, observatif, reflektif, dan fokus pada growth.</p>
+
+            <h3 style="color:var(--accent);margin-top:28px;">E – Experiences (Pengalaman Hidup)</h3>
+            <p>Aku telah jatuh dan bangkit berkali-kali—baik dalam proyek, kompetisi, maupun hubungan personal. Dari setiap pengalaman, aku belajar bahwa ketulusan tidak bisa diajarkan, dan tanggung jawab tidak bisa ditunda. Pengalaman menjadi Dirjen Kementerian Kolaborasi Lembaga mengajarkanku arti kepemimpinan sejati: bukan sekadar mengatur, tapi menumbuhkan. Sementara dunia CTF dan FSAE ITB memberiku ruang untuk mengasah logika dan disiplin teknis.</p>
+            <p><b>Pelajaran utama:</b> Setiap luka adalah pelatihan karakter; setiap perjuangan adalah bahan bakar makna.</p>
+
+            <h3 style="text-align:center;color:var(--brand);margin-top:36px;">Pernyataan Misi Pribadi</h3>
+            <blockquote style="font-style:italic;text-align:center;color:var(--muted);margin:20px auto 0;max-width:700px;">
+                “Aku ingin menggunakan kemampuan analitis dan kreativitasku untuk membangun sistem—baik teknologi maupun manusia—yang selaras antara logika dan nurani. Aku ingin menjadi penghubung antara ide dan tindakan, antara data dan empati.”
+            </blockquote>
+            </section>
+
+            <!-- Tabel Ringkasan SHAPE -->
+            <div class="shape-wrap">
+            <div class="shape-caption">Tabel – Piagam Diri dan Identitas Naratif “My SHAPE”</div>
+            <div style="overflow-x:auto;">
+                <table class="shape-table">
+                <thead>
+                    <tr>
+                    <th>Komponen</th>
+                    <th>Deskripsi Reflektif</th>
+                    <th>Contoh Implementasi Nyata</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th>S – Signature Strengths<br><small>(Kekuatan Khas)</small></th>
+                    <td>Analitis, adaptif, visioner, reflektif. Memiliki pola pikir sistematis dan kemampuan membaca struktur kompleks. Senang membangun solusi dari ide abstrak.</td>
+                    <td>Menjadi penghubung ide & teknis pada proyek <b>Studify</b> dan prototipe <b>Trufman</b>; cepat menemukan pola error dan menyusun solusi efisien.</td>
+                    </tr>
+                    <tr>
+                    <th>H – Heart<br><small>(Nilai & Gairah)</small></th>
+                    <td>Nilai utama: <i>integritas</i>, <i>tanggung jawab</i>, dan <i>pertumbuhan</i>. Tertarik pada bagaimana teknologi meningkatkan nilai kemanusiaan.</td>
+                    <td>Membuat konsep <b>ZeroToHero – microlearning Gen-Z</b>, menggabungkan UI/UX dengan empati pengguna; aktif di kolaborasi antar-lembaga kampus.</td>
+                    </tr>
+                    <tr>
+                    <th>A – Aptitudes & Acquired Skills<br><small>(Bakat & Keterampilan)</small></th>
+                    <td>Cepat belajar, problem solver, fokus pada inovasi dan kerapian sistem.</td>
+                    <td><b>Hard Skills:</b> React, Supabase, Flask, SQL, Network & Security.<br><b>Soft Skills:</b> Leadership, Empati, Communication, Teamwork.</td>
+                    </tr>
+                    <tr>
+                    <th>P – Personality<br><small>(Profil Kepribadian)</small></th>
+                    <td>INTP-T / “Builder-Thinker”: logis tapi imajinatif, rasional namun reflektif. Cocok di lingkungan dengan kebebasan berpikir dan eksplorasi ide.</td>
+                    <td>Menyeimbangkan kerja individu & kolaborasi dalam tim besar seperti <b>Kementerian Kolaborasi Lembaga</b> dan <b>FSAE ITB</b>.</td>
+                    </tr>
+                    <tr>
+                    <th>E – Experiences<br><small>(Pengalaman Hidup)</small></th>
+                    <td>Pernah mengalami kegagalan, penolakan, dan tanggung jawab besar dalam organisasi; menumbuhkan ketahanan, empati, dan disiplin.</td>
+                    <td>Memimpin 100+ lembaga sebagai Dirjen; partisipasi di <b>CTF</b>, <b>FSAE</b>, dan berbagai proyek digital kampus.</td>
+                    </tr>
+                    <tr>
+                    <th>Pernyataan Misi Pribadi</th>
+                    <td colspan="2">“Menggunakan kemampuan analitis dan kreativitas untuk membangun sistem—baik teknologi maupun manusia—yang selaras antara logika dan nurani; menjadi jembatan antara data dan empati.”</td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            <div class="shape-note">Ringkasan ini melengkapi narasi di atas dan bisa dipakai untuk CV/portfolio.</div>
+            </div>
+        </article>`
+        },
+
+
+      { id: 'personal-reviews', title: '5 My Personal Reviews', content: placeholder('My Personal Reviews') },
+      { id: 'my-concepts', title: '6 My Concepts', content: placeholder('My Concepts') },
+      { id: 'my-opinions', title: '7 My Opinions', content: placeholder('My Opinions') },
+      { id: 'my-innovations', title: '8 My Innovations', content: placeholder('My Innovations') },
+      { id: 'my-knowledge', title: '9 My Knowledge', content: placeholder('My Knowledge') },
+      { id: 'pro-reviews', title: '10 My Professional Reviews', content: placeholder('My Professional Reviews') },
+      { id: 'summary', title: '11 Summary', content: placeholder('Summary') },
+      { id: 'references', title: 'References', content: placeholder('References') },
+    ];
+
+    function placeholder(title) {
+      return `<article><p style='color:var(--muted); text-align:center;'>Halaman <b>${title}</b> masih kosong. Silakan isi konten di sini nanti.</p></article>`;
+    }
+
+    function selamatBerjumpa() {
+      return `<article>
+        <div class='meta'>
+          <div><b>Author</b><br>Nafhan Shafy Aulia</div>
+          <div><b>Published</b><br>${new Date().toLocaleDateString('id-ID')}</div>
+        </div>
+        <div class='divider'></div>
+        <div class='hero-wrapper'>
+          <div class='hero'>
+            <div class='copy'>
+              <h2>Jangan Menjadi Beban Lingkungan</h2>
+              <p>Perlakukan wanitamu selayaknya engkau memperlakukan ibumu</p>
+            </div>
+            <div class='img' style="background: url('assets/foto_profile.jpg') center/cover no-repeat; border: none;"></div>
+          </div>
+        </div>
+        <section style='margin-top:40px;'>
+          <h3 style='text-align:center;'>Tentang Saya</h3>
+          <p style='text-align:justify;'>Nafhan Shafy adalah seorang mahasiswa di Sekolah Teknik Elektro dan Informatika ITB angkatan 2024.</p>
+          <p style='text-align:center;' >Memiliki tujuan hidup untuk membanggakan orang - orang terkasihnya</p>
+          <p style='text-align:center;' >— <em>Hardwork beats Genius</em> —</p>
+        </section>
+      </article>`;
+    }
+
+    const toc = document.getElementById('toc');
+    const contentEl = document.getElementById('page-content');
+    const titleEl = document.getElementById('page-title');
+
+    function renderToc(list) {
+      toc.innerHTML = list.map(p => `<li><a href='#${p.id}' data-id='${p.id}'>${p.title}</a></li>`).join('');
+      bindToc();
+      setActive(location.hash.slice(1) || 'selamat-berjumpa');
+    }
+
+    function bindToc() {
+      toc.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setActive(a.dataset.id)));
+    }
+
+    function setActive(id) {
+      toc.querySelectorAll('a').forEach(a => a.classList.toggle('active', a.dataset.id === id));
+      navigate(id);
+    }
+
+    function navigate(id) {
+      const p = PAGES.find(x => x.id === id) || PAGES[0];
+      titleEl.textContent = p.title;
+      contentEl.innerHTML = p.content;
+      contentEl.style.animation = 'fadeUp .5s var(--ease)';
+    }
+
+    renderToc(PAGES);
+    navigate(location.hash.slice(1) || 'selamat-berjumpa');
+
+    document.getElementById('search').addEventListener('input', e => {
+      const q = e.target.value.toLowerCase();
+      const filtered = !q ? PAGES : PAGES.filter(p => p.title.toLowerCase().includes(q));
+      renderToc(filtered);
+    });
+  </script>
+</body>
+</html>
