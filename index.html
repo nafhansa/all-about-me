@@ -58,8 +58,8 @@
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes softPulse { 0%,100% { opacity: 1; } 50% { opacity: .8; } }
 
+    /* paragraf justify */
     article p {text-align: justify;}
-
 
     @media (max-width: 920px) {
       .wrap { grid-template-columns: 1fr; }
@@ -72,31 +72,38 @@
     /* ========== SHAPE TABLE ========== */
     .shape-wrap{max-width:950px;margin:28px auto 0;padding:0 4px}
     .shape-table{
-    width:100%; border-collapse:separate; border-spacing:0;
-    background:var(--panel); color:var(--ink);
-    border:1px solid var(--line); border-radius:14px; overflow:hidden;
-    box-shadow:0 10px 28px rgba(0,0,0,.05);
+      width:100%; border-collapse:separate; border-spacing:0;
+      background:var(--panel); color:var(--ink);
+      border:1px solid var(--line); border-radius:14px; overflow:hidden;
+      box-shadow:0 10px 28px rgba(0,0,0,.05);
     }
     .shape-table thead th{
-    background:linear-gradient(180deg, var(--accent), var(--brand));
-    color:#fff; text-align:left; padding:14px 16px; font-weight:600; letter-spacing:.2px;
+      background:linear-gradient(180deg, var(--accent), var(--brand));
+      color:#fff; text-align:left; padding:14px 16px; font-weight:600; letter-spacing:.2px;
     }
     .shape-table tbody td, .shape-table tbody th{
-    padding:14px 16px; vertical-align:top; border-top:1px solid var(--line);
+      padding:14px 16px; vertical-align:top; border-top:1px solid var(--line);
     }
     .shape-table tbody th{ width:26%; color:var(--accent)}
     .shape-table tbody tr:nth-child(even){ background:#fafbfc }
     .shape-caption{
-    font-weight:700; color:var(--accent); margin:0 0 10px; display:flex; gap:8px; align-items:center;
+      font-weight:700; color:var(--accent); margin:0 0 10px; display:flex; gap:8px; align-items:center;
     }
     .shape-caption::before{content:'📘'}
     .shape-note{ color:var(--muted); font-size:13px; text-align:right; margin:6px 0 0 }
     @media (max-width: 720px){
-    .shape-table thead{display:none}
-    .shape-table, .shape-table tbody, .shape-table tr, .shape-table td, .shape-table th{display:block;width:100%}
-    .shape-table tbody tr{border-top:1px solid var(--line)}
-    .shape-table tbody th{background:#f4f6f8}
-    .shape-table tbody td{padding-top:8px}
+      .shape-table thead{display:none}
+      .shape-table, .shape-table tbody, .shape-table tr, .shape-table td, .shape-table th{display:block;width:100%}
+      .shape-table tbody tr{border-top:1px solid var(--line)}
+      .shape-table tbody th{background:#f4f6f8}
+      .shape-table tbody td{padding-top:8px}
+    }
+
+    mark{
+      background: var(--beige);
+      color: var(--ink);
+      padding: 0 2px;
+      border-radius: 3px;
     }
   </style>
 </head>
@@ -104,7 +111,7 @@
   <div class="wrap">
     <aside>
       <div class="brand">Nafhan Shafy Aulia</div>
-      <div class="search"><input id="search" type="search" placeholder="Cari halaman…"></div>
+      <div class="search"><input id="search" type="search" placeholder="Cari kata…"></div>
       <ul id="toc" class="toc"></ul>
     </aside>
 
@@ -118,39 +125,42 @@
   <script>
     const PAGES = [
       { id: 'selamat-berjumpa', title: 'Halo!! Aku Nafhan', content: selamatBerjumpa() },
+
       { id: 'kisah-identitas',
         title: '1 All About Me',
         content: `
         <article>
-            <section style="max-width:800px;margin:auto;line-height:1.7;">
+          <section style="max-width:800px;margin:auto;line-height:1.7;">
             <h2 style="text-align:center;color:var(--brand);">Perkenalkan. Aku. Nafhan.</h2>
-            <p style="text-align:justify;">
-                Halo! Aku <b>Nafhan Shafy Aulia</b>, seorang mahasiswa yang selalu haus belajar dan senang menjelajahi hal baru di dunia teknologi, desain, dan kreativitas.
-                Dari membangun prototype aplikasi pembelajaran hingga menaklukkan tantangan <i>Capture The Flag</i> di dunia siber,
-                aku selalu tertarik pada proses memahami sistem dan menciptakan solusi nyata dari ide-ide sederhana.
+            <p>
+              Halo! Aku <b>Nafhan Shafy Aulia</b>, seorang mahasiswa yang selalu haus belajar dan senang menjelajahi hal baru di dunia teknologi, desain, dan kreativitas.
+              Dari membangun prototype aplikasi pembelajaran hingga menaklukkan tantangan <i>Capture The Flag</i> di dunia siber,
+              aku selalu tertarik pada proses memahami sistem dan menciptakan solusi nyata dari ide-ide sederhana.
             </p>
-            <p style="text-align:justify;">
-                Selain itu, aku juga aktif di berbagai kegiatan kampus, mulai dari bergabung dengan Kabinet KM ITB dan aktif di HMIF ITB,
-                karena bagiku, keseimbangan antara akademik dan kegiatan non-akademik adalah kunci untuk berkembang.
+            <p>
+              Selain itu, aku juga aktif di berbagai kegiatan kampus, mulai dari bergabung dengan Kabinet KM ITB dan aktif di HMIF ITB,
+              karena bagiku, keseimbangan antara akademik dan kegiatan non-akademik adalah kunci untuk berkembang.
             </p>
-            <p style="text-align:justify;">
-                Aku percaya bahwa setiap langkah kecil — baik itu menulis kode, merancang antarmuka, atau belajar dari kesalahan —
-                adalah bagian dari perjalanan besar menuju versi terbaik dari diri sendiri.
+            <p>
+              Aku percaya bahwa setiap langkah kecil — baik itu menulis kode, merancang antarmuka, atau belajar dari kesalahan —
+              adalah bagian dari perjalanan besar menuju versi terbaik dari diri sendiri.
             </p>
-            </section>
+          </section>
         </article>`
-        },
+      },
+
       { id: 'my-songs', title: '2 My Song for You', content: placeholder('My Songs for You') },
+
       { id: 'my-stories',
         title: '3 My Stories for You',
         content: `
         <article>
-            <section style="max-width:800px;margin:auto;line-height:1.9">
+          <section style="max-width:800px;margin:auto;line-height:1.9">
             <h2 style="text-align:center;color:var(--brand);margin-bottom:10px">
-                “Belajar Dari Masa Lalu” vs “Terbentuk Dari Masa Lalu”
+              “Belajar Dari Masa Lalu” vs “Terbentuk Dari Masa Lalu”
             </h2>
             <p style="color:var(--muted);text-align:center;margin-top:0;margin-bottom:24px">
-                Ditulis oleh Nafhan Shafy Aulia
+              Ditulis oleh Nafhan Shafy Aulia
             </p>
 
             <p>Malam itu, selepas rapat besar pertamanya sebagai Dirjen Kementerian Kolaborasi Lembaga, di hadapan seratus lebih lembaga kampus, Nafhan berdiri dalam diam panjang. Di balik tepuk tangan dan sorotan lampu, ada kesadaran yang lahir, tentang luka, tentang kehilangan, tentang cinta yang pernah ia yakini tulus.</p>
@@ -167,21 +177,21 @@
             <p>Kadang Nafhan tertawa sendiri, mengingat betapa seriusnya ia dulu menanggapi “aku takut kehilangan kamu.” “Takut kehilangan, tapi malah ngegas pergi,” gumamnya sambil menepuk helm Vespa yang catnya mulai pudar. Ia bahkan sempat mikir, mungkin cinta itu kayak Wifi kampus, kuat di awal, hilang pas lagi butuh. Lucunya, dia masih sempat berdoa, “Tuhan, kalau memang jodoh tolong perbaiki dia.” Tapi setelah tiga kali network timeout, ia sadar, kayaknya Tuhan juga disconnect dulu sebentar biar Nafhan belajar sendiri arti sabar.</p>
 
             <p><strong>Sebuah hati besar yang pernah hancur kini tumbuh lagi</strong>, kali ini tak untuk orang lain, melainkan untuk dirinya sendiri.</p>
-            </section>
+          </section>
         </article>`
-        },
+      },
 
       { id: 'my-shapes',
         title: '4 My Shapes',
         content: `
         <article>
-            <!-- Narasi SHAPE -->
-            <section style="max-width:850px;margin:auto;line-height:1.8;text-align:justify;">
+          <!-- Narasi SHAPE -->
+          <section style="max-width:850px;margin:auto;line-height:1.8;text-align:justify;">
             <h2 style="text-align:center;color:var(--brand);margin-bottom:8px">
-                🧭 MY SHAPE – Piagam Diri & Identitas Naratif
+              🧭 MY SHAPE – Piagam Diri & Identitas Naratif
             </h2>
             <p style="text-align:center;color:var(--muted);margin-top:0;">
-                oleh: <b>Nafhan Shafy Aulia</b>
+              oleh: <b>Nafhan Shafy Aulia</b>
             </p>
 
             <h3 style="color:var(--accent);margin-top:32px;">S – Signature Strengths (Kekuatan Khas)</h3>
@@ -207,60 +217,59 @@
 
             <h3 style="text-align:center;color:var(--brand);margin-top:36px;">Pernyataan Misi Pribadi</h3>
             <blockquote style="font-style:italic;text-align:center;color:var(--muted);margin:20px auto 0;max-width:700px;">
-                “Aku ingin menggunakan kemampuan analitis dan kreativitasku untuk membangun sistem—baik teknologi maupun manusia—yang selaras antara logika dan nurani. Aku ingin menjadi penghubung antara ide dan tindakan, antara data dan empati.”
+              “Aku ingin menggunakan kemampuan analitis dan kreativitasku untuk membangun sistem—baik teknologi maupun manusia—yang selaras antara logika dan nurani. Aku ingin menjadi penghubung antara ide dan tindakan, antara data dan empati.”
             </blockquote>
-            </section>
+          </section>
 
-            <!-- Tabel Ringkasan SHAPE -->
-            <div class="shape-wrap">
+          <!-- Tabel Ringkasan SHAPE -->
+          <div class="shape-wrap">
             <div class="shape-caption">Tabel – Piagam Diri dan Identitas Naratif “My SHAPE”</div>
             <div style="overflow-x:auto;">
-                <table class="shape-table">
+              <table class="shape-table">
                 <thead>
-                    <tr>
+                  <tr>
                     <th>Komponen</th>
                     <th>Deskripsi Reflektif</th>
                     <th>Contoh Implementasi Nyata</th>
-                    </tr>
+                  </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                  <tr>
                     <th>S – Signature Strengths<br><small>(Kekuatan Khas)</small></th>
                     <td>Analitis, adaptif, visioner, reflektif. Memiliki pola pikir sistematis dan kemampuan membaca struktur kompleks. Senang membangun solusi dari ide abstrak.</td>
                     <td>Menjadi penghubung ide & teknis pada proyek <b>Studify</b> dan prototipe <b>Trufman</b>; cepat menemukan pola error dan menyusun solusi efisien.</td>
-                    </tr>
-                    <tr>
+                  </tr>
+                  <tr>
                     <th>H – Heart<br><small>(Nilai & Gairah)</small></th>
                     <td>Nilai utama: <i>integritas</i>, <i>tanggung jawab</i>, dan <i>pertumbuhan</i>. Tertarik pada bagaimana teknologi meningkatkan nilai kemanusiaan.</td>
                     <td>Membuat konsep <b>ZeroToHero – microlearning Gen-Z</b>, menggabungkan UI/UX dengan empati pengguna; aktif di kolaborasi antar-lembaga kampus.</td>
-                    </tr>
-                    <tr>
+                  </tr>
+                  <tr>
                     <th>A – Aptitudes & Acquired Skills<br><small>(Bakat & Keterampilan)</small></th>
                     <td>Cepat belajar, problem solver, fokus pada inovasi dan kerapian sistem.</td>
                     <td><b>Hard Skills:</b> React, Supabase, Flask, SQL, Network & Security.<br><b>Soft Skills:</b> Leadership, Empati, Communication, Teamwork.</td>
-                    </tr>
-                    <tr>
+                  </tr>
+                  <tr>
                     <th>P – Personality<br><small>(Profil Kepribadian)</small></th>
                     <td>INTP-T / “Builder-Thinker”: logis tapi imajinatif, rasional namun reflektif. Cocok di lingkungan dengan kebebasan berpikir dan eksplorasi ide.</td>
                     <td>Menyeimbangkan kerja individu & kolaborasi dalam tim besar seperti <b>Kementerian Kolaborasi Lembaga</b> dan <b>FSAE ITB</b>.</td>
-                    </tr>
-                    <tr>
+                  </tr>
+                  <tr>
                     <th>E – Experiences<br><small>(Pengalaman Hidup)</small></th>
                     <td>Pernah mengalami kegagalan, penolakan, dan tanggung jawab besar dalam organisasi; menumbuhkan ketahanan, empati, dan disiplin.</td>
                     <td>Memimpin 100+ lembaga sebagai Dirjen; partisipasi di <b>CTF</b>, <b>FSAE</b>, dan berbagai proyek digital kampus.</td>
-                    </tr>
-                    <tr>
+                  </tr>
+                  <tr>
                     <th>Pernyataan Misi Pribadi</th>
                     <td colspan="2">“Menggunakan kemampuan analitis dan kreativitas untuk membangun sistem—baik teknologi maupun manusia—yang selaras antara logika dan nurani; menjadi jembatan antara data dan empati.”</td>
-                    </tr>
+                  </tr>
                 </tbody>
-                </table>
+              </table>
             </div>
             <div class="shape-note">Ringkasan ini melengkapi narasi di atas dan bisa dipakai untuk CV/portfolio.</div>
-            </div>
+          </div>
         </article>`
-        },
-
+      },
 
       { id: 'personal-reviews', title: '5 My Personal Reviews', content: placeholder('My Personal Reviews') },
       { id: 'my-concepts', title: '6 My Concepts', content: placeholder('My Concepts') },
@@ -294,9 +303,8 @@
         </div>
         <section style='margin-top:40px;'>
           <h3 style='text-align:center;'>Tentang Saya</h3>
-          <p style='text-align:justify;'>Nafhan Shafy adalah seorang mahasiswa di Sekolah Teknik Elektro dan Informatika ITB angkatan 2024.</p>
-          <p style='text-align:center;' >Memiliki tujuan hidup untuk membanggakan orang - orang terkasihnya</p>
-          <p style='text-align:center;' >— <em>Hardwork beats Genius</em> —</p>
+          <p>Nafhan Shafy adalah seorang mahasiswa di Sekolah Teknik Elektro dan Informatika ITB angkatan 2024.</p>
+          <p style='text-align:center;'>Memiliki tujuan hidup untuk membanggakan orang - orang terkasihnya — <em>Hardwork beats Genius</em> —</p>
         </section>
       </article>`;
     }
@@ -305,10 +313,32 @@
     const contentEl = document.getElementById('page-content');
     const titleEl = document.getElementById('page-title');
 
-    function renderToc(list) {
-      toc.innerHTML = list.map(p => `<li><a href='#${p.id}' data-id='${p.id}'>${p.title}</a></li>`).join('');
+    /* ======= INDEX KONTEN UNTUK SEARCH ======= */
+    const CONTENT_INDEX = Object.fromEntries(
+      PAGES.map(p => {
+        const div = document.createElement('div');
+        div.innerHTML = p.content;
+        const text = (div.textContent || "").toLowerCase();
+        return [p.id, text];
+      })
+    );
+
+    function countHits(text, q){
+      if (!q) return 0;
+      const safe = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const m = (text.match(new RegExp(safe, 'gi')) || []);
+      return m.length;
+    }
+
+    function renderToc(list){
+      const q = (document.getElementById('search').value || "").toLowerCase().trim();
+      toc.innerHTML = list.map(p => {
+        const hits = q ? countHits((CONTENT_INDEX[p.id] || "") + " " + p.title.toLowerCase(), q) : 0;
+        const badge = q && hits ? `<small style="float:right;color:var(--muted)">${hits}</small>` : "";
+        return `<li><a href="#${p.id}" data-id="${p.id}">${p.title}${badge}</a></li>`;
+      }).join('');
       bindToc();
-      setActive(location.hash.slice(1) || 'selamat-berjumpa');
+      setActive(location.hash.slice(1) || (list[0]?.id || 'selamat-berjumpa'));
     }
 
     function bindToc() {
@@ -323,16 +353,63 @@
     function navigate(id) {
       const p = PAGES.find(x => x.id === id) || PAGES[0];
       titleEl.textContent = p.title;
-      contentEl.innerHTML = p.content;
+      contentEl.innerHTML = p.content;              // render ulang konten (reset mark)
       contentEl.style.animation = 'fadeUp .5s var(--ease)';
+
+      // highlight sesuai query saat ini
+      const q = (document.getElementById('search').value || '').trim().toLowerCase();
+      if(q) highlightInElement(contentEl, q);
+    }
+
+
+
+    // escape regex special chars
+    function escapeRegExp(str){ return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+
+    // highlight semua kemunculan q di dalam elemen (DOM-safe, per text node)
+    function highlightInElement(root, q){
+      if(!q) return;
+      const re = new RegExp(escapeRegExp(q), 'gi');
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+      const hits = [];
+          let node;
+      while(node = walker.nextNode()){
+        // skip text di dalam <script>/<style> atau anak <mark>
+        const p = node.parentNode;
+        if(!p || p.closest('mark') || /^(SCRIPT|STYLE)$/.test(p.tagName)) continue;
+        if(re.test(node.nodeValue)) hits.push(node);
+      }
+      hits.forEach(n=>{
+        const frag = document.createDocumentFragment();
+        const text = n.nodeValue;
+        let last = 0;
+        text.replace(re, (m, offset)=>{
+          if(offset > last) frag.appendChild(document.createTextNode(text.slice(last, offset)));
+          const mark = document.createElement('mark');
+          mark.textContent = m;
+          frag.appendChild(mark);
+          last = offset + m.length;
+          return m;
+        });
+        if(last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+        n.parentNode.replaceChild(frag, n);
+      });
     }
 
     renderToc(PAGES);
     navigate(location.hash.slice(1) || 'selamat-berjumpa');
 
+    /* ======= SEARCH BY CONTENT ======= */
     document.getElementById('search').addEventListener('input', e => {
-      const q = e.target.value.toLowerCase();
-      const filtered = !q ? PAGES : PAGES.filter(p => p.title.toLowerCase().includes(q));
+      const q = e.target.value.toLowerCase().trim();
+      if (!q) { renderToc(PAGES); return; }
+
+      const filtered = PAGES.filter(p => {
+        const inTitle = p.title.toLowerCase().includes(q);
+        const inBody  = (CONTENT_INDEX[p.id] || "").includes(q);
+        return inTitle || inBody;
+      });
+
       renderToc(filtered);
     });
   </script>
