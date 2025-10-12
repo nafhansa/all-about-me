@@ -399,7 +399,7 @@
     renderToc(PAGES);
     navigate(location.hash.slice(1) || 'selamat-berjumpa');
 
-    /* ======= SEARCH BY CONTENT ======= */
+    /* =======  SEARCH BY CONTENT  ======= */
     document.getElementById('search').addEventListener('input', e => {
       const q = e.target.value.toLowerCase().trim();
       if (!q) { renderToc(PAGES); return; }
