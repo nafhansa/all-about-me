@@ -149,6 +149,145 @@
 
     @keyframes marqueeL { from{transform:translateX(0)} to{transform:translateX(-50%)} }
     @keyframes marqueeR { from{transform:translateX(-50%)} to{transform:translateX(0)} }
+/* ========= All About Me — Aesthetic Components ========= */
+.bio-wrap{max-width:980px;margin:0 auto}
+.bio-header{
+  display:grid;grid-template-columns:120px 1fr;gap:20px;
+  padding:18px;border:1px solid var(--line);border-radius:18px;
+  background:linear-gradient(180deg,#fff, #f7f9fc);
+  box-shadow:0 8px 24px rgba(0,0,0,.06)
+}
+.bio-avatar{
+  width:120px;height:120px;border-radius:14px;overflow:hidden;
+  border:1px solid var(--line);background:#eef2f6;display:grid;place-items:center
+}
+.bio-avatar img{width:100%;height:100%;object-fit:cover}
+.bio-title{
+  display:flex;flex-direction:column;gap:6px;align-self:center
+}
+.bio-title h2{margin:0;color:var(--accent);font-size:26px;letter-spacing:.2px}
+.bio-sub{color:var(--muted);font-size:14px}
+
+.info-chips{
+  margin-top:14px;display:flex;flex-wrap:wrap;gap:10px
+}
+.chip{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 12px;border-radius:999px;
+  background:#f0f4f8;border:1px solid var(--line);color:var(--accent);
+  font-weight:600;font-size:12.5px;letter-spacing:.15px
+}
+.chip i{font-style:normal;font-size:16px;line-height:0}
+
+.section{
+  margin-top:22px;border:1px solid var(--line);border-radius:18px;background:#fff;
+  box-shadow:0 10px 28px rgba(0,0,0,.05);overflow:hidden
+}
+.section-head{
+  display:flex;align-items:center;gap:10px;
+  padding:14px 16px;background:linear-gradient(180deg,#fbfcfe,#f3f6fa);
+  border-bottom:1px solid var(--line)
+}
+.section-head .icon{
+  width:28px;height:28px;border-radius:8px;
+  display:grid;place-items:center;background:rgba(35,76,106,.10);color:var(--accent)
+}
+.section-head h3{margin:0;color:var(--accent);font-size:18px;letter-spacing:.2px}
+.section-body{padding:16px 18px;line-height:1.8;color:var(--ink)}
+.section-body p{margin:0 0 10px;text-align:justify}
+
+.quote{
+  margin:8px 0 0;padding:14px;border-left:4px solid var(--beige);
+  background:#faf5f1;border-radius:10px;color:#4a3f39;font-style:italic
+}
+
+.cards-3{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px
+}
+.mini-card{
+  border:1px solid var(--line);border-radius:14px;background:#fff;padding:12px 14px;
+  box-shadow:0 6px 18px rgba(0,0,0,.05)
+}
+.mini-label{color:var(--muted);font-size:12px;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.mini-value{font-weight:700;color:var(--accent)}
+
+.badges{
+  display:flex;flex-wrap:wrap;gap:8px;margin-top:8px
+}
+.badge{
+  font-size:12px;padding:6px 10px;border-radius:10px;background:#f7fafc;border:1px solid var(--line);color:var(--brand)
+}
+
+/* small anim & responsive */
+.section, .bio-header, .mini-card { animation:fadeUp .5s var(--ease) }
+@media (max-width: 860px){
+  .bio-header{grid-template-columns:1fr}
+  .cards-3{grid-template-columns:1fr}
+}
+
+/* ===== Icon & Chip: toned down (monochrome) ===== */
+.section-head .icon,
+.chip i {
+  /* bikin icon kalem */
+  filter: grayscale(1) saturate(0.2) contrast(0.95);
+  opacity: .9;
+  transition: transform .25s var(--ease), filter .25s var(--ease), opacity .25s var(--ease);
+}
+
+/* saat hover/focus: sedikit hidup, tetap tidak norak */
+.section:hover .section-head .icon,
+.chip:hover i {
+  filter: grayscale(.2) saturate(.7) contrast(1);
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+/* ===== Link & Card micro-interaction ===== */
+.section {
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
+}
+.section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(0,0,0,.07);
+  border-color: rgba(35,76,106,.20);
+}
+
+/* links di All About Me */
+.section-body a {
+  color: var(--brand);
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(35,76,106,.35);
+  transition: color .2s var(--ease), border-color .2s var(--ease);
+}
+.section-body a:hover {
+  color: var(--accent);
+  border-color: rgba(27,60,83,.55);
+}
+
+/* badges/ chips interaksi halus */
+.badge, .chip {
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease), background-color .2s var(--ease);
+}
+.badge:hover, .chip:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.06);
+  background-color: #eef3f7;
+}
+
+/* ===== Focus ring yang rapi (aksesibilitas) ===== */
+:focus-visible {
+  outline: 2px solid rgba(35,76,106,.55);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+/* ===== Prefers Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  .section, .badge, .chip, .section-head .icon, .chip i {
+    transition: none !important;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -173,27 +312,107 @@
       { id: 'kisah-identitas',
         title: '1 All About Me',
         content: `
-        <article>
-          <section style="max-width:800px;margin:auto;line-height:1.7;">
-            <h2 style="text-align:center;color:var(--brand);">Perkenalkan. Aku. Nafhan.</h2>
-            <p>
-              Halo! Aku <b>Nafhan Shafy Aulia</b>, seorang mahasiswa yang selalu haus belajar dan senang menjelajahi hal baru di dunia teknologi, desain, dan keamanan digital.
-              Dari membangun prototype aplikasi pembelajaran hingga menaklukkan tantangan <i>Capture The Flag</i> di dunia siber,
-              aku selalu tertarik pada proses memahami sistem dan menciptakan solusi nyata dari ide-ide sederhana.
-            </p>
-            <p>
-              Selain itu, aku juga aktif di berbagai kegiatan kampus, mulai dari bergabung dengan Kabinet KM ITB dan aktif di HMIF ITB,
-              karena bagiku, keseimbangan antara akademik dan kegiatan non-akademik adalah kunci untuk berkembang.
-            </p>
-            <p>
-              Aku percaya bahwa setiap langkah kecil baik itu menulis kode, merancang website, atau belajar dari kesalahan
-              adalah bagian dari perjalanan besar menuju versi terbaik dari diri sendiri.
-            </p>
-            <p>
-              Upin Ipin makan madu. See u when I see u >w<
-            </p>
-          </section>
-        </article>`
+<article class="bio-wrap">
+  <!-- HEADER -->
+  <div class="bio-header">
+    <div class="bio-avatar">
+      <!-- ganti foto kalau ada -->
+      <img src="assets/foto_profile.jpg" alt="Nafhan">
+    </div>
+    <div class="bio-title">
+      <h2>Perkenalkan, Aku Nafhan</h2>
+      <div class="bio-sub">Mahasiswa STEI ITB • Achiever–Thinker • UI/UX + Red Team Specialist</div>
+      <div class="info-chips">
+        <span class="chip"><i>🎓</i> Mahasiswa ITB</span>
+        <span class="chip"><i>🧭</i> Komunikasi & Karya</span>
+        <span class="chip"><i>🧠</i> Teknologi • Data • Manusia</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="section">
+    <div class="section-head">
+      <div class="icon">👤</div>
+      <h3>Siapa saya?</h3>
+    </div>
+    <div class="section-body">
+      <p>
+        Aku <b>Nafhan Shafy Aulia</b>, mahasiswa yang suka menjelajah titik temu
+        antara <i>teknologi</i>, <i>data</i>, dan <i>manusia</i>. Dari ngebangun prototype
+        pembelajaran, main CTF, sampai desain UI/UX. Aku menikmati proses memahami
+        sistem dan menerjemahkan ide jadi produk yang rapi dan bermanfaat.
+      </p>
+      <div class="quote">
+        “Komunikasi yang baik bukan hanya berbicara, tapi menghadirkan makna tanpa berbicara.”
+      </div>
+      <div class="cards-3">
+        <div class="mini-card">
+          <div class="mini-label">🎯 Fokus</div>
+          <div class="mini-value">Product Thinking & Execution</div>
+          <div class="badges">
+            <span class="badge">Frontend</span>
+            <span class="badge">Backend</span>
+            <span class="badge">Cyber Security</span>
+          </div>
+        </div>
+        <div class="mini-card">
+          <div class="mini-label">🧩 Peran</div>
+          <div class="mini-value">Builder & Problem Solver</div>
+          <div class="badges">
+            <span class="badge">Kolaboratif</span>
+            <span class="badge">Goal-oriented</span>
+          </div>
+        </div>
+        <div class="mini-card">
+          <div class="mini-label">💙 Nilai</div>
+          <div class="mini-value">Integritas & Tanggung Jawab</div>
+          <div class="badges">
+            <span class="badge">Growth Mindset</span>
+            <span class="badge">Empati</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPLE -->
+  <section class="section">
+    <div class="section-head">
+      <div class="icon">💬</div>
+      <h3>Prinsip Kehidupan</h3>
+    </div>
+    <div class="section-body">
+      <p>
+        Aku selalu mencoba untuk berusaha semaksimal mungkin hingga titik darah penghabisan 
+        terakhit sebelum menyerah. Menjadi manusia berjiwa ksatria selagi membawa kebermanfaatan 
+        dalam setiap derap langkah kaki kemanapun aku pergi.
+      </p>
+      <p>Prinsipku satu. <b>Terbang</b>, Tanpa menjatuhkan.</p>
+    </div>
+  </section>
+
+  <!-- ROLES -->
+  <section class="section">
+    <div class="section-head">
+      <div class="icon">🧭</div>
+      <h3>Peran Kehidupan</h3>
+    </div>
+    <div class="section-body">
+      <p>
+        Aku melihat diriku sebagai <b>mahasiswa yang memiliki keinginan belajar yang tinggi</b>,
+        <b>pemimpin yang dapat diandalkan</b>, dan <b>anak bungsu yang ingin membawa manfaat
+        bagi keluarga</b>. Otentik, mengakui yang belum dikuasai, dan terbuka pada masukan.
+      </p>
+      <p>
+        Menjaga citra bukan berarti berpura-pura, justru kejujuran yang sopan adalah
+        fondasi kepercayaan. Kalau salah, aku ingin cepat memperbaiki. Kalau benar,
+        tetap rendah hati.
+      </p>
+    </div>
+  </section>
+</article>`
+
       },
 
       { id: 'my-songs', title: '2 My Song for You', content: placeholder('My Songs for You') },
@@ -516,6 +735,47 @@
 
       renderToc(filtered);
     });
+
+    /* ===== Reveal on Scroll: section muncul halus pas kelihatan ===== */
+const sections = document.querySelectorAll('.section, .bio-header, .mini-card');
+sections.forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(6px)';
+});
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.transition = 'opacity .45s var(--ease), transform .45s var(--ease)';
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'none';
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: .12 });
+sections.forEach(el => io.observe(el));
+
+/* ===== Keyboard nav: ↑ ↓ untuk lompat antar section di halaman All About Me ===== */
+(function enableSectionKeyNav(){
+  const isAllAboutMe = location.hash.includes('kisah-identitas');
+  if (!isAllAboutMe) return;
+  const list = [...document.querySelectorAll('.bio-wrap .section')];
+  if (!list.length) return;
+
+  window.addEventListener('keydown', (ev) => {
+    if (ev.key !== 'ArrowDown' && ev.key !== 'ArrowUp') return;
+    ev.preventDefault();
+    const y = window.scrollY + 10;
+    const idx = list.findIndex(s => s.getBoundingClientRect().top + window.scrollY > y) - 1;
+    let target;
+    if (ev.key === 'ArrowDown') {
+      target = list[Math.min((idx + 1 < 0 ? 0 : idx + 1), list.length - 1)];
+    } else {
+      target = list[Math.max((idx - 1 < 0 ? 0 : idx - 1), 0)];
+    }
+    target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, { passive: false });
+})();
+
   </script>
 </body>
 </html>
