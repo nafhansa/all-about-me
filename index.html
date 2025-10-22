@@ -61,6 +61,14 @@
     /* paragraf justify */
     article p {text-align: justify;}
 
+    section.about { text-align: center; }
+    section.about p {
+      text-align: center;     /* kalahkan rule global */
+      margin-left: auto;      /* biar benar2 di-tengah */
+      margin-right: auto;
+      max-width: 900px;       /* optional: biar lebar bacanya pas */
+    }
+
     @media (max-width: 920px) {
       .wrap { grid-template-columns: 1fr; }
       aside { position: static; height: auto; }
@@ -105,6 +113,42 @@
       padding: 0 2px;
       border-radius: 3px;
     }
+
+    /* ===== Running Tags (ticker) ===== */
+    .tags-runner{
+      margin-top:18px;background:var(--panel);
+      border:1px solid var(--line);border-radius:14px;
+      box-shadow:0 10px 28px rgba(0,0,0,.05);overflow:hidden
+    }
+    .tags-runner .marquee{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+    .tags-runner .marquee:last-child{border-bottom:0}
+    .tags-runner .marquee__inner{
+      display:inline-block;white-space:nowrap;padding:14px 0;
+      animation:marqueeL 28s linear infinite
+    }
+    .tags-runner .marquee.reverse .marquee__inner{animation-name:marqueeR}
+
+    .tags-runner .track{display:inline-block;padding-right:80px}
+
+    /* TEKS SAJA (UPPERCASE + SHADOW TIPIS) */
+    .tags-runner .pill{
+      display:inline-block;
+      margin:0 23px;               /* jarak antar kata */
+      padding:0;
+      border:none; background:transparent; border-radius:0;
+      color: var(--accent);
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-shadow:
+        0 1px 0 rgba(255,255,255,.6),
+        0 1.5px 3px rgba(0,0,0,.10);
+      /* biar tidak “melompat” saat animasi */
+      will-change: transform;
+    }
+
+    @keyframes marqueeL { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    @keyframes marqueeR { from{transform:translateX(-50%)} to{transform:translateX(0)} }
   </style>
 </head>
 <body>
@@ -133,7 +177,7 @@
           <section style="max-width:800px;margin:auto;line-height:1.7;">
             <h2 style="text-align:center;color:var(--brand);">Perkenalkan. Aku. Nafhan.</h2>
             <p>
-              Halo! Aku <b>Nafhan Shafy Aulia</b>, seorang mahasiswa yang selalu haus belajar dan senang menjelajahi hal baru di dunia teknologi, desain, dan kreativitas.
+              Halo! Aku <b>Nafhan Shafy Aulia</b>, seorang mahasiswa yang selalu haus belajar dan senang menjelajahi hal baru di dunia teknologi, desain, dan keamanan digital.
               Dari membangun prototype aplikasi pembelajaran hingga menaklukkan tantangan <i>Capture The Flag</i> di dunia siber,
               aku selalu tertarik pada proses memahami sistem dan menciptakan solusi nyata dari ide-ide sederhana.
             </p>
@@ -142,8 +186,11 @@
               karena bagiku, keseimbangan antara akademik dan kegiatan non-akademik adalah kunci untuk berkembang.
             </p>
             <p>
-              Aku percaya bahwa setiap langkah kecil — baik itu menulis kode, merancang antarmuka, atau belajar dari kesalahan —
+              Aku percaya bahwa setiap langkah kecil baik itu menulis kode, merancang website, atau belajar dari kesalahan
               adalah bagian dari perjalanan besar menuju versi terbaik dari diri sendiri.
+            </p>
+            <p>
+              Upin Ipin makan madu. See u when I see u >w<
             </p>
           </section>
         </article>`
@@ -301,7 +348,65 @@
             <div class='img' style="background: url('assets/foto_profile.jpg') center/cover no-repeat; border: none;"></div>
           </div>
         </div>
-        <section style='margin-top:40px;'>
+
+        <!-- RUNNING TAGS -->
+        <div class="tags-runner" aria-label="Kelebihan & Nilai Nafhan">
+          <div class="marquee">
+            <div class="marquee__inner">
+              <span class="track">
+                <span class="pill">Ambisius</span>
+                <span class="pill">Loyal</span>
+                <span class="pill">Evaluatif</span>
+                <span class="pill">Kolaboratif</span>
+                <span class="pill">Komunikasi Efektif</span>
+                <span class="pill">CTF Hingga Mati</span>
+                <span class="pill">Terbuka</span>
+                <span class="pill">Kreatif</span>
+                <span class="pill">Fast Learner</span>
+              </span>
+              <span class="track" aria-hidden="true">
+                <span class="pill">Bertanggung Jawab</span>
+                <span class="pill">Revolusioner</span>
+                <span class="pill">Strategis</span>
+                <span class="pill">Rasional</span>
+                <span class="pill">Inovatif</span>
+                <span class="pill">Percaya Diri</span>
+                <span class="pill">Terorganisir</span>
+                <span class="pill">Kepemimpinan</span>
+                <span class="pill">Insightful</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="marquee reverse">
+            <div class="marquee__inner">
+              <span class="track">
+                <span class="pill">Tanggung Jawab</span>
+                <span class="pill">Problem Solving</span>
+                <span class="pill">Adaptif</span>
+                <span class="pill">Visioner</span>
+                <span class="pill">Disiplin</span>
+                <span class="pill">Komitmen</span>
+                <span class="pill">Konsisten</span>
+                <span class="pill">Growth Mindset</span>
+                <span class="pill">Teamwork Person</span>
+              </span>
+              <span class="track" aria-hidden="true">
+                <span class="pill">Tanggung Jawab</span>
+                <span class="pill">Problem Solving</span>
+                <span class="pill">Adaptif</span>
+                <span class="pill">Visioner</span>
+                <span class="pill">Disiplin</span>
+                <span class="pill">Komitmen</span>
+                <span class="pill">Konsisten</span>
+                <span class="pill">Growth Mindset</span>
+                <span class="pill">Teamwork Person</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <section class="about" style="margin-top:40px;">
           <h3 style='text-align:center;'>Tentang Saya</h3>
           <p>Nafhan Shafy adalah seorang mahasiswa di Sekolah Teknik Elektro dan Informatika ITB angkatan 2024.</p>
           <p style='text-align:center;'>Memiliki tujuan hidup untuk membanggakan orang - orang terkasihnya — <em>Hardwork beats Genius</em> —</p>
@@ -361,8 +466,6 @@
       if(q) highlightInElement(contentEl, q);
     }
 
-
-
     // escape regex special chars
     function escapeRegExp(str){ return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
 
@@ -372,7 +475,7 @@
       const re = new RegExp(escapeRegExp(q), 'gi');
       const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
       const hits = [];
-          let node;
+      let node;
       while(node = walker.nextNode()){
         // skip text di dalam <script>/<style> atau anak <mark>
         const p = node.parentNode;
