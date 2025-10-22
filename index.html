@@ -138,6 +138,50 @@
   background:linear-gradient(90deg, var(--brand), var(--accent)); }
 .time{ font-variant-numeric: tabular-nums; color:var(--muted); font-size:12px; min-width:84px; text-align:right }
 
+/* ===== Lyrics Card (aesthetic) ===== */
+.lyric-card{
+  margin-top:16px; padding:16px; border-radius:18px;
+  background: linear-gradient(180deg,#ffffff,#f7f9fc);
+  border:1px solid var(--line);
+  box-shadow:0 10px 28px rgba(0,0,0,.06);
+}
+.lyric-head{display:flex; align-items:center; gap:10px; margin-bottom:10px}
+.lyric-icon{
+  width:32px; height:32px; border-radius:10px;
+  display:grid; place-items:center;
+  background:rgba(35,76,106,.08); color:var(--accent);
+  font-size:16px;
+}
+.lyric-title{margin:0; color:var(--accent); font-size:16px; letter-spacing:.2px}
+
+.lyric-body{
+  position:relative; overflow:hidden; max-height:240px;
+  line-height:1.9; color:var(--ink);
+  transition:max-height .35s var(--ease);
+}
+.lyric-body.expanded{ max-height:9999px; }
+
+.lyric-fade{
+  content:""; position:absolute; left:0; right:0; bottom:0; height:60px;
+  background:linear-gradient(180deg, rgba(255,255,255,0), #fff);
+}
+.lyric-fade.hide{ display:none; }
+
+.stanza{ margin:10px 0 14px; }
+.stanza .label{
+  display:inline-block; font-size:12px; font-weight:700; color:var(--brand);
+  background:#eef3f7; border:1px solid var(--line); border-radius:8px; padding:2px 8px; margin-bottom:6px;
+}
+.stanza .text{ margin-top:6px; white-space:pre-line; }
+
+.lyric-actions{ display:flex; justify-content:center; margin-top:10px }
+.lyric-more{
+  border:1px solid var(--line); background:#f4f7fa; color:var(--accent);
+  padding:8px 12px; border-radius:999px; cursor:pointer; font-weight:600; font-size:13px;
+  transition:transform .15s var(--ease), box-shadow .2s var(--ease);
+}
+.lyric-more:hover{ transform:translateY(-1px); box-shadow:0 6px 16px rgba(0,0,0,.06); }
+
   
   </style>
 </head>
@@ -333,6 +377,7 @@
   <h2 style="text-align:center;color:var(--brand);margin:0 0 12px">Udara Malam — Teman Hati</h2>
   <p style="text-align:center;color:var(--muted);margin-top:0">dipilih khusus buat kamu ✨</p>
 
+  <!-- AUDIO PLAYER -->
   <div class="audio-card">
     <div class="audio-cover" style="background-image:url('assets/foto_profile.jpg')"></div>
     <div class="audio-meta">
@@ -348,10 +393,81 @@
     </div>
   </div>
 
+  <!-- LYRICS / DESKRIPSI AESTHETIC -->
+  <div class="lyric-card">
+    <div class="lyric-head">
+      <div class="lyric-icon">🎵</div>
+      <h3 class="lyric-title">Deskripsi & Lirik</h3>
+    </div>
+
+    <div class="lyric-body">
+      <!-- Verse -->
+      <div class="stanza">
+        <div class="label">[Verse]</div>
+        <div class="text">Langit malam tanpa bintang
+Jalanan sepi ku melayang
+Roda berputar pelan-pelan</div>
+      </div>
+
+      <!-- Chorus -->
+      <div class="stanza">
+        <div class="label">[Chorus]</div>
+        <div class="text">Langkah baru ku jalani
+Bukan sedih
+Aku happy
+Angin malam teman hati</div>
+      </div>
+
+      <!-- Verse 2 -->
+      <div class="stanza">
+        <div class="label">[Verse 2]</div>
+        <div class="text">Lampu kota jadi lukisan
+Hirup udara
+Rasa bebas
+Semua luka tinggal kenangan</div>
+      </div>
+
+      <!-- Chorus -->
+      <div class="stanza">
+        <div class="label">[Chorus]</div>
+        <div class="text">Langkah baru ku jalani
+Bukan sedih
+Aku happy
+Angin malam teman hati</div>
+      </div>
+
+      <!-- Bridge -->
+      <div class="stanza">
+        <div class="label">[Bridge]</div>
+        <div class="text">Vespa tua terus melaju
+Hati tenang
+Hidup baru
+Aku senyum
+Siapa tahu</div>
+      </div>
+
+      <!-- Chorus (outro) -->
+      <div class="stanza" style="margin-bottom:0">
+        <div class="label">[Chorus]</div>
+        <div class="text">Langkah baru ku jalani
+Bukan sedih
+Aku happy
+Angin malam teman hati</div>
+      </div>
+
+      <div class="lyric-fade"></div>
+    </div>
+
+    <div class="lyric-actions">
+      <button class="lyric-more" type="button">Baca lengkap</button>
+    </div>
+  </div>
+
   <p style="margin-top:14px;color:var(--muted);text-align:center">
-    Tekan <b>Spasi</b> untuk play/pause saat halaman ini aktif.
+    Tips: Tekan <b>Spasi</b> untuk play/pause saat halaman ini aktif.
   </p>
 </article>` },
+
 
     { id: 'my-stories',
         title: '3 My Stories for You',
@@ -564,9 +680,10 @@
   }
 
   /* === AUDIO PLAYER INIT (tempel sekali saja) === */
+/* === AUDIO PLAYER INIT (copy–paste utuh) === */
 function initSongsPlayer(){
-  const card = document.querySelector('.audio-card'); 
-  if(!card) return;                 // kalau bukan di halaman lagu, keluar
+  const card = document.querySelector('.audio-card');
+  if(!card) return; // bukan di halaman my-songs
 
   const audio   = card.querySelector('audio');
   const playBtn = card.querySelector('.play');
@@ -576,44 +693,69 @@ function initSongsPlayer(){
   const curEl   = card.querySelector('.cur');
   const durEl   = card.querySelector('.dur');
 
-  const fmt = s => {                // format detik -> m:ss
+  const fmt = s => {
     s = Math.floor(s || 0);
     const m = Math.floor(s/60), sec = String(s%60).padStart(2,'0');
     return `${m}:${sec}`;
   };
 
-  audio.addEventListener('loadedmetadata', ()=> {
-    durEl.textContent = fmt(audio.duration);
-  });
-
+  // --- metadata & waktu ---
+  if (audio.readyState >= 1) { durEl.textContent = fmt(audio.duration); }
+  audio.addEventListener('loadedmetadata', ()=> { durEl.textContent = fmt(audio.duration); });
   audio.addEventListener('timeupdate', ()=>{
     curEl.textContent = fmt(audio.currentTime);
     const pct = (audio.currentTime / (audio.duration || 1)) * 100;
     prog.style.width = `${pct}%`;
   });
+  audio.addEventListener('ended', ()=>{
+    playBtn.textContent = '▶'; // reset ikon saat lagu selesai
+  });
 
+  // --- kontrol tombol ---
   playBtn.addEventListener('click', ()=>{
     if(audio.paused){ audio.play(); playBtn.textContent = '⏸'; }
     else { audio.pause(); playBtn.textContent = '▶'; }
   });
-
   muteBtn.addEventListener('click', ()=>{
     audio.muted = !audio.muted;
     muteBtn.textContent = audio.muted ? '🔇' : '🔈';
   });
 
-  bar.addEventListener('click', (e)=>{
+  // --- seek via progress bar (click/drag sederhana) ---
+  function seekAt(clientX){
     const r = bar.getBoundingClientRect();
-    const p = Math.min(Math.max((e.clientX - r.left)/r.width, 0), 1);
+    const p = Math.min(Math.max((clientX - r.left)/r.width, 0), 1);
     audio.currentTime = p * (audio.duration || 0);
-  });
+  }
+  bar.addEventListener('click', (e)=> seekAt(e.clientX));
 
-  // keyboard: spasi untuk play/pause saat di halaman Songs
+  // drag (pointer) — opsional biar halus
+  let dragging = false;
+  bar.addEventListener('pointerdown', (e)=>{ dragging = true; seekAt(e.clientX); });
+  window.addEventListener('pointermove', (e)=>{ if(dragging) seekAt(e.clientX); });
+  window.addEventListener('pointerup',   ()=>{ dragging = false; });
+
+  // --- keyboard: spasi untuk play/pause saat di halaman lagu ---
   function onKey(ev){
     if(!location.hash.includes('my-songs')) return;
-    if(ev.code === 'Space'){ ev.preventDefault(); playBtn.click(); }
+    if(ev.code === 'Space'){
+      ev.preventDefault();
+      playBtn.click();
+    }
   }
   document.addEventListener('keydown', onKey, { passive:false });
+
+  // ===== Toggle "Baca lengkap" lirik =====
+  const lyrBody = document.querySelector('.lyric-body');
+  const lyrFade = document.querySelector('.lyric-fade');
+  const lyrBtn  = document.querySelector('.lyric-more');
+  if (lyrBody && lyrBtn){
+    lyrBtn.addEventListener('click', ()=>{
+      const open = lyrBody.classList.toggle('expanded');
+      if (lyrFade) lyrFade.classList.toggle('hide', open);
+      lyrBtn.textContent = open ? 'Tutup' : 'Baca lengkap';
+    });
+  }
 }
 
 
