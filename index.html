@@ -5,289 +5,108 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio Asesmen II-2100 — Centered Alignment</title>
   <style>
-    :root {
-      --bg: #f6f7f8;
-      --panel: #ffffff;
-      --ink: #12202b;
-      --muted: #5f6b75;
-      --brand: #234C6A;
-      --accent: #1B3C53;
-      --beige: #D2C1B6;
-      --mid: #456882;
-      --line: #e6e8ec;
-      --ease: cubic-bezier(.22,.61,.36,1);
+    :root{
+      --bg:#f6f7f8;--panel:#ffffff;--ink:#12202b;--muted:#5f6b75;
+      --brand:#234C6A;--accent:#1B3C53;--beige:#D2C1B6;--mid:#456882;--line:#e6e8ec;
+      --ease:cubic-bezier(.22,.61,.36,1)
     }
-
-    * { box-sizing: border-box; }
-    html, body { height: 100%; margin: 0; font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--ink); }
-
-    .wrap { display: grid; grid-template-columns: 320px 1fr; min-height: 100vh; }
-
-    aside { background: linear-gradient(180deg, #eef2f6, #ffffff); border-right: 1px solid var(--line); padding: 20px 18px; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
-    .brand { font-weight: 700; font-size: 20px; margin-bottom: 18px; color: var(--accent); animation: softPulse 3s ease-in-out infinite; letter-spacing: .2px; }
-
-    .search input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: #f9fafb; transition: all .3s var(--ease); }
-    .search input:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 2px rgba(35,76,106,0.18); }
-
-    .toc { list-style: none; margin: 20px 0 0; padding: 0; }
-    .toc a { display: block; padding: 10px 12px; margin-bottom: 4px; border-radius: 8px; color: var(--ink); text-decoration: none; transition: all .25s var(--ease); }
-    .toc a:hover { background: rgba(27,60,83,0.08); transform: translateX(3px); }
-    .toc a.active { background: rgba(35,76,106,0.16); color: var(--accent); font-weight: 600; border-left: 3px solid var(--mid); }
-
-    main { padding: 40px 50px; background: var(--bg); animation: fadeIn .6s var(--ease); display: flex; flex-direction: column; align-items: center; }
-
-    .crumb { color: var(--muted); font-size: 14px; margin-bottom: 10px; align-self: flex-start; }
-    h1 { font-size: 32px; margin-bottom: 20px; color: var(--accent); text-align: center; }
-
-    article { max-width: 900px; animation: fadeUp .6s var(--ease); }
-    .meta { display: flex; gap: 24px; color: var(--muted); font-size: 14px; margin-bottom: 16px; justify-content: center; }
-    .divider { height: 1px; background: var(--line); margin: 20px auto; width: 80%; }
-
-    .hero-wrapper { display: flex; justify-content: center; width: 100%; }
-
-    .hero { display: flex; justify-content: center; align-items: center; background: var(--panel); border-radius: 20px; padding: 32px; box-shadow: 0 12px 35px rgba(0,0,0,0.06); transition: all .4s var(--ease); border: 1px solid var(--line); gap: 48px; width: 100%; max-width: 900px; margin: 0 auto; }
-    .hero:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); }
-
-    .hero .copy { flex: 1; text-align: left; display: flex; flex-direction: column; justify-content: center; padding-left: 40px; }
-    .hero h2 { margin: 0 0 8px; font-size: 28px; color: var(--brand); }
-    .hero p { margin: 0; color: var(--muted); }
-
-    .hero .img { flex: 1; display: flex; justify-content: center; align-items: center; aspect-ratio: 16/9; border-radius: 14px; background: linear-gradient(135deg, var(--mid), var(--brand)); color: #e7ecf1; font-size: 13px; font-style: italic; border: 1px solid rgba(27,60,83,.25); max-width: 360px; }
-
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes softPulse { 0%,100% { opacity: 1; } 50% { opacity: .8; } }
-
-    /* paragraf justify */
-    article p {text-align: justify;}
-
-    section.about { text-align: center; }
-    section.about p {
-      text-align: center;     /* kalahkan rule global */
-      margin-left: auto;      /* biar benar2 di-tengah */
-      margin-right: auto;
-      max-width: 900px;       /* optional: biar lebar bacanya pas */
-    }
-
-    @media (max-width: 920px) {
-      .wrap { grid-template-columns: 1fr; }
-      aside { position: static; height: auto; }
-      main { padding: 24px; }
-      .hero { flex-direction: column; gap: 24px; width: 100%; text-align: center; }
-      .hero .copy { padding-left: 0; align-items: center; text-align: center; }
-    }
-
-    /* ========== SHAPE TABLE ========== */
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink)}
+    .wrap{display:grid;grid-template-columns:320px 1fr;min-height:100vh}
+    aside{background:linear-gradient(180deg,#eef2f6,#ffffff);border-right:1px solid var(--line);padding:20px 18px;position:sticky;top:0;height:100vh;overflow-y:auto}
+    .brand{font-weight:700;font-size:20px;margin-bottom:18px;color:var(--accent);animation:softPulse 3s ease-in-out infinite;letter-spacing:.2px}
+    .search input{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#f9fafb;transition:all .3s var(--ease)}
+    .search input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 2px rgba(35,76,106,0.18)}
+    .toc{list-style:none;margin:20px 0 0;padding:0}
+    .toc a{display:block;padding:10px 12px;margin-bottom:4px;border-radius:8px;color:var(--ink);text-decoration:none;transition:all .25s var(--ease)}
+    .toc a:hover{background:rgba(27,60,83,0.08);transform:translateX(3px)}
+    .toc a.active{background:rgba(35,76,106,0.16);color:var(--accent);font-weight:600;border-left:3px solid var(--mid)}
+    main{padding:40px 50px;background:var(--bg);animation:fadeIn .6s var(--ease);display:flex;flex-direction:column;align-items:center}
+    .crumb{color:var(--muted);font-size:14px;margin-bottom:10px;align-self:flex-start}
+    h1{font-size:32px;margin-bottom:20px;color:var(--accent);text-align:center}
+    article{max-width:900px;animation:fadeUp .6s var(--ease)}
+    .meta{display:flex;gap:24px;color:var(--muted);font-size:14px;margin-bottom:16px;justify-content:center}
+    .divider{height:1px;background:var(--line);margin:20px auto;width:80%}
+    .hero-wrapper{display:flex;justify-content:center;width:100%}
+    .hero{display:flex;justify-content:center;align-items:center;background:var(--panel);border-radius:20px;padding:32px;box-shadow:0 12px 35px rgba(0,0,0,0.06);transition:all .4s var(--ease);border:1px solid var(--line);gap:48px;width:100%;max-width:900px;margin:0 auto}
+    .hero:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,0.08)}
+    .hero .copy{flex:1;text-align:left;display:flex;flex-direction:column;justify-content:center;padding-left:40px}
+    .hero h2{margin:0 0 8px;font-size:28px;color:var(--brand)}
+    .hero p{margin:0;color:var(--muted)}
+    .hero .img{flex:1;display:flex;justify-content:center;align-items:center;aspect-ratio:16/9;border-radius:14px;background:linear-gradient(135deg,var(--mid),var(--brand));color:#e7ecf1;font-size:13px;font-style:italic;border:1px solid rgba(27,60,83,.25);max-width:360px}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes softPulse{0%,100%{opacity:1}50%{opacity:.8}}
+    article p{text-align:justify}
+    section.about{text-align:center}
+    section.about p{text-align:center;margin-left:auto;margin-right:auto;max-width:900px}
+    @media (max-width: 920px){.wrap{grid-template-columns:1fr}aside{position:static;height:auto}main{padding:24px}.hero{flex-direction:column;gap:24px;width:100%;text-align:center}.hero .copy{padding-left:0;align-items:center;text-align:center}}
     .shape-wrap{max-width:950px;margin:28px auto 0;padding:0 4px}
-    .shape-table{
-      width:100%; border-collapse:separate; border-spacing:0;
-      background:var(--panel); color:var(--ink);
-      border:1px solid var(--line); border-radius:14px; overflow:hidden;
-      box-shadow:0 10px 28px rgba(0,0,0,.05);
-    }
-    .shape-table thead th{
-      background:linear-gradient(180deg, var(--accent), var(--brand));
-      color:#fff; text-align:left; padding:14px 16px; font-weight:600; letter-spacing:.2px;
-    }
-    .shape-table tbody td, .shape-table tbody th{
-      padding:14px 16px; vertical-align:top; border-top:1px solid var(--line);
-    }
-    .shape-table tbody th{ width:26%; color:var(--accent)}
-    .shape-table tbody tr:nth-child(even){ background:#fafbfc }
-    .shape-caption{
-      font-weight:700; color:var(--accent); margin:0 0 10px; display:flex; gap:8px; align-items:center;
-    }
+    .shape-table{width:100%;border-collapse:separate;border-spacing:0;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.05)}
+    .shape-table thead th{background:linear-gradient(180deg,var(--accent),var(--brand));color:#fff;text-align:left;padding:14px 16px;font-weight:600;letter-spacing:.2px}
+    .shape-table tbody td,.shape-table tbody th{padding:14px 16px;vertical-align:top;border-top:1px solid var(--line)}
+    .shape-table tbody th{width:26%;color:var(--accent)}
+    .shape-table tbody tr:nth-child(even){background:#fafbfc}
+    .shape-caption{font-weight:700;color:var(--accent);margin:0 0 10px;display:flex;gap:8px;align-items:center}
     .shape-caption::before{content:'📘'}
-    .shape-note{ color:var(--muted); font-size:13px; text-align:right; margin:6px 0 0 }
-    @media (max-width: 720px){
-      .shape-table thead{display:none}
-      .shape-table, .shape-table tbody, .shape-table tr, .shape-table td, .shape-table th{display:block;width:100%}
-      .shape-table tbody tr{border-top:1px solid var(--line)}
-      .shape-table tbody th{background:#f4f6f8}
-      .shape-table tbody td{padding-top:8px}
-    }
-
-    mark{
-      background: var(--beige);
-      color: var(--ink);
-      padding: 0 2px;
-      border-radius: 3px;
-    }
-
-    /* ===== Running Tags (ticker) ===== */
-    .tags-runner{
-      margin-top:18px;background:var(--panel);
-      border:1px solid var(--line);border-radius:14px;
-      box-shadow:0 10px 28px rgba(0,0,0,.05);overflow:hidden
-    }
+    .shape-note{color:var(--muted);font-size:13px;text-align:right;margin:6px 0 0}
+    @media (max-width:720px){.shape-table thead{display:none}.shape-table,.shape-table tbody,.shape-table tr,.shape-table td,.shape-table th{display:block;width:100%}.shape-table tbody tr{border-top:1px solid var(--line)}.shape-table tbody th{background:#f4f6f8}.shape-table tbody td{padding-top:8px}}
+    mark{background:var(--beige);color:var(--ink);padding:0 2px;border-radius:3px}
+    .tags-runner{margin-top:18px;background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 28px rgba(0,0,0,.05);overflow:hidden}
     .tags-runner .marquee{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
     .tags-runner .marquee:last-child{border-bottom:0}
-    .tags-runner .marquee__inner{
-      display:inline-block;white-space:nowrap;padding:14px 0;
-      animation:marqueeL 28s linear infinite
-    }
+    .tags-runner .marquee__inner{display:inline-block;white-space:nowrap;padding:14px 0;animation:marqueeL 28s linear infinite}
     .tags-runner .marquee.reverse .marquee__inner{animation-name:marqueeR}
-
     .tags-runner .track{display:inline-block;padding-right:80px}
-
-    /* TEKS SAJA (UPPERCASE + SHADOW TIPIS) */
-    .tags-runner .pill{
-      display:inline-block;
-      margin:0 23px;               /* jarak antar kata */
-      padding:0;
-      border:none; background:transparent; border-radius:0;
-      color: var(--accent);
-      text-transform: uppercase;
-      font-weight: 800;
-      letter-spacing: .06em;
-      text-shadow:
-        0 1px 0 rgba(255,255,255,.6),
-        0 1.5px 3px rgba(0,0,0,.10);
-      /* biar tidak “melompat” saat animasi */
-      will-change: transform;
-    }
-
-    @keyframes marqueeL { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-    @keyframes marqueeR { from{transform:translateX(-50%)} to{transform:translateX(0)} }
-/* ========= All About Me — Aesthetic Components ========= */
-.bio-wrap{max-width:980px;margin:0 auto}
-.bio-header{
-  display:grid;grid-template-columns:120px 1fr;gap:20px;
-  padding:18px;border:1px solid var(--line);border-radius:18px;
-  background:linear-gradient(180deg,#fff, #f7f9fc);
-  box-shadow:0 8px 24px rgba(0,0,0,.06)
-}
-.bio-avatar{
-  width:120px;height:120px;border-radius:14px;overflow:hidden;
-  border:1px solid var(--line);background:#eef2f6;display:grid;place-items:center
-}
-.bio-avatar img{width:100%;height:100%;object-fit:cover}
-.bio-title{
-  display:flex;flex-direction:column;gap:6px;align-self:center
-}
-.bio-title h2{margin:0;color:var(--accent);font-size:26px;letter-spacing:.2px}
-.bio-sub{color:var(--muted);font-size:14px}
-
-.info-chips{
-  margin-top:14px;display:flex;flex-wrap:wrap;gap:10px
-}
-.chip{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:8px 12px;border-radius:999px;
-  background:#f0f4f8;border:1px solid var(--line);color:var(--accent);
-  font-weight:600;font-size:12.5px;letter-spacing:.15px
-}
-.chip i{font-style:normal;font-size:16px;line-height:0}
-
-.section{
-  margin-top:22px;border:1px solid var(--line);border-radius:18px;background:#fff;
-  box-shadow:0 10px 28px rgba(0,0,0,.05);overflow:hidden
-}
-.section-head{
-  display:flex;align-items:center;gap:10px;
-  padding:14px 16px;background:linear-gradient(180deg,#fbfcfe,#f3f6fa);
-  border-bottom:1px solid var(--line)
-}
-.section-head .icon{
-  width:28px;height:28px;border-radius:8px;
-  display:grid;place-items:center;background:rgba(35,76,106,.10);color:var(--accent)
-}
-.section-head h3{margin:0;color:var(--accent);font-size:18px;letter-spacing:.2px}
-.section-body{padding:16px 18px;line-height:1.8;color:var(--ink)}
-.section-body p{margin:0 0 10px;text-align:justify}
-
-.quote{
-  margin:8px 0 0;padding:14px;border-left:4px solid var(--beige);
-  background:#faf5f1;border-radius:10px;color:#4a3f39;font-style:italic
-}
-
-.cards-3{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px
-}
-.mini-card{
-  border:1px solid var(--line);border-radius:14px;background:#fff;padding:12px 14px;
-  box-shadow:0 6px 18px rgba(0,0,0,.05)
-}
-.mini-label{color:var(--muted);font-size:12px;margin-bottom:6px;display:flex;align-items:center;gap:6px}
-.mini-value{font-weight:700;color:var(--accent)}
-
-.badges{
-  display:flex;flex-wrap:wrap;gap:8px;margin-top:8px
-}
-.badge{
-  font-size:12px;padding:6px 10px;border-radius:10px;background:#f7fafc;border:1px solid var(--line);color:var(--brand)
-}
-
-/* small anim & responsive */
-.section, .bio-header, .mini-card { animation:fadeUp .5s var(--ease) }
-@media (max-width: 860px){
-  .bio-header{grid-template-columns:1fr}
-  .cards-3{grid-template-columns:1fr}
-}
-
-/* ===== Icon & Chip: toned down (monochrome) ===== */
-.section-head .icon,
-.chip i {
-  /* bikin icon kalem */
-  filter: grayscale(1) saturate(0.2) contrast(0.95);
-  opacity: .9;
-  transition: transform .25s var(--ease), filter .25s var(--ease), opacity .25s var(--ease);
-}
-
-/* saat hover/focus: sedikit hidup, tetap tidak norak */
-.section:hover .section-head .icon,
-.chip:hover i {
-  filter: grayscale(.2) saturate(.7) contrast(1);
-  opacity: 1;
-  transform: translateY(-1px);
-}
-
-/* ===== Link & Card micro-interaction ===== */
-.section {
-  transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
-}
-.section:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 34px rgba(0,0,0,.07);
-  border-color: rgba(35,76,106,.20);
-}
-
-/* links di All About Me */
-.section-body a {
-  color: var(--brand);
-  text-decoration: none;
-  border-bottom: 1px dotted rgba(35,76,106,.35);
-  transition: color .2s var(--ease), border-color .2s var(--ease);
-}
-.section-body a:hover {
-  color: var(--accent);
-  border-color: rgba(27,60,83,.55);
-}
-
-/* badges/ chips interaksi halus */
-.badge, .chip {
-  transition: transform .2s var(--ease), box-shadow .2s var(--ease), background-color .2s var(--ease);
-}
-.badge:hover, .chip:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(0,0,0,.06);
-  background-color: #eef3f7;
-}
-
-/* ===== Focus ring yang rapi (aksesibilitas) ===== */
-:focus-visible {
-  outline: 2px solid rgba(35,76,106,.55);
-  outline-offset: 2px;
-  border-radius: 10px;
-}
-
-/* ===== Prefers Reduced Motion ===== */
-@media (prefers-reduced-motion: reduce) {
-  .section, .badge, .chip, .section-head .icon, .chip i {
-    transition: none !important;
-  }
-}
-
+    .tags-runner .pill{display:inline-block;margin:0 23px;padding:0;border:none;background:transparent;border-radius:0;color:var(--accent);text-transform:uppercase;font-weight:800;letter-spacing:.06em;text-shadow:0 1px 0 rgba(255,255,255,.6),0 1.5px 3px rgba(0,0,0,.10);will-change:transform}
+    @keyframes marqueeL{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    @keyframes marqueeR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+    .bio-wrap{max-width:980px;margin:0 auto}
+    .bio-header{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:18px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#fff,#f7f9fc);box-shadow:0 8px 24px rgba(0,0,0,.06)}
+    .bio-avatar{width:120px;height:120px;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#eef2f6;display:grid;place-items:center}
+    .bio-avatar img{width:100%;height:100%;object-fit:cover}
+    .bio-title{display:flex;flex-direction:column;gap:6px;align-self:center}
+    .bio-title h2{margin:0;color:var(--accent);font-size:26px;letter-spacing:.2px}
+    .bio-sub{color:var(--muted);font-size:14px}
+    .info-chips{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#f0f4f8;border:1px solid var(--line);color:var(--accent);font-weight:600;font-size:12.5px;letter-spacing:.15px}
+    .chip i{font-style:normal;font-size:16px;line-height:0}
+    .section{margin-top:22px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 10px 28px rgba(0,0,0,.05);overflow:hidden;transition:transform .25s var(--ease),box-shadow .25s var(--ease),border-color .25s var(--ease)}
+    .section:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(0,0,0,.07);border-color:rgba(35,76,106,.20)}
+    .section-head{display:flex;align-items:center;gap:10px;padding:14px 16px;background:linear-gradient(180deg,#fbfcfe,#f3f6fa);border-bottom:1px solid var(--line)}
+    .section-head .icon{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:rgba(35,76,106,.10);color:var(--accent);filter:grayscale(1) saturate(.2) contrast(.95);opacity:.9;transition:transform .25s var(--ease),filter .25s var(--ease),opacity .25s var(--ease)}
+    .section:hover .section-head .icon{filter:grayscale(.2) saturate(.7) contrast(1);opacity:1;transform:translateY(-1px)}
+    .section-head h3{margin:0;color:var(--accent);font-size:18px;letter-spacing:.2px}
+    .section-body{padding:16px 18px;line-height:1.8;color:var(--ink)}
+    .section-body p{margin:0 0 10px;text-align:justify}
+    .quote{margin:8px 0 0;padding:14px;border-left:4px solid var(--beige);background:#faf5f1;border-radius:10px;color:#4a3f39;font-style:italic}
+    .cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
+    .mini-card{border:1px solid var(--line);border-radius:14px;background:#fff;padding:12px 14px;box-shadow:0 6px 18px rgba(0,0,0,.05);animation:fadeUp .5s var(--ease)}
+    .mini-label{color:var(--muted);font-size:12px;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+    .mini-value{font-weight:700;color:var(--accent)}
+    .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+    .badge{font-size:12px;padding:6px 10px;border-radius:10px;background:#f7fafc;border:1px solid var(--line);color:var(--brand);transition:transform .2s var(--ease),box-shadow .2s var(--ease),background-color .2s var(--ease)}
+    .badge:hover,.chip:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,.06);background-color:#eef3f7}
+    @media (max-width:860px){.bio-header{grid-template-columns:1fr}.cards-3{grid-template-columns:1fr}}
+    :focus-visible{outline:2px solid rgba(35,76,106,.55);outline-offset:2px;border-radius:10px}
+    @media (prefers-reduced-motion:reduce){.section,.badge,.chip,.section-head .icon{transition:none!important}}
+    /* CHAT */
+    .ai-launcher{position:fixed;right:22px;bottom:22px;pointer-events:auto;z-index:2147483647;width:54px;height:54px;border-radius:50%;border:1px solid rgba(0,0,0,.05);background:radial-gradient(120% 120% at 30% 20%,#3a6b8f,var(--brand));color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(0,0,0,.18);transition:transform .2s var(--ease),box-shadow .2s var(--ease),filter .2s var(--ease)}
+    .ai-launcher:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(0,0,0,.22);filter:brightness(1.05)}
+    .ai-panel{position:fixed;right:22px;bottom:90px;z-index:2147483646;width:340px;max-height:70vh;display:none;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.18);overflow:hidden;animation:fadeUp .25s var(--ease)}
+    .ai-panel.open{display:flex}
+    .ai-header{display:flex;align-items:center;gap:10px;padding:10px 12px;background:linear-gradient(180deg,#fbfcfe,#f3f6fa);border-bottom:1px solid var(--line)}
+    .ai-dot{width:10px;height:10px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.18)}
+    .ai-sub{font-size:12px;color:var(--muted)}
+    .ai-close{margin-left:auto;border:none;background:transparent;font-size:18px;cursor:pointer;color:var(--muted)}
+    .ai-messages{padding:12px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;background:#fbfcfe}
+    .msg{max-width:88%;padding:10px 12px;border-radius:12px;line-height:1.6;font-size:14px;white-space: pre-wrap;}
+    .msg.user{align-self:flex-end;background:#234c6a;color:#fff;border:1px solid rgba(255,255,255,.12)}
+    .msg.bot{align-self:flex-start;background:#fff;color:var(--ink);border:1px solid var(--line);line-height: 1.75;}
+    .ai-input{padding:10px;display:flex;gap:8px;border-top:1px solid var(--line);background:#fff}
+    .ai-input input{flex:1;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#f7f9fc}
+    .ai-input input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 2px rgba(35,76,106,.15)}
+    .ai-send{width:44px;border:none;border-radius:10px;background:var(--brand);color:#fff;cursor:pointer}
   </style>
 </head>
 <body>
@@ -305,11 +124,74 @@
     </main>
   </div>
 
+  <!-- ======== APP SCRIPT (navigasi, search, animasi) ======== -->
   <script>
-    const PAGES = [
-      { id: 'selamat-berjumpa', title: 'Halo!! Aku Nafhan', content: selamatBerjumpa() },
+  /* ---------- helpers dulu supaya hoisted ---------- */
+  function placeholder(title){
+    return `<article><p style='color:var(--muted); text-align:center;'>Halaman <b>${title}</b> masih kosong. Silakan isi konten di sini nanti.</p></article>`;
+  }
+  function selamatBerjumpa(){
+    return `<article>
+      <div class='meta'>
+        <div><b>Author</b><br>Nafhan Shafy Aulia</div>
+        <div><b>Published</b><br>${new Date().toLocaleDateString('id-ID')}</div>
+      </div>
+      <div class='divider'></div>
+      <div class='hero-wrapper'>
+        <div class='hero'>
+          <div class='copy'>
+            <h2>Jangan Menjadi Beban Lingkungan</h2>
+            <p>Perlakukan wanitamu selayaknya engkau memperlakukan ibumu</p>
+          </div>
+          <div class='img' style="background:url('assets/foto_profile.jpg') center/cover no-repeat;border:none;"></div>
+        </div>
+      </div>
 
-      { id: 'kisah-identitas',
+      <div class="tags-runner" aria-label="Kelebihan & Nilai Nafhan">
+        <div class="marquee">
+          <div class="marquee__inner">
+            <span class="track">
+              <span class="pill">Ambisius</span><span class="pill">Loyal</span><span class="pill">Evaluatif</span>
+              <span class="pill">Kolaboratif</span><span class="pill">Komunikasi Efektif</span><span class="pill">CTF Hingga Mati</span>
+              <span class="pill">Terbuka</span><span class="pill">Kreatif</span><span class="pill">Fast Learner</span>
+            </span>
+            <span class="track" aria-hidden="true">
+              <span class="pill">Bertanggung Jawab</span><span class="pill">Revolusioner</span><span class="pill">Strategis</span>
+              <span class="pill">Rasional</span><span class="pill">Inovatif</span><span class="pill">Percaya Diri</span>
+              <span class="pill">Terorganisir</span><span class="pill">Kepemimpinan</span><span class="pill">Insightful</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="marquee reverse">
+          <div class="marquee__inner">
+            <span class="track">
+              <span class="pill">Tanggung Jawab</span><span class="pill">Problem Solving</span><span class="pill">Adaptif</span>
+              <span class="pill">Visioner</span><span class="pill">Disiplin</span><span class="pill">Komitmen</span>
+              <span class="pill">Konsisten</span><span class="pill">Growth Mindset</span><span class="pill">Teamwork Person</span>
+            </span>
+            <span class="track" aria-hidden="true">
+              <span class="pill">Tanggung Jawab</span><span class="pill">Problem Solving</span><span class="pill">Adaptif</span>
+              <span class="pill">Visioner</span><span class="pill">Disiplin</span><span class="pill">Komitmen</span>
+              <span class="pill">Konsisten</span><span class="pill">Growth Mindset</span><span class="pill">Teamwork Person</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <section class="about" style="margin-top:40px;">
+        <h3 style='text-align:center;'>Tentang Saya</h3>
+        <p>Nafhan Shafy adalah seorang mahasiswa di Sekolah Teknik Elektro dan Informatika ITB angkatan 2024.</p>
+        <p style='text-align:center;'>Memiliki tujuan hidup untuk membanggakan orang - orang terkasihnya</p>
+        <p style='text-align:center;'>— <em>Hardwork beats Genius</em> —</p>
+      </section>
+    </article>`;
+  }
+
+  /* ---------- data halaman ---------- */
+  const PAGES = [
+    { id:'selamat-berjumpa', title:'Halo!! Aku Nafhan', content: selamatBerjumpa() },
+    { id: 'kisah-identitas',
         title: '1 All About Me',
         content: `
 <article class="bio-wrap">
@@ -414,10 +296,8 @@
 </article>`
 
       },
-
-      { id: 'my-songs', title: '2 My Song for You', content: placeholder('My Songs for You') },
-
-      { id: 'my-stories',
+    { id:'my-songs', title:'2 My Song for You', content: placeholder('My Songs for You') },
+    { id: 'my-stories',
         title: '3 My Stories for You',
         content: `
         <article>
@@ -446,8 +326,7 @@
           </section>
         </article>`
       },
-
-      { id: 'my-shapes',
+    { id: 'my-shapes',
         title: '4 My Shapes',
         content: `
         <article>
@@ -536,246 +415,288 @@
           </div>
         </article>`
       },
+    { id:'personal-reviews', title:'5 My Personal Reviews', content: placeholder('My Personal Reviews') },
+    { id:'my-concepts',       title:'6 My Concepts',          content: placeholder('My Concepts') },
+    { id:'my-opinions',       title:'7 My Opinions',          content: placeholder('My Opinions') },
+    { id:'my-innovations',    title:'8 My Innovations',       content: placeholder('My Innovations') },
+    { id:'my-knowledge',      title:'9 My Knowledge',         content: placeholder('My Knowledge') },
+    { id:'pro-reviews',       title:'10 My Professional Reviews', content: placeholder('My Professional Reviews') },
+    { id:'summary',           title:'11 Summary',             content: placeholder('Summary') },
+    { id:'references',        title:'References',             content: placeholder('References') },
+  ];
+  // expose ke script chat
+  window.PAGES = PAGES;
 
-      { id: 'personal-reviews', title: '5 My Personal Reviews', content: placeholder('My Personal Reviews') },
-      { id: 'my-concepts', title: '6 My Concepts', content: placeholder('My Concepts') },
-      { id: 'my-opinions', title: '7 My Opinions', content: placeholder('My Opinions') },
-      { id: 'my-innovations', title: '8 My Innovations', content: placeholder('My Innovations') },
-      { id: 'my-knowledge', title: '9 My Knowledge', content: placeholder('My Knowledge') },
-      { id: 'pro-reviews', title: '10 My Professional Reviews', content: placeholder('My Professional Reviews') },
-      { id: 'summary', title: '11 Summary', content: placeholder('Summary') },
-      { id: 'references', title: 'References', content: placeholder('References') },
-    ];
+  const toc = document.getElementById('toc');
+  const contentEl = document.getElementById('page-content');
+  const titleEl = document.getElementById('page-title');
 
-    function placeholder(title) {
-      return `<article><p style='color:var(--muted); text-align:center;'>Halaman <b>${title}</b> masih kosong. Silakan isi konten di sini nanti.</p></article>`;
+  const CONTENT_INDEX = Object.fromEntries(
+    PAGES.map(p=>{
+      const div=document.createElement('div'); div.innerHTML=p.content;
+      const text=(div.textContent||"").toLowerCase();
+      return [p.id, text];
+    })
+  );
+
+  function countHits(text,q){
+    if(!q) return 0;
+    const safe=q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+    return (text.match(new RegExp(safe,'gi'))||[]).length;
+  }
+
+  function bindToc(){ toc.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setActive(a.dataset.id))); }
+  function renderToc(list){
+    const q=(document.getElementById('search').value||"").toLowerCase().trim();
+    toc.innerHTML=list.map(p=>{
+      const hits=q?countHits((CONTENT_INDEX[p.id]||"")+" "+p.title.toLowerCase(), q):0;
+      const badge=q&&hits?`<small style="float:right;color:var(--muted)">${hits}</small>`:"";
+      return `<li><a href="#${p.id}" data-id="${p.id}">${p.title}${badge}</a></li>`;
+    }).join('');
+    bindToc();
+    setActive(location.hash.slice(1) || (list[0]?.id || 'selamat-berjumpa'));
+  }
+
+  function setActive(id){
+    toc.querySelectorAll('a').forEach(a=>a.classList.toggle('active', a.dataset.id===id));
+    navigate(id);
+  }
+
+  function highlightInElement(root,q){
+    if(!q) return;
+    const re=new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi');
+    const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,null);
+    const hits=[]; let node;
+    while(node=walker.nextNode()){
+      const p=node.parentNode;
+      if(!p || p.closest('mark') || /^(SCRIPT|STYLE)$/.test(p.tagName)) continue;
+      if(re.test(node.nodeValue)) hits.push(node);
     }
+    hits.forEach(n=>{
+      const frag=document.createDocumentFragment(); const text=n.nodeValue; let last=0;
+      text.replace(re,(m,offset)=>{
+        if(offset>last) frag.appendChild(document.createTextNode(text.slice(last,offset)));
+        const mark=document.createElement('mark'); mark.textContent=m; frag.appendChild(mark);
+        last=offset+m.length; return m;
+      });
+      if(last<text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+      n.parentNode.replaceChild(frag,n);
+    });
+  }
 
-    function selamatBerjumpa() {
-      return `<article>
-        <div class='meta'>
-          <div><b>Author</b><br>Nafhan Shafy Aulia</div>
-          <div><b>Published</b><br>${new Date().toLocaleDateString('id-ID')}</div>
-        </div>
-        <div class='divider'></div>
-        <div class='hero-wrapper'>
-          <div class='hero'>
-            <div class='copy'>
-              <h2>Jangan Menjadi Beban Lingkungan</h2>
-              <p>Perlakukan wanitamu selayaknya engkau memperlakukan ibumu</p>
-            </div>
-            <div class='img' style="background: url('assets/foto_profile.jpg') center/cover no-repeat; border: none;"></div>
-          </div>
-        </div>
+  function navigate(id){
+    const p=PAGES.find(x=>x.id===id)||PAGES[0];
+    titleEl.textContent=p.title;
+    contentEl.innerHTML=p.content;
+    contentEl.style.animation='fadeUp .5s var(--ease)';
+    const q=(document.getElementById('search').value||'').trim().toLowerCase();
+    if(q) highlightInElement(contentEl,q);
 
-        <!-- RUNNING TAGS -->
-        <div class="tags-runner" aria-label="Kelebihan & Nilai Nafhan">
-          <div class="marquee">
-            <div class="marquee__inner">
-              <span class="track">
-                <span class="pill">Ambisius</span>
-                <span class="pill">Loyal</span>
-                <span class="pill">Evaluatif</span>
-                <span class="pill">Kolaboratif</span>
-                <span class="pill">Komunikasi Efektif</span>
-                <span class="pill">CTF Hingga Mati</span>
-                <span class="pill">Terbuka</span>
-                <span class="pill">Kreatif</span>
-                <span class="pill">Fast Learner</span>
-              </span>
-              <span class="track" aria-hidden="true">
-                <span class="pill">Bertanggung Jawab</span>
-                <span class="pill">Revolusioner</span>
-                <span class="pill">Strategis</span>
-                <span class="pill">Rasional</span>
-                <span class="pill">Inovatif</span>
-                <span class="pill">Percaya Diri</span>
-                <span class="pill">Terorganisir</span>
-                <span class="pill">Kepemimpinan</span>
-                <span class="pill">Insightful</span>
-              </span>
-            </div>
-          </div>
-
-          <div class="marquee reverse">
-            <div class="marquee__inner">
-              <span class="track">
-                <span class="pill">Tanggung Jawab</span>
-                <span class="pill">Problem Solving</span>
-                <span class="pill">Adaptif</span>
-                <span class="pill">Visioner</span>
-                <span class="pill">Disiplin</span>
-                <span class="pill">Komitmen</span>
-                <span class="pill">Konsisten</span>
-                <span class="pill">Growth Mindset</span>
-                <span class="pill">Teamwork Person</span>
-              </span>
-              <span class="track" aria-hidden="true">
-                <span class="pill">Tanggung Jawab</span>
-                <span class="pill">Problem Solving</span>
-                <span class="pill">Adaptif</span>
-                <span class="pill">Visioner</span>
-                <span class="pill">Disiplin</span>
-                <span class="pill">Komitmen</span>
-                <span class="pill">Konsisten</span>
-                <span class="pill">Growth Mindset</span>
-                <span class="pill">Teamwork Person</span>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <section class="about" style="margin-top:40px;">
-          <h3 style='text-align:center;'>Tentang Saya</h3>
-          <p>Nafhan Shafy adalah seorang mahasiswa di Sekolah Teknik Elektro dan Informatika ITB angkatan 2024.</p>
-          <p style='text-align:center;'>Memiliki tujuan hidup untuk membanggakan orang - orang terkasihnya  </p>
-          <p style='text-align:center;'>— <em>Hardwork beats Genius</em> —</p>
-        </section>
-      </article>`;
-    }
-
-    const toc = document.getElementById('toc');
-    const contentEl = document.getElementById('page-content');
-    const titleEl = document.getElementById('page-title');
-
-    /* ======= INDEX KONTEN UNTUK SEARCH ======= */
-    const CONTENT_INDEX = Object.fromEntries(
-      PAGES.map(p => {
-        const div = document.createElement('div');
-        div.innerHTML = p.content;
-        const text = (div.textContent || "").toLowerCase();
-        return [p.id, text];
+    // reveal on scroll
+    const sections=document.querySelectorAll('.section, .bio-header, .mini-card');
+    sections.forEach(el=>{el.style.opacity='0'; el.style.transform='translateY(6px)';});
+    const io=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.style.transition='opacity .45s var(--ease), transform .45s var(--ease)';
+          e.target.style.opacity='1'; e.target.style.transform='none'; io.unobserve(e.target);
+        }
       })
-    );
+    },{threshold:.12});
+    sections.forEach(el=>io.observe(el));
+  }
 
-    function countHits(text, q){
-      if (!q) return 0;
-      const safe = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      const m = (text.match(new RegExp(safe, 'gi')) || []);
-      return m.length;
-    }
+  renderToc(PAGES);
+  navigate(location.hash.slice(1)||'selamat-berjumpa');
 
-    function renderToc(list){
-      const q = (document.getElementById('search').value || "").toLowerCase().trim();
-      toc.innerHTML = list.map(p => {
-        const hits = q ? countHits((CONTENT_INDEX[p.id] || "") + " " + p.title.toLowerCase(), q) : 0;
-        const badge = q && hits ? `<small style="float:right;color:var(--muted)">${hits}</small>` : "";
-        return `<li><a href="#${p.id}" data-id="${p.id}">${p.title}${badge}</a></li>`;
-      }).join('');
-      bindToc();
-      setActive(location.hash.slice(1) || (list[0]?.id || 'selamat-berjumpa'));
-    }
+  document.getElementById('search').addEventListener('input', e=>{
+    const q=e.target.value.toLowerCase().trim();
+    if(!q){ renderToc(PAGES); return; }
+    const filtered=PAGES.filter(p=>{
+      const inTitle=p.title.toLowerCase().includes(q);
+      const inBody=(CONTENT_INDEX[p.id]||"").includes(q);
+      return inTitle||inBody;
+    });
+    renderToc(filtered);
+  });
 
-    function bindToc() {
-      toc.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setActive(a.dataset.id)));
-    }
+  // dukung back/forward via hash
+  window.addEventListener('hashchange', ()=> setActive(location.hash.slice(1)));
+  </script>
 
-    function setActive(id) {
-      toc.querySelectorAll('a').forEach(a => a.classList.toggle('active', a.dataset.id === id));
-      navigate(id);
-    }
+  <!-- ============ CHAT LAUNCHER + PANEL (HTML) ============ -->
+  <button id="aiLauncher" class="ai-launcher" aria-label="Tanya AI tentang Nafhan">💬</button>
+  <div id="aiPanel" class="ai-panel" aria-live="polite" aria-label="Chat AI">
+    <div class="ai-header">
+      <div class="ai-dot"></div>
+      <div><strong>Shafy's Agent</strong><div class="ai-sub">Tanya apa saja tentang aku</div></div>
+      <button id="aiClose" class="ai-close" aria-label="Tutup">✕</button>
+    </div>
+    <div id="aiMessages" class="ai-messages">
+      <div class="msg bot">Halo, aku agen rahasia Shafy. Tanyain apa saja tentang Nafhan, karya, nilai, atau kegiatan.</div>
+    </div>
+    <form id="aiForm" class="ai-input">
+      <input id="aiText" type="text" placeholder="Ketik pertanyaan kamu..." autocomplete="off" />
+      <button class="ai-send" aria-label="Kirim">⮕</button>
+    </form>
+  </div>
 
-    function navigate(id) {
-      const p = PAGES.find(x => x.id === id) || PAGES[0];
-      titleEl.textContent = p.title;
-      contentEl.innerHTML = p.content;              // render ulang konten (reset mark)
-      contentEl.style.animation = 'fadeUp .5s var(--ease)';
+  <!-- ============ CHAT SCRIPT (offline; referensi konten) ============ -->
+  <script>
+  (function(){
+    const aiBtn = document.getElementById('aiLauncher');
+    const aiPanel = document.getElementById('aiPanel');
+    const aiClose = document.getElementById('aiClose');
+    const aiForm = document.getElementById('aiForm');
+    const aiInput = document.getElementById('aiText');
+    const aiMsgs = document.getElementById('aiMessages');
 
-      // highlight sesuai query saat ini
-      const q = (document.getElementById('search').value || '').trim().toLowerCase();
-      if(q) highlightInElement(contentEl, q);
-    }
+    aiBtn?.addEventListener('click', ()=> aiPanel.classList.toggle('open'));
+    aiClose?.addEventListener('click', ()=> aiPanel.classList.remove('open'));
 
-    // escape regex special chars
-    function escapeRegExp(str){ return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
+    function htmlToText(html) {
+      const d = document.createElement('div');
+  d.innerHTML = html;
 
-    // highlight semua kemunculan q di dalam elemen (DOM-safe, per text node)
-    function highlightInElement(root, q){
-      if(!q) return;
-      const re = new RegExp(escapeRegExp(q), 'gi');
-      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
-      const hits = [];
-      let node;
-      while(node = walker.nextNode()){
-        // skip text di dalam <script>/<style> atau anak <mark>
-        const p = node.parentNode;
-        if(!p || p.closest('mark') || /^(SCRIPT|STYLE)$/.test(p.tagName)) continue;
-        if(re.test(node.nodeValue)) hits.push(node);
-      }
-      hits.forEach(n=>{
-        const frag = document.createDocumentFragment();
-        const text = n.nodeValue;
-        let last = 0;
-        text.replace(re, (m, offset)=>{
-          if(offset > last) frag.appendChild(document.createTextNode(text.slice(last, offset)));
-          const mark = document.createElement('mark');
-          mark.textContent = m;
-          frag.appendChild(mark);
-          last = offset + m.length;
-          return m;
-        });
-        if(last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
-        n.parentNode.replaceChild(frag, n);
-      });
-    }
+  d.querySelectorAll('.tags-runner, table, thead, tbody, tfoot').forEach(el => el.remove());
 
-    renderToc(PAGES);
-    navigate(location.hash.slice(1) || 'selamat-berjumpa');
-
-    /* =======  SEARCH BY CONTENT  ======= */
-    document.getElementById('search').addEventListener('input', e => {
-      const q = e.target.value.toLowerCase().trim();
-      if (!q) { renderToc(PAGES); return; }
-
-      const filtered = PAGES.filter(p => {
-        const inTitle = p.title.toLowerCase().includes(q);
-        const inBody  = (CONTENT_INDEX[p.id] || "").includes(q);
-        return inTitle || inBody;
-      });
-
-      renderToc(filtered);
+  const txt = (d.textContent || '').replace(/\s+/g, ' ').trim();
+  return txt;
+}
+    
+    
+    const KB = (window.PAGES||[]).map(p=>{
+      const text=htmlToText(p.content);
+      const sents=text.split(/(?<=[.!?])\s+(?=[A-ZÀ-ÖØ-Ý])/u);
+      return { id:p.id, title:p.title, text, sents };
     });
 
-    /* ===== Reveal on Scroll: section muncul halus pas kelihatan ===== */
-const sections = document.querySelectorAll('.section, .bio-header, .mini-card');
-sections.forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(6px)';
-});
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.style.transition = 'opacity .45s var(--ease), transform .45s var(--ease)';
-      e.target.style.opacity = '1';
-      e.target.style.transform = 'none';
-      io.unobserve(e.target);
-    }
+    const STOP=new Set(['aku','saya','gue','yang','dan','atau','ini','itu','sih','deh','ya','ga','nggak','gak','mau','tau','ingin','kalo','kalau','apa','aja','nih','lah','di','ke','dari','untuk','pada','karena','dengan','seperti','jadi','ada','bisa','tentang']);
+    function toks(q){return (q||'').toLowerCase().replace(/[^\p{L}\p{N}\s]/gu,' ').split(/\s+/).filter(t=>t && !STOP.has(t) && t.length>2)}
+    const BOOST={siapa:['profil','about','bio','tentang','dirimu','nafhan'],fokus:['minat','interest','konsentrasi','spesialis'],nilai:['prinsip','values','mindset'],karya:['proyek','project','portfolio','produk','ctf']};
+    function expand(ts){const out=[...ts]; ts.forEach(t=>{for(const [k,arr] of Object.entries(BOOST)){if(t===k||arr.includes(t)) out.push(k)}}); return out;}
+    function scoreDoc(doc,qTokens){let s=0, text=doc.text.toLowerCase(), title=doc.title.toLowerCase(); qTokens.forEach(tok=>{const re=new RegExp('\\b'+tok.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\$&')+'\\b','g'); s+=(text.match(re)||[]).length*3 + (title.match(re)||[]).length*6; if(['siapa','profil','about','bio','nafhan'].includes(tok)) s+=6;}); return s;}
+    function bestSnippets(doc,qTokens,k=2){const scored=doc.sents.map(s=>{const ls=s.toLowerCase(); let hit=0; qTokens.forEach(t=>{const re=new RegExp('\\b'+t.replace(/[.*+?^${}()|[\\]\\\\]/g,'\\\\$&')+'\\b','g'); hit+=(ls.match(re)||[]).length;}); return {s,hit};}).filter(x=>x.hit>0).sort((a,b)=>b.hit-a.hit).slice(0,k); return scored.map(x=>x.s);}
+
+    function localAnswer(q) {
+  // ========== Tokenizing ringan ==========
+  const STOP = new Set([
+    'aku','saya','gue','yang','dan','atau','ini','itu','sih','deh','ya','ga','gak','nggak',
+    'mau','tau','ingin','kalo','kalau','apa','aja','nih','lah','di','ke','dari','untuk','pada',
+    'karena','dengan','seperti','jadi','ada','bisa','tentang'
+  ]);
+  const toks = (q||'').toLowerCase().replace(/[^\p{L}\p{N}\s]/gu,' ')
+    .split(/\s+/).filter(t=>t && !STOP.has(t) && t.length>2);
+
+  // fallback kalau pertanyaan terlalu umum
+  if (!toks.length) {
+    return "Coba tanya hal spesifik, misalnya: *siapa Nafhan?*, *fokus Nafhan apa?*, *nilai/prinsip Nafhan?*, *karya yang pernah dibuat?*, atau *apa itu SHAPE?*";
+  }
+
+  // ===== Build KB (pakai versi htmlToText yang baru) =====
+  const KB = (window.PAGES || []).map(p => {
+    const text = htmlToText(p.content);
+    // segmentasi kalimat yang lebih halus
+    const sents = text
+      .replace(/([.!?])(\s+)(?=[A-ZÀ-ÖØ-Ý])/g, '$1|')  // tandai batas kalimat
+      .split('|')
+      .map(s => s.trim())
+      .filter(Boolean);
+    return { id: p.id, title: p.title, text, sents };
   });
-}, { threshold: .12 });
-sections.forEach(el => io.observe(el));
 
-/* ===== Keyboard nav: ↑ ↓ untuk lompat antar section di halaman All About Me ===== */
-(function enableSectionKeyNav(){
-  const isAllAboutMe = location.hash.includes('kisah-identitas');
-  if (!isAllAboutMe) return;
-  const list = [...document.querySelectorAll('.bio-wrap .section')];
-  if (!list.length) return;
+  // ===== scorer sederhana (title lebih berbobot) =====
+  const scoreDoc = (doc) => {
+    let s = 0, tx = doc.text.toLowerCase(), tt = doc.title.toLowerCase();
+    toks.forEach(t => {
+      const re = new RegExp(`\\b${t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}\\b`, 'g');
+      s += (tx.match(re) || []).length * 3;
+      s += (tt.match(re) || []).length * 6;
+    });
+    return s;
+  };
 
-  window.addEventListener('keydown', (ev) => {
-    if (ev.key !== 'ArrowDown' && ev.key !== 'ArrowUp') return;
-    ev.preventDefault();
-    const y = window.scrollY + 10;
-    const idx = list.findIndex(s => s.getBoundingClientRect().top + window.scrollY > y) - 1;
-    let target;
-    if (ev.key === 'ArrowDown') {
-      target = list[Math.min((idx + 1 < 0 ? 0 : idx + 1), list.length - 1)];
-    } else {
-      target = list[Math.max((idx - 1 < 0 ? 0 : idx - 1), 0)];
+  // ===== pilih 1–3 dokumen paling relevan =====
+  const ranked = [...KB]
+    .map(d => ({ d, s: scoreDoc(d) }))
+    .sort((a,b)=>b.s-a.s)
+    .slice(0,3)
+    .filter(x=>x.s>0);
+
+  if (!ranked.length) {
+    return "Aku nggak menemukan jawabannya di halaman ini. Tanyakan sesuatu yang memang ada di portofolio (mis. *fokus*, *nilai*, *SHAPE*, *karya*).";
+  }
+
+  // ===== fungsi ambil 2–3 kalimat terbaik per dokumen =====
+  const pickSents = (doc, topK=3) => {
+    const scored = doc.sents.map(s => {
+      const ls = s.toLowerCase();
+      let hit = 0;
+      toks.forEach(t => {
+        const re = new RegExp(`\\b${t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}\\b`, 'g');
+        hit += (ls.match(re) || []).length;
+      });
+      return { s, hit };
+    }).filter(x=>x.hit>0)
+      .sort((a,b)=>b.hit-a.hit)
+      .slice(0, topK)
+      .map(x=>x.s);
+    return scored;
+  };
+
+  // ===== niat khusus: “siapa nafhan” / “profil” =====
+  if (/\b(siapa|profil|about|bio)\b.*\b(nafhan|kamu|dirimu)\b/i.test(q)) {
+    const doc = ranked[0].d;
+    const sn  = pickSents(doc, 3);
+    if (sn.length) {
+      return [
+        `Berikut ringkasan singkat tentang Nafhan menurut halaman **${doc.title}**:`,
+        sn.join(' '),
+        `\n— Sumber: ${doc.title}`
+      ].join('\n\n');
     }
-    target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, { passive: false });
-})();
+  }
 
+  // ===== rangkai jawaban natural (bukan dump) =====
+  const parts = ranked.map(({d}, i) => {
+    const sn = pickSents(d, i === 0 ? 3 : 2);
+    const intro = i === 0
+      ? `Dari halaman **${d.title}**, ini poin utama yang relevan:`
+      : `Tambahan dari **${d.title}**:`;
+    const body = sn.length
+      ? `• ${sn.join('\n• ')}`
+      : `• ${d.text.slice(0, 220)}…`;
+    return `${intro}\n${body}`;
+  });
+
+  // tutup dengan ajakan rujukan
+  parts.push('Kalau butuh detail, buka halaman sumber pada sidebar ya.');
+
+  return parts.join('\n\n');
+}
+
+    function pushMsg(text, who='bot'){ const b=document.createElement('div'); b.className=`msg ${who}`; b.textContent=text; aiMsgs.appendChild(b); aiMsgs.scrollTop=aiMsgs.scrollHeight; }
+
+    function renderSuggestions(){
+      const wrap=document.createElement('div'); wrap.style.display='flex'; wrap.style.flexWrap='wrap'; wrap.style.gap='8px'; wrap.style.padding='8px 10px 0';
+      ['siapa nafhan?','fokus nafhan apa?','nilai/prinsip nafhan','karya yang pernah dibuat','apa itu SHAPE'].forEach(t=>{
+        const chip=document.createElement('button'); chip.type='button'; chip.textContent=t;
+        chip.style.border='1px solid var(--line)'; chip.style.background='#f4f7fa'; chip.style.borderRadius='999px'; chip.style.fontSize='12px'; chip.style.padding='6px 10px'; chip.style.cursor='pointer';
+        chip.addEventListener('click',()=>{aiInput.value=t; aiForm.dispatchEvent(new Event('submit'));});
+        wrap.appendChild(chip);
+      });
+      aiMsgs.appendChild(wrap);
+    }
+    let injected=false;
+    aiBtn?.addEventListener('click', ()=>{ if(!injected){ renderSuggestions(); injected=true; } });
+
+    aiForm?.addEventListener('submit',(e)=>{
+      e.preventDefault();
+      const q=aiInput.value.trim(); if(!q) return;
+      pushMsg(q,'user'); aiInput.value='';
+      pushMsg(localAnswer(q),'bot');
+    });
+  })();
   </script>
 </body>
 </html>
