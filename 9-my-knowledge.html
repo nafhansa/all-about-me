@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>9 My Knowledge</title>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
+
+    /* --- BASE LAYOUT (TETAP KONSISTEN 900px) --- */
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #1e293b;
+    }
+
+    .main-wrapper {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      width: 100%;
+      padding: 40px 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+    }
+
+    .main-container {
+      background: #ffffff;
+      width: 100%;
+      max-width: 900px; /* Sizing dikunci */
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+      border: 1px solid #f0f0f0;
+      overflow: hidden;
+      padding: 50px;
+      box-sizing: border-box;
+    }
+
+    /* --- TECH STYLING MODERN --- */
+
+    /* 1. Intro Section: Terminal Style */
+    .terminal-box {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 40px;
+      border: 1px solid #334155;
+      box-shadow: 0 10px 30px rgba(30, 41, 59, 0.2);
+    }
+
+    .terminal-header {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 10px;
+    }
+
+    .dot { width: 12px; height: 12px; border-radius: 50%; }
+    .red { background: #ef4444; }
+    .yellow { background: #f59e0b; }
+    .green { background: #10b981; }
+
+    .terminal-text {
+      font-family: 'JetBrains Mono', monospace;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .highlight-code { color: #38bdf8; }
+    .comment-code { color: #94a3b8; font-style: italic; }
+
+    /* 2. System Design Animation (CSS Only) */
+    .system-design-container {
+      background: #f1f5f9;
+      border-radius: 16px;
+      padding: 30px;
+      margin: 40px 0;
+      position: relative;
+      border: 1px dashed #cbd5e1;
+      overflow: hidden;
+    }
+
+    .sys-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #64748b;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .architecture-diagram {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      padding: 0 20px;
+    }
+
+    /* Nodes (Kotak-kotak) */
+    .node {
+      background: #fff;
+      border: 2px solid #e2e8f0;
+      padding: 15px 20px;
+      border-radius: 12px;
+      text-align: center;
+      z-index: 2;
+      width: 140px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    .node:hover {
+      border-color: #3b82f6;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 15px rgba(59, 130, 246, 0.1);
+    }
+
+    .node-icon { font-size: 1.5rem; display: block; margin-bottom: 5px; }
+    .node-label { font-size: 0.85rem; font-weight: 700; color: #1e293b; }
+    .node-sub { font-size: 0.7rem; color: #64748b; font-family: 'JetBrains Mono'; }
+
+    /* Connecting Lines & Animation */
+    .connection-line {
+      position: absolute;
+      top: 50%;
+      left: 100px;
+      right: 100px;
+      height: 2px;
+      background: #cbd5e1;
+      z-index: 1;
+    }
+
+    /* Animasi Data Flow (Titik Biru Bergerak) */
+    .data-packet {
+      position: absolute;
+      top: 50%;
+      left: 18%; /* Start after Client */
+      width: 8px;
+      height: 8px;
+      background: #3b82f6;
+      border-radius: 50%;
+      transform: translateY(-50%);
+      animation: flow 3s infinite linear;
+      box-shadow: 0 0 10px #3b82f6;
+      z-index: 3;
+    }
+
+    .data-packet.reverse {
+      animation: flow-reverse 3s infinite linear;
+      background: #10b981; /* Green for response */
+      box-shadow: 0 0 10px #10b981;
+      animation-delay: 1.5s;
+    }
+
+    @keyframes flow {
+      0% { left: 18%; opacity: 0; }
+      10% { opacity: 1; }
+      45% { left: 50%; } /* Middle Node */
+      90% { left: 82%; opacity: 1; }
+      100% { left: 82%; opacity: 0; }
+    }
+
+    @keyframes flow-reverse {
+      0% { left: 82%; opacity: 0; }
+      10% { opacity: 1; }
+      45% { left: 50%; }
+      90% { left: 18%; opacity: 1; }
+      100% { left: 18%; opacity: 0; }
+    }
+
+
+    /* 3. Skill Sections */
+    h2 {
+      font-size: 1.2rem;
+      color: #1e293b;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2::before {
+      content: '#';
+      color: #3b82f6;
+      font-family: 'JetBrains Mono';
+    }
+
+    .tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* Modern Tech Badges */
+    .tech-pill {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #475569;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+      cursor: default;
+    }
+
+    .tech-pill:hover {
+      border-color: #3b82f6;
+      background: #eff6ff;
+      color: #1d4ed8;
+      transform: scale(1.02);
+    }
+
+    /* Warna Icon Badge */
+    .dot-tech { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+    .c-blue { background: #3b82f6; }
+    .c-green { background: #10b981; }
+    .c-purple { background: #8b5cf6; }
+
+    .desc-text {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-top: 8px;
+      margin-left: 5px;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 40px;
+      text-decoration: none;
+      color: #94a3b8;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+      font-family: 'JetBrains Mono';
+    }
+    .back-btn:hover { color: #3b82f6; }
+
+    /* Responsive untuk Animasi */
+    @media (max-width: 600px) {
+      .architecture-diagram { flex-direction: column; gap: 40px; }
+      .connection-line { width: 2px; height: 100%; left: 50%; top: 0; }
+      .node { width: 100%; }
+      .data-packet { display: none; /* Hide animation on mobile for simplicity */ }
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="main-wrapper">
+  <div class="main-container">
+
+    <div class="terminal-box">
+      <div class="terminal-header">
+        <div class="dot red"></div>
+        <div class="dot yellow"></div>
+        <div class="dot green"></div>
+      </div>
+      <div class="terminal-text">
+        <span class="comment-code">// Knowledge Base & Philosophy</span><br>
+        const <span class="highlight-code">developer</span> = {<br>
+        &nbsp;&nbsp;hardSkills: "Robust Engineering",<br>
+        &nbsp;&nbsp;softSkills: "Human-Centric Design",<br>
+        &nbsp;&nbsp;goal: "Combine both for Innovation"<br>
+        };
+      </div>
+    </div>
+
+    <div class="system-design-container">
+      <div class="sys-title">System Architecture Visualization</div>
+      
+      <div class="architecture-diagram">
+        <div class="connection-line"></div>
+        
+        <div class="data-packet"></div> 
+        <div class="data-packet reverse"></div>
+
+        <div class="node">
+          <span class="node-icon">📱</span>
+          <div class="node-label">Client</div>
+          <div class="node-sub">Mobile/Web UI</div>
+        </div>
+
+        <div class="node">
+          <span class="node-icon">⚡</span>
+          <div class="node-label">Logic</div>
+          <div class="node-sub">JS/API Layer</div>
+        </div>
+
+        <div class="node">
+          <span class="node-icon">☁️</span>
+          <div class="node-label">Database</div>
+          <div class="node-sub">Database/Storage</div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Technical Stack</h2>
+    <div class="tags-container">
+      <div class="tech-pill"><span class="dot-tech c-blue"></span>Next.js</div>
+      <div class="tech-pill"><span class="dot-tech c-blue"></span>Typescript</div>
+      <div class="tech-pill"><span class="dot-tech c-blue"></span>Responsive UI</div>
+      <div class="tech-pill"><span class="dot-tech c-blue"></span>Google Lighthouse</div>
+      <div class="tech-pill"><span class="dot-tech c-blue"></span>Firebase Database</div>
+      <div class="tech-pill"><span class="dot-tech c-blue"></span>Vercel Deployment</div>
+    </div>
+
+    <h2>Product & Mindset</h2>
+    <div class="tags-container">
+      <div class="tech-pill"><span class="dot-tech c-green"></span>UX Research</div>
+      <div class="tech-pill"><span class="dot-tech c-green"></span>Data Curation</div>
+      <div class="tech-pill"><span class="dot-tech c-green"></span>Systematic Thinking</div>
+    </div>
+
+    <h2>Social Impact</h2>
+    <div class="tags-container">
+      <div class="tech-pill"><span class="dot-tech c-purple"></span>Empathy for Users</div>
+      <div class="tech-pill"><span class="dot-tech c-purple"></span>SDGs Awareness</div>
+    </div>
+
+    <a href="index.html" class="back-btn">&lt; cd .. /Kembali</a>
+  </div>
+</div>
+
+</body>
+</html>

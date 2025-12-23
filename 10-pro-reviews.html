@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>10 My Professional Reviews</title>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap');
+
+    /* --- BASE STYLE (SAMA DENGAN FILE LAIN) --- */
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f6f7f8;
+      color: #12202b;
+    }
+
+    .main-wrapper {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      width: 100%;
+      padding: 40px 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+    }
+
+    .main-container {
+      background: #ffffff;
+      width: 100%;
+      max-width: 900px; /* Lebar dikunci 900px (KONSISTEN) */
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+      border: 1px solid #f0f0f0;
+      overflow: hidden;
+      padding: 50px;
+      box-sizing: border-box;
+      min-height: 500px; /* Biar tidak terlalu pendek saat kosong */
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* HEADER */
+    .header-section {
+      text-align: center;
+      margin-bottom: 40px;
+      border-bottom: 2px dashed #ececec;
+      padding-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #2d3436;
+      margin: 0 0 10px 0;
+    }
+
+    .subtitle {
+      color: #636e72;
+      font-size: 1rem;
+    }
+
+    /* EMPTY STATE DESIGN (Tampilan Kosong tapi Bagus) */
+    .empty-state {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #fafafa;
+      border-radius: 16px;
+      border: 1px solid #eee;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .icon-placeholder {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      opacity: 0.5;
+    }
+
+    .empty-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #2d3436;
+      margin-bottom: 10px;
+    }
+
+    .empty-desc {
+      color: #b2bec3;
+      font-size: 0.95rem;
+      max-width: 400px;
+      line-height: 1.6;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      color: #b2bec3;
+      font-weight: 600;
+      font-size: 0.9rem;
+      align-self: flex-start; /* Tombol di kiri bawah */
+      transition: color 0.3s;
+    }
+    .back-btn:hover { color: #0984e3; }
+    
+    /* Responsive HP */
+    @media (max-width: 768px) {
+      .main-container { padding: 30px 20px; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="main-wrapper">
+  <div class="main-container">
+    
+    <div class="header-section">
+      <h1>Professional Reviews 🤝</h1>
+      <div class="subtitle">Evaluasi kinerja, feedback mentor, dan testimoni rekan kerja.</div>
+    </div>
+
+    <div class="empty-state">
+      <div class="icon-placeholder">📂</div>
+      <div class="empty-title">Konten Belum Tersedia</div>
+      <div class="empty-desc">
+        Halaman ini disiapkan untuk menampung feedback profesional di masa depan. Silakan kembali lagi setelah data terkumpul.
+      </div>
+    </div>
+
+    <a href="index.html" class="back-btn">← Kembali ke daftar</a>
+  </div>
+</div>
+
+</body>
+</html>

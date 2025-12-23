@@ -1,0 +1,116 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Lora:ital,wght@1,500&display=swap');
+
+  .main-wrapper {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  }
+
+  .main-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 900px; /* Sizing dikunci */
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+    border: 1px solid #f0f0f0;
+    overflow: hidden;
+    padding: 50px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #2d3436;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+  }
+
+  .meta {
+    color: #b2bec3;
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  p {
+    line-height: 1.8;
+    color: #636e72;
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  /* Style Quote Box Persis Referensi */
+  .quote-box {
+    font-family: 'Lora', serif;
+    background: #fdfbf7;
+    border-left: 4px solid #fab1a0;
+    padding: 20px 30px;
+    border-radius: 0 12px 12px 0;
+    margin: 30px 0;
+    font-size: 1.1rem;
+    color: #555;
+    font-style: italic;
+  }
+
+  .comparison-table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+  }
+  
+  .comparison-table td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    color: #2d3436;
+  }
+
+  .back-btn {
+    display: inline-block;
+    margin-top: 40px;
+    text-decoration: none;
+    color: #b2bec3;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+  }
+  .back-btn:hover { color: #0984e3; }
+</style>
+
+<div class="main-wrapper">
+  <div class="main-container">
+    <h1>Berhenti Mengandalkan "Hoki"</h1>
+    <div class="meta">Opini Pribadi • Seputar Job Hunting</div>
+
+    <p>
+      Kita sering mendengar keluhan: "Susah cari kerja." Tapi ketika ditanya, "Sudah apply ke berapa perusahaan minggu ini?" atau "Apa alasan kamu ditolak di tahap interview?", kebanyakan orang tidak punya datanya.
+    </p>
+
+    <p>
+      Masalah terbesar pencari kerja di Indonesia bukan hanya kurangnya lapangan kerja, tapi <strong>manajemen proses yang berantakan</strong>. Spreadsheet manual itu membosankan, sulit dibuka di HP, dan akhirnya ditinggalkan.
+    </p>
+
+    <div class="quote-box">
+      “Mencari kerja tanpa data itu seperti menembak dalam gelap. Kamu mungkin kena sasaran, tapi itu murni keberuntungan, bukan strategi.”
+    </div>
+
+    <p>Selain itu, tutorial di internet banyak yang "polusi". Durasi 1 jam tapi isinya cuma basa-basi (yapping). Kita butuh alat yang menghargai waktu kita.</p>
+
+    <table class="comparison-table">
+      <tr>
+        <td width="50%">❌ <strong>Spreadsheet Manual</strong><br><span style="font-size:0.9rem; color:#b2bec3">Berat, manual, membosankan.</span></td>
+        <td>✅ <strong>Job Tracker App</strong><br><span style="font-size:0.9rem; color:#b2bec3">Otomatis, visual, ada insight.</span></td>
+      </tr>
+      <tr>
+        <td>❌ <strong>Random YouTube Search</strong><br><span style="font-size:0.9rem; color:#b2bec3">Banyak clickbait & yapping.</span></td>
+        <td>✅ <strong>Curated Learning Hub</strong><br><span style="font-size:0.9rem; color:#b2bec3">Materi "daging" terkurasi.</span></td>
+      </tr>
+    </table>
+
+    <a href="index.html" class="back-btn">← Kembali ke daftar</a>
+  </div>
+</div>

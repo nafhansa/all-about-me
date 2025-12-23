@@ -1,0 +1,219 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Lora:ital,wght@1,500&display=swap');
+
+  .about-wrapper {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-container {
+    background: #ffffff;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+    border: 1px solid #f0f0f0;
+    overflow: hidden;
+    padding: 50px;
+  }
+
+  /* HEADER SECTION */
+  .header-section {
+    text-align: center;
+    margin-bottom: 50px;
+    border-bottom: 2px dashed #ececec;
+    padding-bottom: 40px;
+  }
+
+  .main-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #2d3436;
+    margin: 0 0 20px 0;
+    letter-spacing: -1px;
+    line-height: 1.2;
+  }
+
+  .tags-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tag-badge {
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* Warna-warni Badge sesuai peran */
+  .tag-stei { background: #e3f2fd; color: #1565c0; }
+  .tag-trait { background: #f3e5f5; color: #7b1fa2; }
+  .tag-dev { background: #e8f5e9; color: #2e7d32; }
+  .tag-red { background: #ffebee; color: #c62828; } /* Merah untuk Red Team */
+
+  /* CONTENT GRID */
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    color: #2d3436;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Garis bawah dekoratif pada h2 */
+  h2::after {
+    content: '';
+    display: block;
+    width: 40%;
+    height: 4px;
+    background: #0984e3;
+    border-radius: 2px;
+    margin-top: 5px;
+  }
+
+  p {
+    line-height: 1.8;
+    color: #636e72;
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  strong { color: #2d3436; font-weight: 700; }
+
+  /* QUOTE BOX */
+  .quote-box {
+    font-family: 'Lora', serif; /* Font Serif biar elegan */
+    background: #fdfbf7; /* Warna kertas tua */
+    border-left: 4px solid #fab1a0;
+    padding: 20px 30px;
+    border-radius: 0 12px 12px 0;
+    margin: 30px 0;
+    font-size: 1.1rem;
+    color: #555;
+    font-style: italic;
+  }
+
+  /* PRINCIPLE & ROLE SECTION (2 Kolom di Desktop) */
+  .secondary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  .card-box {
+    background: #fafafa;
+    padding: 30px;
+    border-radius: 16px;
+    transition: transform 0.2s;
+    border: 1px solid #eee;
+  }
+
+  .card-box:hover {
+    transform: translateY(-5px);
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  }
+
+  .highlight-principle {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #2d3436;
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+    background: linear-gradient(120deg, #81ecec 0%, #74b9ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .back-btn {
+    display: inline-block;
+    margin-top: 40px;
+    text-decoration: none;
+    color: #b2bec3;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+  }
+  
+  .back-btn:hover { color: #0984e3; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .about-container { padding: 30px 20px; }
+    .main-title { font-size: 2rem; }
+    .secondary-grid { grid-template-columns: 1fr; } /* Jadi 1 kolom di HP */
+  }
+</style>
+
+<div class="about-wrapper">
+  <div class="about-container">
+    
+    <div class="header-section">
+      <h1 class="main-title">Perkenalkan, Aku Nafhan 👋</h1>
+      <div class="tags-container">
+        <span class="tag-badge tag-stei">🎓 Mahasiswa STEI ITB</span>
+        <span class="tag-badge tag-trait">🚀 Achiever–Thinker</span>
+        <span class="tag-badge tag-dev">💻 Software Developer</span>
+        <span class="tag-badge tag-red">🛡️ Red Team Specialist</span>
+      </div>
+    </div>
+
+    <div class="content-grid">
+      
+      <section>
+        <h2>Siapa saya?</h2>
+        <p>
+          Aku <strong>Nafhan Shafy Aulia</strong>, seorang mahasiswa yang gemar menjelajah titik temu antara <em>teknologi</em>, <em>data</em>, dan <em>manusia</em>. Mulai dari membangun prototype pembelajaran, bermain CTF (Capture The Flag), hingga merancang UI/UX.
+        </p>
+        <p>
+          Aku menikmati setiap proses memahami sistem yang kompleks dan menerjemahkan ide-ide abstrak menjadi produk nyata yang rapi dan bermanfaat bagi orang lain.
+        </p>
+        
+        <div class="quote-box">
+          “Komunikasi yang baik bukan hanya berbicara, tapi menghadirkan makna tanpa berbicara.”
+        </div>
+      </section>
+
+      <div class="secondary-grid">
+        
+        <div class="card-box">
+          <h2>Prinsip Kehidupan</h2>
+          <p>
+            Aku selalu mencoba untuk berusaha semaksimal mungkin hingga titik darah penghabisan terakhir sebelum menyerah. Menjadi manusia berjiwa ksatria selagi membawa kebermanfaatan dalam setiap derap langkah kaki kemanapun aku pergi.
+          </p>
+          <span class="highlight-principle">Terbang, Tanpa menjatuhkan. 🦅</span>
+        </div>
+
+        <div class="card-box">
+          <h2>Peran Kehidupan</h2>
+          <p>Aku melihat diriku dalam tiga peran utama:</p>
+          <ul style="padding-left: 20px; color: #636e72; line-height: 1.8;">
+            <li><strong>Mahasiswa</strong> dengan rasa ingin tahu tinggi.</li>
+            <li><strong>Pemimpin</strong> yang dapat diandalkan.</li>
+            <li><strong>Anak bungsu</strong> yang berjuang membawa manfaat bagi keluarga.</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+    <a href="index.html" class="back-btn">← Kembali ke daftar</a>
+  </div>
+</div>

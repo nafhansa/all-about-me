@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>8 My Innovations</title>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
+
+    /* --- STRUKTUR UTAMA (TIDAK BERUBAH) --- */
+    .main-wrapper {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      background-color: #f8f9fa;
+    }
+
+    .main-container {
+      background: #ffffff;
+      width: 100%;
+      max-width: 900px; /* TETAP DIKUNCI 900px */
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+      border: 1px solid #f0f0f0;
+      overflow: hidden;
+      padding: 50px;
+      box-sizing: border-box;
+    }
+
+    /* --- MODERN TECH STYLING STARTS HERE --- */
+
+    /* Hero Section dengan Pola Grid Tech */
+    .hero-tech {
+      background: #0f172a; /* Dark Blue Base */
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 30px 30px; /* Ukuran kotak grid */
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      color: white;
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #1e293b;
+      box-shadow: 0 10px 40px rgba(15, 23, 42, 0.2);
+    }
+
+    /* Efek Glow di belakang Hero */
+    .hero-tech::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-tech h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin: 0 0 15px 0;
+      position: relative;
+      background: linear-gradient(to right, #ffffff, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-tech p {
+      font-size: 1.05rem;
+      color: #cbd5e1;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    /* Modern Button */
+    .btn-tech {
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      color: white;
+      padding: 12px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn-tech:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6);
+    }
+
+    /* Grid Layout untuk Fitur */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-bottom: 25px; /* Jarak antar baris */
+    }
+
+    /* Kartu Fitur Interaktif */
+    .tech-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      padding: 25px;
+      border-radius: 16px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    /* Hover Effect: Border menyala & naik */
+    .tech-card:hover {
+      border-color: #3b82f6;
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(59, 130, 246, 0.1);
+    }
+
+    .tech-card h3 {
+      color: #1e293b;
+      margin: 10px 0 8px 0;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .tech-card p {
+      color: #64748b;
+      line-height: 1.6;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    /* Badge Style ala Code */
+    .badge-code {
+      font-family: 'JetBrains Mono', monospace; /* Font coding */
+      background: #f1f5f9;
+      color: #64748b;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: inline-block;
+      margin-bottom: 12px;
+      transition: all 0.3s;
+    }
+
+    .tech-card:hover .badge-code {
+      background: #eff6ff;
+      color: #3b82f6;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      color: #94a3b8;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+    .back-btn:hover { color: #3b82f6; }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .main-container { padding: 30px 20px; }
+      .tech-grid { grid-template-columns: 1fr; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="main-wrapper">
+  <div class="main-container">
+    
+    <div class="hero-tech">
+      <h1>Job Tracker & Learning Hub</h1>
+      <p>Platform manajemen karir "All-in-One". Gantikan spreadsheet manualmu dengan pelacak lamaran cerdas dan akses materi belajar terkurasi.</p>
+      
+      <a href="https://tracker.nafhan.space" target="_blank" class="btn-tech">
+        tracker.nafhan.space 🚀
+      </a>
+    </div>
+
+    <div class="tech-grid">
+      
+      <div class="tech-card">
+        <span class="badge-code">&lt;Feature_01&gt;</span>
+        <h3>📊 Application Tracking</h3>
+        <p>Monitor status lamaran (Applied, Interview, Offer) dalam satu dashboard visual real-time. Input data tanpa ribet.</p>
+      </div>
+
+      <div class="tech-card">
+        <span class="badge-code">&lt;Feature_02&gt;</span>
+        <h3>🎓 No-BS Learning</h3>
+        <p>Kurikulum skill terkurasi. Algoritma kami memfilter video "yapping" dan hanya menyajikan materi inti industri.</p>
+      </div>
+
+    </div>
+
+    <div class="tech-grid">
+      
+      <div class="tech-card">
+        <span class="badge-code">&lt;Impact&gt;</span>
+        <h3>📱 Mobile First Design</h3>
+        <p>Didesain ringan & responsif. Update status interview-mu langsung dari HP sesaat setelah keluar ruangan.</p>
+      </div>
+
+      <div class="tech-card">
+        <span class="badge-code">&lt;Global_Goal&gt;</span>
+        <h3>🌍 Solving Poverty</h3>
+        <p>Solusi teknis untuk Masalah Global No. 1 (Kemiskinan) dengan mengakselerasi penyerapan tenaga kerja.</p>
+      </div>
+
+    </div>
+
+    <a href="index.html" class="back-btn">← Kembali ke daftar</a>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<style>
+  /* Import Google Font agar tidak kaku */
+  @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap');
+
+  /* Container Utama untuk merapikan layout */
+  .music-container {
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #f8f9fa; /* Background area konten */
+    min-height: 80vh;
+  }
+
+  /* Kartu Musik (The Card) */
+  .player-card {
+    display: flex;
+    flex-direction: row; /* Layout Kiri-Kanan */
+    background: #ffffff;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .player-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+  }
+
+  /* Sisi Kiri: Visual / Cover Art */
+  .visual-side {
+    flex: 1;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    min-width: 300px;
+    position: relative;
+  }
+
+  /* Animasi Vinyl/CD Berputar */
+  .album-art {
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle at center, #333 0%, #000 100%);
+    border-radius: 50%;
+    border: 5px solid rgba(255,255,255,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: spin 10s linear infinite;
+  }
+
+  .album-art-inner {
+    width: 80px;
+    height: 80px;
+    background: url('https://images.unsplash.com/photo-1493225255756-d9584f8606e9?auto=format&fit=crop&w=150&q=80'); /* Gambar random estetik */
+    background-size: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
+  }
+
+  @keyframes spin {
+    100% { transform: rotate(360deg); }
+  }
+
+  /* Sisi Kanan: Konten */
+  .content-side {
+    flex: 1.5;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 2rem;
+    color: #2d3436;
+    margin: 0;
+    font-weight: 700;
+  }
+
+  .subtitle {
+    color: #636e72;
+    font-size: 1rem;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    display: inline-block;
+  }
+
+  .badge {
+    background: #e0f7fa;
+    color: #00cec9;
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+
+  /* Styling Audio Player Bawaan agar lebih rapi */
+  audio {
+    width: 100%;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    outline: none;
+  }
+
+  /* Area Lirik */
+  .lyrics-container {
+    background: #f1f2f6;
+    border-radius: 16px;
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: 250px; /* Batasi tinggi agar bisa discroll */
+    border: 1px solid #dfe6e9;
+  }
+
+  .lyrics-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #b2bec3;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+
+  .lyrics-text {
+    white-space: pre-line; /* Agar enter terbaca otomatis */
+    line-height: 1.8;
+    color: #57606f;
+    font-size: 0.95rem;
+  }
+
+  /* Scrollbar Kustom biar cantik */
+  .lyrics-container::-webkit-scrollbar {
+    width: 6px;
+  }
+  .lyrics-container::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .lyrics-container::-webkit-scrollbar-thumb {
+    background: #bdc3c7;
+    border-radius: 10px;
+  }
+
+  /* Responsif untuk HP (Layar Kecil) */
+  @media (max-width: 768px) {
+    .player-card {
+      flex-direction: column;
+    }
+    .visual-side {
+      padding: 30px;
+      min-height: 200px;
+    }
+    .album-art {
+      width: 150px;
+      height: 150px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="music-container">
+  <div class="player-card">
+    
+    <div class="visual-side">
+      <div class="album-art">
+        <div class="album-art-inner"></div>
+      </div>
+    </div>
+
+    <div class="content-side">
+      <div>
+        <span class="badge">Special For You ✨</span>
+        <h1>Udara Malam Teman Hati</h1>
+        <p class="subtitle">By Nafhan Shafy Aulia</p>
+      </div>
+
+      <audio controls src="assets/audio/udara-malam-teman-hati.mp3">
+        Browser kamu tidak mendukung audio player.
+      </audio>
+
+      <div class="lyrics-container">
+        <div class="lyrics-title">Deskripsi & Lirik</div>
+        <div class="lyrics-text">
+          Langit malam tanpa bintang
+          Jalanan sepi ku melayang
+          Roda berputar pelan-pelan
+          
+          Langkah baru ku jalani
+          Bukan sedih
+          Aku happy
+          Angin malam teman hati
+          
+          Lampu kota jadi lukisan
+          Hirup udara
+          Rasa bebas
+          Semua luka tinggal kenangan
+          
+          Vespa tua terus melaju
+          Hati tenang
+          Hidup baru
+          Aku senyum
+          Siapa tahu...
+          
+          (Scroll ke bawah untuk lanjut membaca...)
+          Ini adalah bagian contoh jika liriknya panjang
+          dia akan otomatis bisa di-scroll
+          tanpa merusak tampilan layout utama.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

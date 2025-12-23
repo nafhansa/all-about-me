@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>4 My Shapes</title>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Lora:ital,wght@1,500&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f6f7f8;
+      color: #12202b;
+    }
+
+    .about-wrapper {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      width: 100%;
+      padding: 40px 20px; /* Padding body disesuaikan dikit biar lega */
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+    }
+
+    .about-container {
+      background: #ffffff;
+      width: 100%;
+      max-width: 900px; /* KUNCI KONSISTENSI */
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+      border: 1px solid #f0f0f0;
+      overflow: hidden;
+      padding: 50px;
+      box-sizing: border-box;
+    }
+
+    .header-section {
+      text-align: center;
+      margin-bottom: 50px;
+      border-bottom: 2px dashed #ececec;
+      padding-bottom: 40px;
+    }
+
+    .main-title {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: #2d3436;
+      margin: 0 0 10px 0;
+      letter-spacing: -1px;
+      line-height: 1.2;
+    }
+
+    .tags-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      color: #636e72;
+      font-weight: 600;
+    }
+
+    /* Grid Layout untuk S-H-A-E (Menggunakan secondary-grid dari referensi) */
+    .secondary-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* 2 Kolom */
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    /* Styling Kartu S-H-A-E */
+    .card-box {
+      background: #fafafa;
+      padding: 30px;
+      border-radius: 16px;
+      transition: transform 0.2s;
+      border: 1px solid #eee;
+      display: flex;
+      flex-direction: column;
+      height: 100%; /* Biar tinggi sama */
+      box-sizing: border-box;
+    }
+
+    .card-box:hover {
+      transform: translateY(-5px);
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      border-color: #0984e3;
+    }
+
+    .letter-big {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      border-radius: 12px;
+    }
+
+    /* Warna Huruf */
+    .s-color { background: #e3f2fd; color: #1565c0; }
+    .h-color { background: #ffebee; color: #c62828; }
+    .a-color { background: #e8f5e9; color: #2e7d32; }
+    .e-color { background: #fff3e0; color: #ef6c00; }
+
+    h2 {
+      font-size: 1.2rem;
+      color: #2d3436;
+      margin: 0 0 10px 0;
+      font-weight: 700;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #636e72;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 40px;
+      text-decoration: none;
+      color: #b2bec3;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+    .back-btn:hover { color: #0984e3; }
+
+    /* Responsif HP */
+    @media (max-width: 768px) {
+      .about-container { padding: 30px 20px; }
+      .secondary-grid { grid-template-columns: 1fr; } /* Jadi 1 kolom di HP */
+      .main-title { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="about-wrapper">
+  <div class="about-container">
+    
+    <div class="header-section">
+      <div class="tags-container">
+        Piagam Diri & Identitas Naratif
+      </div>
+    </div>
+
+    <div class="secondary-grid">
+      
+      <div class="card-box">
+        <div class="letter-big s-color">S</div>
+        <h2>Signature Strengths</h2>
+        <p><strong>Kekuatan Khas:</strong><br>Analitis, Adaptif, Visioner, Reflektif. Selalu mencari makna di balik sistem digital maupun emosional.</p>
+      </div>
+
+      <div class="card-box">
+        <div class="letter-big h-color">H</div>
+        <h2>Heart & Values</h2>
+        <p><strong>Nilai & Gairah:</strong><br>Integritas dan Pertumbuhan. Bergairah menciptakan dampak lewat desain pembelajaran (Studify) & keamanan siber.</p>
+      </div>
+
+      <div class="card-box">
+        <div class="letter-big a-color">A</div>
+        <h2>Aptitudes (Skills)</h2>
+        <p><strong>Hard Skills:</strong> Web Dev, Security, Database.<br><strong>Soft Skills:</strong> Leadership, Empati, Problem Solving.</p>
+      </div>
+
+      <div class="card-box">
+        <div class="letter-big e-color">E</div>
+        <h2>Experiences</h2>
+        <p><strong>Pengalaman:</strong><br>Bangkit dari kegagalan proyek & kompetisi. Belajar kepemimpinan sejati saat menjadi Dirjen Kementerian Kolaborasi.</p>
+      </div>
+
+    </div>
+
+    <a href="index.html" class="back-btn">← Kembali ke daftar</a>
+  </div>
+</div>
+
+</body>
+</html>

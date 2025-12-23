@@ -90,99 +90,6 @@
     @media (max-width:860px){.bio-header{grid-template-columns:1fr}.cards-3{grid-template-columns:1fr}}
     :focus-visible{outline:2px solid rgba(35,76,106,.55);outline-offset:2px;border-radius:10px}
     @media (prefers-reduced-motion:reduce){.section,.badge,.chip,.section-head .icon{transition:none!important}}
-    /* CHAT */
-    .ai-launcher{position:fixed;right:22px;bottom:22px;pointer-events:auto;z-index:2147483647;width:54px;height:54px;border-radius:50%;border:1px solid rgba(0,0,0,.05);background:radial-gradient(120% 120% at 30% 20%,#3a6b8f,var(--brand));color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(0,0,0,.18);transition:transform .2s var(--ease),box-shadow .2s var(--ease),filter .2s var(--ease)}
-    .ai-launcher:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(0,0,0,.22);filter:brightness(1.05)}
-    .ai-panel{position:fixed;right:22px;bottom:90px;z-index:2147483646;width:340px;max-height:70vh;display:none;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.18);overflow:hidden;animation:fadeUp .25s var(--ease)}
-    .ai-panel.open{display:flex}
-    .ai-header{display:flex;align-items:center;gap:10px;padding:10px 12px;background:linear-gradient(180deg,#fbfcfe,#f3f6fa);border-bottom:1px solid var(--line)}
-    .ai-dot{width:10px;height:10px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.18)}
-    .ai-sub{font-size:12px;color:var(--muted)}
-    .ai-close{margin-left:auto;border:none;background:transparent;font-size:18px;cursor:pointer;color:var(--muted)}
-    .ai-messages{padding:12px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;background:#fbfcfe}
-    .msg{max-width:88%;padding:10px 12px;border-radius:12px;line-height:1.6;font-size:14px;white-space: pre-wrap;}
-    .msg.user{align-self:flex-end;background:#234c6a;color:#fff;border:1px solid rgba(255,255,255,.12)}
-    .msg.bot{align-self:flex-start;background:#fff;color:var(--ink);border:1px solid var(--line);line-height: 1.75;}
-    .ai-input{padding:10px;display:flex;gap:8px;border-top:1px solid var(--line);background:#fff}
-    .ai-input input{flex:1;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#f7f9fc}
-    .ai-input input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 2px rgba(35,76,106,.15)}
-    .ai-send{width:44px;border:none;border-radius:10px;background:var(--brand);color:#fff;cursor:pointer}
-    
-    /* ===== Audio Player ===== */
-.audio-card{
-  display:flex; gap:16px; align-items:center;
-  padding:16px; border-radius:18px;
-  background:var(--panel); border:1px solid var(--line);
-  box-shadow:0 10px 28px rgba(0,0,0,.06)
-}
-.audio-cover{
-  width:88px; height:88px; border-radius:14px; flex:0 0 88px;
-  background:linear-gradient(135deg,var(--mid),var(--brand));
-  border:1px solid rgba(27,60,83,.2);
-  background-size:cover; background-position:center;
-}
-.audio-meta{flex:1; min-width:0}
-.audio-title{font-weight:700; color:var(--accent); line-height:1.3}
-.audio-sub{color:var(--muted); font-size:13px; margin-top:2px}
-
-.audio-ctrl{display:flex; align-items:center; gap:10px; margin-top:10px}
-.audio-btn{
-  width:42px; height:42px; border-radius:12px; border:1px solid var(--line);
-  background:#f3f7fb; cursor:pointer; font-size:18px;
-  display:grid; place-items:center; transition:transform .15s var(--ease), box-shadow .2s var(--ease)
-}
-.audio-btn:hover{ transform:translateY(-1px); box-shadow:0 6px 16px rgba(0,0,0,.06) }
-
-.bar{ position:relative; height:8px; flex:1; background:#eef2f6; border-radius:999px; border:1px solid var(--line); cursor:pointer; }
-.progress{ position:absolute; inset:0 auto 0 0; width:0%; height:100%; border-radius:999px;
-  background:linear-gradient(90deg, var(--brand), var(--accent)); }
-.time{ font-variant-numeric: tabular-nums; color:var(--muted); font-size:12px; min-width:84px; text-align:right }
-
-/* ===== Lyrics Card (aesthetic) ===== */
-.lyric-card{
-  margin-top:16px; padding:16px; border-radius:18px;
-  background: linear-gradient(180deg,#ffffff,#f7f9fc);
-  border:1px solid var(--line);
-  box-shadow:0 10px 28px rgba(0,0,0,.06);
-}
-.lyric-head{display:flex; align-items:center; gap:10px; margin-bottom:10px}
-.lyric-icon{
-  width:32px; height:32px; border-radius:10px;
-  display:grid; place-items:center;
-  background:rgba(35,76,106,.08); color:var(--accent);
-  font-size:16px;
-}
-.lyric-title{margin:0; color:var(--accent); font-size:16px; letter-spacing:.2px}
-
-.lyric-body{
-  position:relative; overflow:hidden; max-height:240px;
-  line-height:1.9; color:var(--ink);
-  transition:max-height .35s var(--ease);
-}
-.lyric-body.expanded{ max-height:9999px; }
-
-.lyric-fade{
-  content:""; position:absolute; left:0; right:0; bottom:0; height:60px;
-  background:linear-gradient(180deg, rgba(255,255,255,0), #fff);
-}
-.lyric-fade.hide{ display:none; }
-
-.stanza{ margin:10px 0 14px; }
-.stanza .label{
-  display:inline-block; font-size:12px; font-weight:700; color:var(--brand);
-  background:#eef3f7; border:1px solid var(--line); border-radius:8px; padding:2px 8px; margin-bottom:6px;
-}
-.stanza .text{ margin-top:6px; white-space:pre-line; }
-
-.lyric-actions{ display:flex; justify-content:center; margin-top:10px }
-.lyric-more{
-  border:1px solid var(--line); background:#f4f7fa; color:var(--accent);
-  padding:8px 12px; border-radius:999px; cursor:pointer; font-weight:600; font-size:13px;
-  transition:transform .15s var(--ease), box-shadow .2s var(--ease);
-}
-.lyric-more:hover{ transform:translateY(-1px); box-shadow:0 6px 16px rgba(0,0,0,.06); }
-
-  
   </style>
 </head>
 <body>
@@ -264,363 +171,42 @@
     </article>`;
   }
 
-  /* ---------- data halaman ---------- */
+  /* ---------- data halaman (external files) ---------- */
   const PAGES = [
-    { id:'selamat-berjumpa', title:'Halo!! Aku Nafhan', content: selamatBerjumpa() },
-    { id: 'kisah-identitas',
-        title: '1 All About Me',
-        content: `
-<article class="bio-wrap">
-  <!-- HEADER -->
-  <div class="bio-header">
-    <div class="bio-avatar">
-      <!-- ganti foto kalau ada -->
-      <img src="assets/foto_profile.jpg" alt="Nafhan">
-    </div>
-    <div class="bio-title">
-      <h2>Perkenalkan, Aku Nafhan</h2>
-      <div class="bio-sub">Mahasiswa STEI ITB • Achiever–Thinker • Software Developer + Red Team Specialist</div>
-      <div class="info-chips">
-        <span class="chip"><i>🎓</i> Mahasiswa ITB</span>
-        <span class="chip"><i>🧭</i> Komunikasi & Karya</span>
-        <span class="chip"><i>🧠</i> Teknologi • Data • Manusia</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ABOUT -->
-  <section class="section">
-    <div class="section-head">
-      <div class="icon">👤</div>
-      <h3>Siapa saya?</h3>
-    </div>
-    <div class="section-body">
-      <p>
-        Aku <b>Nafhan Shafy Aulia</b>, mahasiswa yang suka menjelajah titik temu
-        antara <i>teknologi</i>, <i>data</i>, dan <i>manusia</i>. Dari ngebangun prototype
-        pembelajaran, main CTF, sampai desain UI/UX. Aku menikmati proses memahami
-        sistem dan menerjemahkan ide jadi produk yang rapi dan bermanfaat.
-      </p>
-      <div class="quote">
-        “Komunikasi yang baik bukan hanya berbicara, tapi menghadirkan makna tanpa berbicara.”
-      </div>
-      <div class="cards-3">
-        <div class="mini-card">
-          <div class="mini-label">🎯 Fokus</div>
-          <div class="mini-value">Product Thinking & Execution</div>
-          <div class="badges">
-            <span class="badge">Frontend</span>
-            <span class="badge">Backend</span>
-            <span class="badge">Cyber Security</span>
-          </div>
-        </div>
-        <div class="mini-card">
-          <div class="mini-label">🧩 Peran</div>
-          <div class="mini-value">Builder & Problem Solver</div>
-          <div class="badges">
-            <span class="badge">Kolaboratif</span>
-            <span class="badge">Goal-oriented</span>
-          </div>
-        </div>
-        <div class="mini-card">
-          <div class="mini-label">💙 Nilai</div>
-          <div class="mini-value">Integritas & Tanggung Jawab</div>
-          <div class="badges">
-            <span class="badge">Growth Mindset</span>
-            <span class="badge">Empati</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRINCIPLE -->
-  <section class="section">
-    <div class="section-head">
-      <div class="icon">💬</div>
-      <h3>Prinsip Kehidupan</h3>
-    </div>
-    <div class="section-body">
-      <p>
-        Aku selalu mencoba untuk berusaha semaksimal mungkin hingga titik darah penghabisan 
-        terakhit sebelum menyerah. Menjadi manusia berjiwa ksatria selagi membawa kebermanfaatan 
-        dalam setiap derap langkah kaki kemanapun aku pergi.
-      </p>
-      <p>Prinsipku satu. <b>Terbang</b>, Tanpa menjatuhkan.</p>
-    </div>
-  </section>
-
-  <!-- ROLES -->
-  <section class="section">
-    <div class="section-head">
-      <div class="icon">🧭</div>
-      <h3>Peran Kehidupan</h3>
-    </div>
-    <div class="section-body">
-      <p>
-        Aku melihat diriku sebagai <b>mahasiswa yang memiliki keinginan belajar yang tinggi</b>,
-        <b>pemimpin yang dapat diandalkan</b>, dan <b>anak bungsu yang ingin membawa manfaat
-        bagi keluarga</b>. Otentik, mengakui yang belum dikuasai, dan terbuka pada masukan.
-      </p>
-      <p>
-        Menjaga citra bukan berarti berpura-pura, justru kejujuran yang sopan adalah
-        fondasi kepercayaan. Kalau salah, aku ingin cepat memperbaiki. Kalau benar,
-        tetap rendah hati.
-      </p>
-    </div>
-  </section>
-</article>`
-
-      },
-    { id: 'my-songs', title: '2 My Song for You', content: `
-<article style="max-width:880px;margin:auto">
-  <h2 style="text-align:center;color:var(--brand);margin:0 0 12px">Udara Malam Teman Hati</h2>
-  <p style="text-align:center;color:var(--muted);margin-top:0">dipilih khusus buat kamu cintaku ✨</p>
-
-  <!-- AUDIO PLAYER -->
-  <div class="audio-card">
-    <div class="audio-cover" style="background-image:url('assets/foto_profile.jpg')"></div>
-    <div class="audio-meta">
-      <div class="audio-title">Udara Malam Teman Hati</div>
-      <div class="audio-sub">by Nafhan</div>
-      <div class="audio-ctrl">
-        <button class="audio-btn play" aria-label="Play/Pause">▶</button>
-        <div class="bar" aria-label="Progress"><div class="progress"></div></div>
-        <div class="time"><span class="cur">0:00</span> / <span class="dur">0:00</span></div>
-        <button class="audio-btn mute" aria-label="Mute">🔈</button>
-      </div>
-      <audio preload="metadata" src="assets/audio/udara-malam-teman-hati.mp3"></audio>
-    </div>
-  </div>
-
-  <!-- LYRICS / DESKRIPSI AESTHETIC -->
-  <div class="lyric-card">
-    <div class="lyric-head">
-      <div class="lyric-icon">🎵</div>
-      <h3 class="lyric-title">Deskripsi & Lirik</h3>
-    </div>
-
-    <div class="lyric-body">
-      <!-- Verse -->
-      <div class="stanza">
-        <div class="label">[Verse]</div>
-        <div class="text">Langit malam tanpa bintang
-Jalanan sepi ku melayang
-Roda berputar pelan-pelan</div>
-      </div>
-
-      <!-- Chorus -->
-      <div class="stanza">
-        <div class="label">[Chorus]</div>
-        <div class="text">Langkah baru ku jalani
-Bukan sedih
-Aku happy
-Angin malam teman hati</div>
-      </div>
-
-      <!-- Verse 2 -->
-      <div class="stanza">
-        <div class="label">[Verse 2]</div>
-        <div class="text">Lampu kota jadi lukisan
-Hirup udara
-Rasa bebas
-Semua luka tinggal kenangan</div>
-      </div>
-
-      <!-- Chorus -->
-      <div class="stanza">
-        <div class="label">[Chorus]</div>
-        <div class="text">Langkah baru ku jalani
-Bukan sedih
-Aku happy
-Angin malam teman hati</div>
-      </div>
-
-      <!-- Bridge -->
-      <div class="stanza">
-        <div class="label">[Bridge]</div>
-        <div class="text">Vespa tua terus melaju
-Hati tenang
-Hidup baru
-Aku senyum
-Siapa tahu</div>
-      </div>
-
-      <!-- Chorus (outro) -->
-      <div class="stanza" style="margin-bottom:0">
-        <div class="label">[Chorus]</div>
-        <div class="text">Langkah baru ku jalani
-Bukan sedih
-Aku happy
-Angin malam teman hati</div>
-      </div>
-
-      <div class="lyric-fade"></div>
-    </div>
-
-    <div class="lyric-actions">
-      <button class="lyric-more" type="button">Baca lengkap</button>
-    </div>
-  </div>
-
-  <p style="margin-top:14px;color:var(--muted);text-align:center">
-    Tips: Tekan <b>Spasi</b> untuk play/pause saat halaman ini aktif.
-  </p>
-</article>` },
-
-
-    { id: 'my-stories',
-        title: '3 My Stories for You',
-        content: `
-        <article>
-          <section style="max-width:800px;margin:auto;line-height:1.9">
-            <h2 style="text-align:center;color:var(--brand);margin-bottom:10px">
-              “Belajar Dari Masa Lalu” vs “Terbentuk Dari Masa Lalu”
-            </h2>
-            <p style="color:var(--muted);text-align:center;margin-top:0;margin-bottom:24px">
-              Ditulis oleh Nafhan Shafy Aulia
-            </p>
-
-            <p>Malam itu, selepas rapat besar pertamanya sebagai Dirjen Kementerian Kolaborasi Lembaga, di hadapan seratus lebih lembaga kampus, Nafhan berdiri dalam diam panjang. Di balik tepuk tangan dan sorotan lampu, ada kesadaran yang lahir, tentang luka, tentang kehilangan, tentang cinta yang pernah ia yakini tulus.</p>
-
-            <p>Ia sadar telah mencintai seseorang seutuhnya, sementara hatinya hanya dijadikan tempat singgah. Cinta yang ia jaga seolah tak berarti, seolah kasih bisa diukur dengan kenyamanan sesaat. Ia pernah menitipkan hatinya dengan keyakinan, menerima janji dengan sepenuh rasa, namun dibalas dengan pengabaian dan keegoisan.</p>
-
-            <p>Nafhan tidak marah karena ditinggalkan, melainkan karena kejujuran yang ia berikan tak pernah dihargai. Ia menyesal bukan karena cinta itu kandas, tetapi karena ia terlalu percaya pada seseorang yang belum sembuh dari masa lalunya. Ia memaafkan, tapi tidak lupa, ia mencintai, tapi tak lagi ingin diperbudak oleh harapan.</p>
-
-            <p>Kini, ia memilih berdamai. Menyadari cinta bukan tentang siapa yang datang duluan, tapi siapa yang bertahan dan memperjuangkan. Nafhan belajar, cinta tak seharusnya mengorbankan diri, melainkan menguatkan keduanya. Ia belajar bahwa ada perbedaan besar antara belajar dari masa lalu dan terbentuk oleh masa lalu.</p>
-
-            <p>Di antara rasa sakit dan kecewa, Nafhan menemukan kembali dirinya, seseorang yang berharga, yang layak dicintai dengan tanggung jawab, bukan dijadikan pembenaran untuk luka orang lain.
-            Dan di bawah langit malam itu, ia berjanji: akan mencintai lagi, tapi kali ini dengan kebijaksanaan, bukan keinginan. Ia pergi bukan karena benci, melainkan karena sudah cukup berjuang.</p>
-
-            <p>Kadang Nafhan tertawa sendiri, mengingat betapa seriusnya ia dulu menanggapi “aku takut kehilangan kamu.” “Takut kehilangan, tapi malah ngegas pergi,” gumamnya sambil menepuk helm Vespa yang catnya mulai pudar. Ia bahkan sempat mikir, mungkin cinta itu kayak Wifi kampus, kuat di awal, hilang pas lagi butuh. Lucunya, dia masih sempat berdoa, “Tuhan, kalau memang jodoh tolong perbaiki dia.” Tapi setelah tiga kali network timeout, ia sadar, kayaknya Tuhan juga disconnect dulu sebentar biar Nafhan belajar sendiri arti sabar.</p>
-
-            <p><strong>Sebuah hati besar yang pernah hancur kini tumbuh lagi</strong>, kali ini tak untuk orang lain, melainkan untuk dirinya sendiri.</p>
-          </section>
-        </article>`
-      },
-    { id: 'my-shapes',
-        title: '4 My Shapes',
-        content: `
-        <article>
-          <!-- Narasi SHAPE -->
-          <section style="max-width:850px;margin:auto;line-height:1.8;text-align:justify;">
-            <h2 style="text-align:center;color:var(--brand);margin-bottom:8px">
-              🧭 MY SHAPE – Piagam Diri & Identitas Naratif
-            </h2>
-            <p style="text-align:center;color:var(--muted);margin-top:0;">
-              oleh: <b>Nafhan Shafy Aulia</b>
-            </p>
-
-            <h3 style="color:var(--accent);margin-top:32px;">S – Signature Strengths (Kekuatan Khas)</h3>
-            <p>Aku tumbuh sebagai seseorang yang selalu mencari makna di balik setiap sistem—baik sistem digital, sosial, maupun emosional. Kemampuan analitis dan rasa ingin tahu yang besar membuatku cepat memahami struktur di balik kerumitan. Dalam tim, aku sering menjadi penghubung antara ide dan eksekusi; antara rasionalitas dan empati.</p>
-            <p><b>Kekuatan khasku:</b> Analitis, Adaptif, Visioner, dan Reflektif.</p>
-
-            <h3 style="color:var(--accent);margin-top:28px;">H – Heart (Nilai & Gairah)</h3>
-            <p>Aku percaya pada nilai integritas, tanggung jawab, dan pertumbuhan. Di balik semua pencapaian teknis, hatiku selalu tertuju pada bagaimana teknologi bisa membuat manusia merasa lebih manusiawi. Aku bergairah menciptakan hal yang berdampak—entah lewat desain pembelajaran seperti <i>Studify</i>, atau lewat problem-solving di dunia CTF dan keamanan siber.</p>
-            <p>Aku hidup untuk belajar, tumbuh, dan meninggalkan sesuatu yang berguna.</p>
-
-            <h3 style="color:var(--accent);margin-top:28px;">A – Aptitudes & Acquired Skills (Bakat & Keterampilan)</h3>
-            <p>Secara alami aku cepat mempelajari sesuatu yang baru—terutama ketika harus memecahkan masalah atau membangun sesuatu dari nol. Aku menguasai bahasa pemrograman, sistem jaringan, hingga UI/UX; namun lebih dari itu, aku memiliki ketahanan untuk belajar dari kesalahan.</p>
-            <p><b>Hard Skills:</b> Web & Game Development (React, Supabase, Flask), Network & Security, Database Design.<br>
-                <b>Soft Skills:</b> Leadership, Empati, Problem Solving, Communication, Team Collaboration.</p>
-
-            <h3 style="color:var(--accent);margin-top:28px;">P – Personality (Profil Kepribadian)</h3>
-            <p>Aku seorang INTP-T dengan jiwa builder-thinker: logis tapi imajinatif, rasional tapi idealis. Aku nyaman bekerja di ruang yang memberi kebebasan berpikir dan eksplorasi. Namun, aku juga menyadari pentingnya keseimbangan—antara struktur dan spontanitas, antara bekerja untuk hasil dan bekerja untuk makna.</p>
-            <p><b>Gaya kerja:</b> independen namun kolaboratif, observatif, reflektif, dan fokus pada growth.</p>
-
-            <h3 style="color:var(--accent);margin-top:28px;">E – Experiences (Pengalaman Hidup)</h3>
-            <p>Aku telah jatuh dan bangkit berkali-kali—baik dalam proyek, kompetisi, maupun hubungan personal. Dari setiap pengalaman, aku belajar bahwa ketulusan tidak bisa diajarkan, dan tanggung jawab tidak bisa ditunda. Pengalaman menjadi Dirjen Kementerian Kolaborasi Lembaga mengajarkanku arti kepemimpinan sejati: bukan sekadar mengatur, tapi menumbuhkan. Sementara dunia CTF dan FPAG ITB memberiku ruang untuk mengasah logika dan disiplin teknis.</p>
-            <p><b>Pelajaran utama:</b> Setiap luka adalah pelatihan karakter; setiap perjuangan adalah bahan bakar makna.</p>
-
-            <h3 style="text-align:center;color:var(--brand);margin-top:36px;">Pernyataan Misi Pribadi</h3>
-            <blockquote style="font-style:italic;text-align:center;color:var(--muted);margin:20px auto 0;max-width:700px;">
-              “Aku ingin menggunakan kemampuan analitis dan kreativitasku untuk membangun sistem—baik teknologi maupun manusia yang selaras antara logika dan nurani. Aku ingin menjadi penghubung antara ide dan tindakan, antara data dan empati.”
-            </blockquote>
-          </section>
-
-          <!-- Tabel Ringkasan SHAPE -->
-          <div class="shape-wrap">
-            <div class="shape-caption">Tabel – Piagam Diri dan Identitas Naratif “My SHAPE”</div>
-            <div style="overflow-x:auto;">
-              <table class="shape-table">
-                <thead>
-                  <tr>
-                    <th>Komponen</th>
-                    <th>Deskripsi Reflektif</th>
-                    <th>Contoh Implementasi Nyata</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th>S – Signature Strengths<br><small>(Kekuatan Khas)</small></th>
-                    <td>Analitis, adaptif, visioner, reflektif. Memiliki pola pikir sistematis dan kemampuan membaca struktur kompleks. Senang membangun solusi dari ide abstrak.</td>
-                    <td>Menjadi penghubung ide & teknis pada proyek <b>Studify</b> dan prototipe <b>Trufman</b>; cepat menemukan pola error dan menyusun solusi efisien.</td>
-                  </tr>
-                  <tr>
-                    <th>H – Heart<br><small>(Nilai & Gairah)</small></th>
-                    <td>Nilai utama: <i>integritas</i>, <i>tanggung jawab</i>, dan <i>pertumbuhan</i>. Tertarik pada bagaimana teknologi meningkatkan nilai kemanusiaan.</td>
-                    <td>Membuat konsep <b>ZeroToHero – microlearning Gen-Z</b>, menggabungkan UI/UX dengan empati pengguna; aktif di kolaborasi antar-lembaga kampus.</td>
-                  </tr>
-                  <tr>
-                    <th>A – Aptitudes & Acquired Skills<br><small>(Bakat & Keterampilan)</small></th>
-                    <td>Cepat belajar, problem solver, fokus pada inovasi dan kerapian sistem.</td>
-                    <td><b>Hard Skills:</b> React, Supabase, Flask, SQL, Network & Security.<br><b>Soft Skills:</b> Leadership, Empati, Communication, Teamwork.</td>
-                  </tr>
-                  <tr>
-                    <th>P – Personality<br><small>(Profil Kepribadian)</small></th>
-                    <td>INTP-T / “Builder-Thinker”: logis tapi imajinatif, rasional namun reflektif. Cocok di lingkungan dengan kebebasan berpikir dan eksplorasi ide.</td>
-                    <td>Menyeimbangkan kerja individu & kolaborasi dalam tim besar seperti <b>Kementerian Kolaborasi Lembaga</b> dan <b>FPAG ITB</b>.</td>
-                  </tr>
-                  <tr>
-                    <th>E – Experiences<br><small>(Pengalaman Hidup)</small></th>
-                    <td>Pernah mengalami kegagalan, penolakan, dan tanggung jawab besar dalam organisasi; menumbuhkan ketahanan, empati, dan disiplin.</td>
-                    <td>Memimpin 100+ lembaga sebagai Dirjen; partisipasi di <b>CTF</b>, <b>FPAG</b>, dan berbagai proyek digital kampus.</td>
-                  </tr>
-                  <tr>
-                    <th>Pernyataan Misi Pribadi</th>
-                    <td colspan="2">“Menggunakan kemampuan analitis dan kreativitas untuk membangun sistem—baik teknologi maupun manusia—yang selaras antara logika dan nurani; menjadi jembatan antara data dan empati.”</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="shape-note">Ringkasan ini melengkapi narasi di atas dan bisa dipakai untuk CV/portfolio.</div>
-          </div>
-        </article>`
-      },
-    { id:'personal-reviews', title:'5 My Personal Reviews', 
-    content: `
-        <article>
-          <section style="max-width:800px;margin:auto;line-height:1.9">
-            <p style="color:var(--muted);text-align:center;margin-top:0;margin-bottom:24px">
-              Berikut hasil penilaian
-            </p>
-            <p><a href="https://docs.google.com/spreadsheets/d/1x3bg9_xGJnWiYiUR4hmjC0gnctuZjzpN/edit?usp=sharing&ouid=109120925158181353881&rtpof=true&sd=true">Link Penilaian Self Assessment</a></p>
-            <p><a href="https://chatgpt.com/share/68f998c5-df50-8010-83a9-cc648d3d5073">Link Chat Penilaian AI</a></p>
-          </section>
-        </article>`
-      },
-    { id:'my-concepts',       title:'6 My Concepts',          content: placeholder('My Concepts') },
-    { id:'my-opinions',       title:'7 My Opinions',          content: placeholder('My Opinions') },
-    { id:'my-innovations',    title:'8 My Innovations',       content: placeholder('My Innovations') },
-    { id:'my-knowledge',      title:'9 My Knowledge',         content: placeholder('My Knowledge') },
-    { id:'pro-reviews',       title:'10 My Professional Reviews', content: placeholder('My Professional Reviews') },
-    { id:'summary',           title:'11 Summary',             content: placeholder('Summary') },
-    { id:'references',        title:'References',             content: placeholder('References') },
+    { id:'selamat-berjumpa', title:'Halo!! Aku Nafhan', file: 'selamat-berjumpa.html' },
+    { id:'kisah-identitas', title:'1 All About Me', file: '1-all-about-me.html' },
+    { id:'my-songs', title:'2 My Song for You', file: '2-my-songs.html' },
+    { id:'my-stories', title:'3 My Stories for You', file: '3-my-stories.html' },
+    { id:'my-shapes', title:'4 My Shapes', file: '4-my-shapes.html' },
+    { id:'personal-reviews', title:'5 My Personal Reviews', file: '5-personal-reviews.html' },
+    { id:'my-concepts', title:'6 My Concepts', file: '6-my-concepts.html' },
+    { id:'my-opinions', title:'7 My Opinions', file: '7-my-opinions.html' },
+    { id:'my-innovations', title:'8 My Innovations', file: '8-my-innovations.html' },
+    { id:'my-knowledge', title:'9 My Knowledge', file: '9-my-knowledge.html' },
+    { id:'pro-reviews', title:'10 My Professional Reviews', file: '10-pro-reviews.html' },
+    { id:'summary', title:'11 Summary', file: '11-summary.html' },
+    { id:'references', title:'References', file: 'references.html' }
   ];
-  // expose ke script chat
+  // expose to chat script
   window.PAGES = PAGES;
 
   const toc = document.getElementById('toc');
   const contentEl = document.getElementById('page-content');
   const titleEl = document.getElementById('page-title');
 
-  const CONTENT_INDEX = Object.fromEntries(
-    PAGES.map(p=>{
-      const div=document.createElement('div'); div.innerHTML=p.content;
-      const text=(div.textContent||"").toLowerCase();
-      return [p.id, text];
-    })
-  );
+  // prefetch page texts for search/chat and caching
+  const CONTENT_INDEX = {};
+  async function buildContentIndex(){
+    await Promise.all(PAGES.map(async p=>{
+      try{
+        const res = await fetch(p.file, {cache:'no-store'});
+        const txt = await res.text();
+        p.content = txt; // attach raw HTML for other scripts
+        const div = document.createElement('div'); div.innerHTML = txt;
+        CONTENT_INDEX[p.id] = (div.textContent||'').toLowerCase();
+      }catch(err){ CONTENT_INDEX[p.id] = ''; p.content=''; }
+    }));
+  }
 
   function countHits(text,q){
     if(!q) return 0;
@@ -668,26 +254,36 @@ Angin malam teman hati</div>
   }
 
   function navigate(id){
-    const p=PAGES.find(x=>x.id===id)||PAGES[0];
-    titleEl.textContent=p.title;
-    contentEl.innerHTML=p.content;
-    contentEl.style.animation='fadeUp .5s var(--ease)';
-    const q=(document.getElementById('search').value||'').trim().toLowerCase();
-    if(q) highlightInElement(contentEl,q);
+    (async ()=>{
+      const p=PAGES.find(x=>x.id===id)||PAGES[0];
+      titleEl.textContent=p.title;
+      contentEl.style.animation='fadeUp .5s var(--ease)';
+      try{
+        // always try to fetch fresh copy so edits show immediately
+        let html = p.content || '';
+        try{
+          const res = await fetch(p.file || '', {cache:'no-store'});
+          if(res.ok){ html = await res.text(); p.content = html; const div=document.createElement('div'); div.innerHTML=html; CONTENT_INDEX[p.id]=(div.textContent||'').toLowerCase(); }
+        }catch(e){ /* ignore fetch error, fall back to attached content */ }
+        contentEl.innerHTML = html || `<article><p style="color:var(--muted);text-align:center;">Halaman kosong.</p></article>`;
+        const q=(document.getElementById('search').value||'').trim().toLowerCase();
+        if(q) highlightInElement(contentEl,q);
+      }catch(err){ contentEl.innerHTML = `<article><p style="color:var(--muted);text-align:center;">Gagal memuat halaman.</p></article>`; }
 
-    // reveal on scroll
-    const sections=document.querySelectorAll('.section, .bio-header, .mini-card');
-    sections.forEach(el=>{el.style.opacity='0'; el.style.transform='translateY(6px)';});
-    const io=new IntersectionObserver(entries=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          e.target.style.transition='opacity .45s var(--ease), transform .45s var(--ease)';
-          e.target.style.opacity='1'; e.target.style.transform='none'; io.unobserve(e.target);
-        }
-      })
-    },{threshold:.12});
-    sections.forEach(el=>io.observe(el));
-    if (id === 'my-songs') initSongsPlayer();
+      // reveal on scroll
+      const sections=document.querySelectorAll('.section, .bio-header, .mini-card');
+      sections.forEach(el=>{el.style.opacity='0'; el.style.transform='translateY(6px)';});
+      const io=new IntersectionObserver(entries=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){
+            e.target.style.transition='opacity .45s var(--ease), transform .45s var(--ease)';
+            e.target.style.opacity='1'; e.target.style.transform='none'; io.unobserve(e.target);
+          }
+        })
+      },{threshold:.12});
+      sections.forEach(el=>io.observe(el));
+      if (id === 'my-songs') initSongsPlayer();
+    })();
   }
 
   /* === AUDIO PLAYER INIT (tempel sekali saja) === */
@@ -770,8 +366,10 @@ function initSongsPlayer(){
 }
 
 
-  renderToc(PAGES);
-  navigate(location.hash.slice(1)||'selamat-berjumpa');
+  buildContentIndex().then(()=>{
+    renderToc(PAGES);
+    navigate(location.hash.slice(1)||'selamat-berjumpa');
+  });
 
   document.getElementById('search').addEventListener('input', e=>{
     const q=e.target.value.toLowerCase().trim();
@@ -787,23 +385,6 @@ function initSongsPlayer(){
   // dukung back/forward via hash
   window.addEventListener('hashchange', ()=> setActive(location.hash.slice(1)));
   </script>
-
-  <!-- ============ CHAT LAUNCHER + PANEL (HTML) ============ -->
-  <button id="aiLauncher" class="ai-launcher" aria-label="Tanya AI tentang Nafhan">💬</button>
-  <div id="aiPanel" class="ai-panel" aria-live="polite" aria-label="Chat AI">
-    <div class="ai-header">
-      <div class="ai-dot"></div>
-      <div><strong>Shafy's Agent</strong><div class="ai-sub">Tanya apa saja tentang boss aku</div></div>
-      <button id="aiClose" class="ai-close" aria-label="Tutup">✕</button>
-    </div>
-    <div id="aiMessages" class="ai-messages">
-      <div class="msg bot">Halo, aku agen rahasia Shafy. Tanyain apa saja tentang Nafhan, karya, nilai, atau kegiatan.</div>
-    </div>
-    <form id="aiForm" class="ai-input">
-      <input id="aiText" type="text" placeholder="Ketik pertanyaan kamu..." autocomplete="off" />
-      <button class="ai-send" aria-label="Kirim">⮕</button>
-    </form>
-  </div>
 
   <!-- ============ CHAT SCRIPT (offline; referensi konten) ============ -->
   <script>
