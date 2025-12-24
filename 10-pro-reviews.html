@@ -6,14 +6,14 @@
   <title>10 My Professional Reviews</title>
   
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
 
-    /* --- BASE STYLE (SAMA DENGAN FILE LAIN) --- */
+    /* --- BASE STYLE (KONSISTEN 900px) --- */
     body {
       margin: 0;
       padding: 0;
-      background: #f6f7f8;
-      color: #12202b;
+      background: #f8f9fa;
+      color: #1e293b;
     }
 
     .main-wrapper {
@@ -28,16 +28,13 @@
     .main-container {
       background: #ffffff;
       width: 100%;
-      max-width: 900px; /* Lebar dikunci 900px (KONSISTEN) */
+      max-width: 900px; /* Lebar dikunci 900px */
       border-radius: 24px;
       box-shadow: 0 20px 60px rgba(0,0,0,0.05);
       border: 1px solid #f0f0f0;
       overflow: hidden;
       padding: 50px;
       box-sizing: border-box;
-      min-height: 500px; /* Biar tidak terlalu pendek saat kosong */
-      display: flex;
-      flex-direction: column;
     }
 
     /* HEADER */
@@ -48,68 +45,214 @@
       padding-bottom: 30px;
     }
 
+    .badge-system {
+      background: #e0f2fe;
+      color: #0284c7;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      display: inline-block;
+    }
+
     h1 {
       font-size: 2.2rem;
       font-weight: 800;
-      color: #2d3436;
+      color: #0f172a;
       margin: 0 0 10px 0;
     }
 
     .subtitle {
-      color: #636e72;
+      color: #64748b;
       font-size: 1rem;
     }
 
-    /* EMPTY STATE DESIGN (Tampilan Kosong tapi Bagus) */
-    .empty-state {
-      flex: 1;
+    /* SCORE HERO CARD */
+    .score-hero {
+      background: linear-gradient(135deg, #064e3b 0%, #10b981 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 16px;
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      box-shadow: 0 15px 30px rgba(16, 185, 129, 0.2);
+    }
+
+    .score-left h2 { margin: 0; font-size: 1.5rem; font-weight: 800; }
+    .score-left p { margin: 5px 0 0 0; opacity: 0.9; font-family: 'JetBrains Mono'; font-size: 0.9rem; }
+
+    .score-big {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1;
+      text-align: right;
+    }
+    .score-grade { font-size: 1rem; font-weight: 600; opacity: 0.9; display: block; }
+
+    /* GRID REVIEW CARDS */
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .review-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      padding: 20px;
+      border-radius: 12px;
+      transition: all 0.3s;
+    }
+
+    .review-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      border-color: #10b981;
+    }
+
+    .card-label {
+      font-size: 0.85rem;
+      color: #64748b;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .card-score {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .card-grade {
+      color: #10b981;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-left: 5px;
+    }
+
+    /* PROGRESS BAR */
+    .progress-track {
+      width: 100%;
+      height: 6px;
+      background: #f1f5f9;
+      border-radius: 10px;
+      margin-top: 15px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: #10b981;
+      border-radius: 10px;
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .resource-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transition: all 0.3s;
+    }
+
+    .resource-card:hover {
+      background: #fff;
+      border-color: #3b82f6;
+      box-shadow: 0 10px 20px rgba(59, 130, 246, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .res-icon {
+      width: 45px;
+      height: 45px;
+      background: white;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      display: flex;
       align-items: center;
       justify-content: center;
-      background: #fafafa;
-      border-radius: 16px;
-      border: 1px solid #eee;
-      padding: 40px;
-      text-align: center;
+      font-size: 1.5rem;
     }
 
-    .icon-placeholder {
-      font-size: 4rem;
-      margin-bottom: 20px;
-      opacity: 0.5;
+    .res-content h4 { margin: 0; color: #1e293b; font-size: 1rem; font-weight: 700; }
+    .res-content span { font-size: 0.85rem; color: #64748b; }
+    .arrow-icon { margin-left: auto; color: #94a3b8; font-weight: bold; }
+
+    /* JSON TERMINAL STYLE */
+    .json-terminal {
+      background: #0f172a; /* Lebih gelap biar code pop-out */
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 20px;
+      border: 1px solid #334155;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }
 
-    .empty-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #2d3436;
-      margin-bottom: 10px;
+    .terminal-header {
+      background: #1e293b;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid #334155;
     }
 
-    .empty-desc {
-      color: #b2bec3;
-      font-size: 0.95rem;
-      max-width: 400px;
+    .win-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .wd-red { background: #ef4444; }
+    .wd-yellow { background: #f59e0b; }
+    .wd-green { background: #10b981; }
+    .win-title { color: #94a3b8; font-family: 'JetBrains Mono'; font-size: 0.8rem; margin-left: auto; }
+
+    .terminal-body {
+      padding: 25px;
+      color: #e2e8f0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      overflow-x: auto;
       line-height: 1.6;
     }
+    
+    /* Syntax Highlighting Manual */
+    .key { color: #7dd3fc; }      /* Light Blue for Keys */
+    .string { color: #86efac; }   /* Light Green for Strings */
+    .number { color: #fca5a5; }   /* Light Red for Numbers */
+    .punc { color: #94a3b8; }     /* Grey for Brackets/Commas */
 
     .back-btn {
       display: inline-block;
-      margin-top: 30px;
+      margin-top: 40px;
       text-decoration: none;
-      color: #b2bec3;
+      color: #94a3b8;
       font-weight: 600;
       font-size: 0.9rem;
-      align-self: flex-start; /* Tombol di kiri bawah */
       transition: color 0.3s;
+      font-family: 'JetBrains Mono';
     }
-    .back-btn:hover { color: #0984e3; }
-    
-    /* Responsive HP */
+    .back-btn:hover { color: #3b82f6; }
+
+    /* Responsive */
     @media (max-width: 768px) {
       .main-container { padding: 30px 20px; }
-      h1 { font-size: 1.8rem; }
+      .score-hero { flex-direction: column; text-align: center; gap: 20px; }
+      .score-big { text-align: center; }
+      .resources-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -119,19 +262,157 @@
   <div class="main-container">
     
     <div class="header-section">
-      <h1>Professional Reviews 🤝</h1>
-      <div class="subtitle">Evaluasi kinerja, feedback mentor, dan testimoni rekan kerja.</div>
+      <span class="badge-system">System: UAS_Checker v1.0</span>
+      <h1>Professional Reviews 🎓</h1>
+      <div class="subtitle">Hasil Evaluasi Simulasi UAS - ChatGPT</div>
     </div>
 
-    <div class="empty-state">
-      <div class="icon-placeholder">📂</div>
-      <div class="empty-title">Konten Belum Tersedia</div>
-      <div class="empty-desc">
-        Halaman ini disiapkan untuk menampung feedback profesional di masa depan. Silakan kembali lagi setelah data terkumpul.
+    <div class="score-hero">
+      <div class="score-left">
+        <h2>FINAL RESULT: PASS</h2>
+        <p>Status: Max Score Assigned</p>
+      </div>
+      <div class="score-right">
+        <div class="score-big">100</div>
+        <span class="score-grade">Perfect Score (A+)</span>
       </div>
     </div>
 
-    <a href="index.html" class="back-btn">← Kembali ke daftar</a>
+    <div class="review-grid">
+      <div class="review-card">
+        <span class="card-label">My Concepts</span>
+        <div><span class="card-score">100</span><span class="card-grade">A+</span></div>
+        <div class="progress-track"><div class="progress-fill" style="width:100%"></div></div>
+      </div>
+      <div class="review-card">
+        <span class="card-label">My Opinions</span>
+        <div><span class="card-score">100</span><span class="card-grade">A+</span></div>
+        <div class="progress-track"><div class="progress-fill" style="width:100%"></div></div>
+      </div>
+      <div class="review-card">
+        <span class="card-label">My Innovations</span>
+        <div><span class="card-score">100</span><span class="card-grade">A+</span></div>
+        <div class="progress-track"><div class="progress-fill" style="width:100%"></div></div>
+      </div>
+      <div class="review-card">
+        <span class="card-label">My Knowledge</span>
+        <div><span class="card-score">100</span><span class="card-grade">A+</span></div>
+        <div class="progress-track"><div class="progress-fill" style="width:100%"></div></div>
+      </div>
+    </div>
+
+  <h3 style="font-size: 1rem; color: #64748b; margin-bottom: 15px; font-family:'JetBrains Mono'">🔗 External Data Sources</h3>
+    <div class="resources-grid">
+      
+      <a href="https://chatgpt.com/share/694b89e8-7cb4-8008-a834-2080754fed6a" target="_blank" class="resource-card">
+        <div class="res-icon">🤖</div>
+        <div class="res-content">
+          <h4>AI Chat Log</h4>
+          <span>Lihat riwayat percakapan evaluasi.</span>
+        </div>
+        <div class="arrow-icon">&rarr;</div>
+      </a>
+
+      <a href="https://docs.google.com/spreadsheets/d/1K5WJiEnbrIo3WauuRieW71i73RwJb4dUk6WPU-VISNA/edit?usp=sharing" target="_blank" class="resource-card">
+        <div class="res-icon">📊</div>
+        <div class="res-content">
+          <h4>Live Spreadsheet</h4>
+          <span>Data dan kalkulasi real-time.</span>
+        </div>
+        <div class="arrow-icon">&rarr;</div>
+      </a>
+
+    </div>    
+
+    <h3 style="font-size: 1rem; color: #64748b; margin-bottom: 10px; font-family:'JetBrains Mono'">💾 ./output/uas_result.json</h3>
+    <div class="json-terminal">
+      <div class="terminal-header">
+        <div class="win-dot wd-red"></div>
+        <div class="win-dot wd-yellow"></div>
+        <div class="win-dot wd-green"></div>
+        <div class="win-title">JSON Viewer</div>
+      </div>
+      <div class="terminal-body">
+<pre style="margin:0">
+<span class="punc">{</span>
+  <span class="key">"uas_checker"</span><span class="punc">:</span> <span class="punc">{</span>
+    <span class="key">"version"</span><span class="punc">:</span> <span class="string">"1.0"</span><span class="punc">,</span>
+    <span class="key">"evaluation_type"</span><span class="punc">:</span> <span class="string">"Real Assesment"</span><span class="punc">,</span>
+    <span class="key">"option"</span><span class="punc">:</span> <span class="string">"B"</span><span class="punc">,</span>
+    <span class="key">"status"</span><span class="punc">:</span> <span class="string">"PASS"</span><span class="punc">,</span>
+    <span class="key">"final_grade"</span><span class="punc">:</span> <span class="punc">{</span>
+      <span class="key">"score"</span><span class="punc">:</span> <span class="number">100</span><span class="punc">,</span>
+      <span class="key">"letter"</span><span class="punc">:</span> <span class="string">"A+"</span>
+    <span class="punc">}</span>
+  <span class="punc">},</span>
+  <span class="key">"student_project"</span><span class="punc">:</span> <span class="punc">{</span>
+    <span class="key">"title"</span><span class="punc">:</span> <span class="string">"Career Acceleration System"</span><span class="punc">,</span>
+    <span class="key">"components"</span><span class="punc">:</span> <span class="punc">[</span>
+      <span class="punc">{</span>
+        <span class="key">"id"</span><span class="punc">:</span> <span class="string">"my_concept"</span><span class="punc">,</span>
+        <span class="key">"file"</span><span class="punc">:</span> <span class="string">"6-my-concepts.html"</span><span class="punc">,</span>
+        <span class="key">"score"</span><span class="punc">:</span> <span class="number">100</span><span class="punc">,</span>
+        <span class="key">"grade"</span><span class="punc">:</span> <span class="string">"A+"</span><span class="punc">,</span>
+        <span class="key">"rubric_evaluation"</span><span class="punc">:</span> <span class="punc">{</span>
+          <span class="key">"concept_clarity"</span><span class="punc">:</span> <span class="string">"Excellent"</span><span class="punc">,</span>
+          <span class="key">"analytical_depth"</span><span class="punc">:</span> <span class="string">"Excellent"</span><span class="punc">,</span>
+          <span class="key">"academic_framework"</span><span class="punc">:</span> <span class="string">"Excellent"</span><span class="punc">,</span>
+          <span class="key">"social_relevance"</span><span class="punc">:</span> <span class="string">"Excellent"</span>
+        <span class="punc">},</span>
+        <span class="key">"summary"</span><span class="punc">:</span> <span class="string">"Konsep disusun sistematis dengan pendekatan akademik, mengintegrasikan teori, framework, dan konteks sosial secara koheren."</span>
+      <span class="punc">},</span>
+      <span class="punc">{</span>
+        <span class="key">"id"</span><span class="punc">:</span> <span class="string">"my_opinions"</span><span class="punc">,</span>
+        <span class="key">"file"</span><span class="punc">:</span> <span class="string">"7-my-opinions.html"</span><span class="punc">,</span>
+        <span class="key">"score"</span><span class="punc">:</span> <span class="number">100</span><span class="punc">,</span>
+        <span class="key">"grade"</span><span class="punc">:</span> <span class="string">"A+"</span><span class="punc">,</span>
+        <span class="key">"rubric_evaluation"</span><span class="punc">:</span> <span class="punc">{</span>
+          <span class="key">"argument_strength"</span><span class="punc">:</span> <span class="string">"Excellent"</span><span class="punc">,</span>
+          <span class="key">"originality"</span><span class="punc">:</span> <span class="string">"Excellent"</span><span class="punc">,</span>
+          <span class="key">"logical_coherence"</span><span class="punc">:</span> <span class="string">"Excellent"</span><span class="punc">,</span>
+          <span class="key">"contextual_relevance"</span><span class="punc">:</span> <span class="string">"Excellent"</span>
+        <span class="punc">},</span>
+        <span class="key">"summary"</span><span class="punc">:</span> <span class="string">"Opini kritis berbasis realitas, disampaikan dengan argumen logis dan refleksi personal yang kuat."</span>
+      <span class="punc">},</span>
+      <span class="punc">{</span>
+        <span class="key">"id"</span><span class="punc">:</span> <span class="string">"my_innovations"</span><span class="punc">,</span>
+        <span class="key">"file"</span><span class="punc">:</span> <span class="string">"8-my-innovations.html"</span><span class="punc">,</span>
+        <span class="key">"score"</span><span class="punc">:</span> <span class="number">100</span><span class="punc">,</span>
+        <span class="key">"grade"</span><span class="punc">:</span> <span class="string">"A+"</span><span class="punc">,</span>
+        <span class="key">"rubric_evaluation"</span><span class="punc">:</span> <span class="punc">{</span>
+          <span class="key">"innovation_novelty"</span><span class="punc">:</span> <span class="string">"Excellent"</span><span class="punc">,</span>
+          <span class="key">"problem_solution_fit"</span><span class="punc">:</span> <span class="string">"Excellent"</span><span class="punc">,</span>
+          <span class="key">"implementation_feasibility"</span><span class="punc">:</span> <span class="string">"Excellent"</span><span class="punc">,</span>
+          <span class="key">"social_impact"</span><span class="punc">:</span> <span class="string">"Excellent"</span>
+        <span class="punc">},</span>
+        <span class="key">"summary"</span><span class="punc">:</span> <span class="string">"Inovasi bersifat aplikatif dan nyata, dengan dampak sosial jelas serta keterkaitan langsung terhadap permasalahan global."</span>
+      <span class="punc">},</span>
+      <span class="punc">{</span>
+        <span class="key">"id"</span><span class="punc">:</span> <span class="string">"my_knowledge"</span><span class="punc">,</span>
+        <span class="key">"file"</span><span class="punc">:</span> <span class="string">"9-my-knowledge.html"</span><span class="punc">,</span>
+        <span class="key">"score"</span><span class="punc">:</span> <span class="number">100</span><span class="punc">,</span>
+        <span class="key">"grade"</span><span class="punc">:</span> <span class="string">"A+"</span><span class="punc">,</span>
+        <span class="key">"rubric_evaluation"</span><span class="punc">:</span> <span class="punc">{</span>
+          <span class="key">"technical_understanding"</span><span class="punc">:</span> <span class="string">"Excellent"</span><span class="punc">,</span>
+          <span class="key">"system_thinking"</span><span class="punc">:</span> <span class="string">"Excellent"</span><span class="punc">,</span>
+          <span class="key">"skill_integration"</span><span class="punc">:</span> <span class="string">"Excellent"</span><span class="punc">,</span>
+          <span class="key">"representation_quality"</span><span class="punc">:</span> <span class="string">"Excellent"</span>
+        <span class="punc">},</span>
+        <span class="key">"summary"</span><span class="punc">:</span> <span class="string">"Menunjukkan penguasaan pengetahuan teknis dan non-teknis, serta pemahaman arsitektur sistem secara menyeluruh."</span>
+      <span class="punc">}</span>
+    <span class="punc">]</span>
+  <span class="punc">},</span>
+  <span class="key">"final_summary"</span><span class="punc">:</span> <span class="punc">{</span>
+    <span class="key">"overall_assessment"</span><span class="punc">:</span> <span class="string">"Outstanding"</span><span class="punc">,</span>
+    <span class="key">"remarks"</span><span class="punc">:</span> <span class="string">"Project memenuhi seluruh kriteria Opsi B dengan integrasi konsep, opini, inovasi, dan pengetahuan yang matang. Layak memperoleh nilai maksimal."</span><span class="punc">,</span>
+    <span class="key">"recommendation"</span><span class="punc">:</span> <span class="string">"Max score assigned without revision"</span>
+  <span class="punc">}</span>
+<span class="punc">}</span>
+</pre>
+      </div>
+    </div>
+
+    <a href="index.html" class="back-btn">&lt; cd .. /Kembali</a>
   </div>
 </div>
 

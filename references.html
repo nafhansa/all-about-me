@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>References</title>
+  <title>12 References</title>
   
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400&display=swap');
 
-    /* --- BASE STYLE (KONSISTEN 900px) --- */
+    /* --- BASE STYLE --- */
     body {
       margin: 0;
       padding: 0;
-      background: #f6f7f8;
-      color: #12202b;
+      background: #f8f9fa;
+      color: #1e293b;
     }
 
     .main-wrapper {
@@ -28,14 +28,13 @@
     .main-container {
       background: #ffffff;
       width: 100%;
-      max-width: 900px; /* Lebar dikunci 900px */
+      max-width: 900px;
       border-radius: 24px;
       box-shadow: 0 20px 60px rgba(0,0,0,0.05);
-      border: 1px solid #f0f0f0;
+      border: 1px solid #e2e8f0;
       overflow: hidden;
       padding: 50px;
       box-sizing: border-box;
-      min-height: 500px;
       display: flex;
       flex-direction: column;
     }
@@ -51,65 +50,130 @@
     h1 {
       font-size: 2.2rem;
       font-weight: 800;
-      color: #2d3436;
+      color: #0f172a;
       margin: 0 0 10px 0;
     }
 
     .subtitle {
-      color: #636e72;
+      color: #64748b;
       font-size: 1rem;
     }
 
-    /* EMPTY STATE (REFERENCES THEME) */
-    .empty-state {
+    /* REFERENCE GROUPS */
+    .ref-group {
+      margin-bottom: 40px;
+    }
+
+    .group-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .group-title::after {
+      content: "";
       flex: 1;
+      height: 1px;
+      background: #e2e8f0;
+    }
+
+    /* REF CARDS */
+    .ref-list {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: #f8faff; /* Nuansa biru sangat tipis */
-      border-radius: 16px;
-      border: 1px solid #e3f2fd;
-      padding: 40px;
-      text-align: center;
+      gap: 15px;
     }
 
-    .icon-placeholder {
-      font-size: 4rem;
-      margin-bottom: 20px;
-      opacity: 0.8;
+    .ref-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 20px;
+      border-radius: 12px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      color: inherit;
     }
 
-    .empty-title {
-      font-size: 1.2rem;
+    .ref-card:hover {
+      border-color: #3b82f6;
+      background: #f8fafc;
+      transform: translateX(5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .ref-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      background: #f1f5f9;
+      padding: 4px 8px;
+      border-radius: 4px;
+      margin-top: 2px;
+    }
+
+    .ref-content {
+      flex: 1;
+    }
+
+    .ref-title {
       font-weight: 700;
-      color: #2d3436;
-      margin-bottom: 10px;
+      font-size: 1rem;
+      color: #0f172a;
+      margin-bottom: 5px;
+      line-height: 1.4;
     }
 
-    .empty-desc {
-      color: #b2bec3;
-      font-size: 0.95rem;
-      max-width: 450px;
-      line-height: 1.6;
+    .ref-meta {
+      font-size: 0.9rem;
+      color: #64748b;
+      line-height: 1.5;
     }
 
+    .ref-meta strong {
+      color: #475569;
+      font-weight: 600;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+
+    .tag-theory { background: #e0f2fe; color: #0369a1; }
+    .tag-data { background: #fef3c7; color: #b45309; }
+    .tag-tech { background: #dcfce7; color: #15803d; }
+
+    /* FOOTER / BACK BTN */
     .back-btn {
       display: inline-block;
-      margin-top: 30px;
+      margin-top: 20px;
       text-decoration: none;
-      color: #b2bec3;
+      color: #94a3b8;
       font-weight: 600;
       font-size: 0.9rem;
-      align-self: flex-start;
       transition: color 0.3s;
     }
-    .back-btn:hover { color: #0984e3; }
-    
-    /* Responsive HP */
+    .back-btn:hover { color: #3b82f6; }
+
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       .main-container { padding: 30px 20px; }
-      h1 { font-size: 1.8rem; }
+      .ref-card { flex-direction: column; gap: 10px; }
+      .ref-number { align-self: flex-start; }
     }
   </style>
 </head>
@@ -120,18 +184,115 @@
     
     <div class="header-section">
       <h1>References 📚</h1>
-      <div class="subtitle">Sumber data, literatur, dan inspirasi karya.</div>
+      <div class="subtitle">Landasan teori, sumber data, dan literatur teknis.</div>
     </div>
 
-    <div class="empty-state">
-      <div class="icon-placeholder">📖</div>
-      <div class="empty-title">Daftar Referensi Sedang Disusun</div>
-      <div class="empty-desc">
-        Halaman ini akan memuat daftar pustaka, jurnal, atau artikel yang menjadi landasan inovasi (seperti data SDGs & Laporan PBB).
+    <div class="ref-group">
+      <div class="group-title">🔬 Academic Frameworks</div>
+      <div class="ref-list">
+        
+        <a href="#" class="ref-card">
+          <div class="ref-number">[1]</div>
+          <div class="ref-content">
+            <div class="ref-title">The Mathematical Theory of Communication</div>
+            <div class="ref-meta">
+              <strong>Shannon, C. E., & Weaver, W.</strong> (1949). University of Illinois Press.<br>
+              <em>Dasar teori entropi informasi yang digunakan untuk memodelkan ketidakpastian dalam pencarian kerja.</em>
+            </div>
+            <span class="tag tag-theory">Information Theory</span>
+          </div>
+        </a>
+
+        <a href="#" class="ref-card">
+          <div class="ref-number">[2]</div>
+          <div class="ref-content">
+            <div class="ref-title">A Discourse on Winning and Losing (The OODA Loop)</div>
+            <div class="ref-meta">
+              <strong>Boyd, J. R.</strong> (1987). Air University Press.<br>
+              <em>Konsep Observe-Orient-Decide-Act yang diadaptasi menjadi fitur pengambilan keputusan cepat dalam sistem.</em>
+            </div>
+            <span class="tag tag-theory">Strategy</span>
+          </div>
+        </a>
+
+        <a href="#" class="ref-card">
+          <div class="ref-number">[3]</div>
+          <div class="ref-content">
+            <div class="ref-title">Atomic Habits: An Easy & Proven Way to Build Good Habits</div>
+            <div class="ref-meta">
+              <strong>Clear, J.</strong> (2018). Avery.<br>
+              <em>Referensi psikologis untuk fitur "Streak" dan "Daily Goals" guna membangun konsistensi pelamar.</em>
+            </div>
+            <span class="tag tag-theory">Psychology</span>
+          </div>
+        </a>
+
       </div>
     </div>
 
-    <a href="index.html" class="back-btn">← Kembali ke daftar</a>
+    <div class="ref-group">
+      <div class="group-title">📊 Data & Social Reports</div>
+      <div class="ref-list">
+        
+        <a href="https://sdgs.un.org/goals/goal8" target="_blank" class="ref-card">
+          <div class="ref-number">[4]</div>
+          <div class="ref-content">
+            <div class="ref-title">United Nations Sustainable Development Goals (Goal 8)</div>
+            <div class="ref-meta">
+              <strong>United Nations.</strong> (2023). sdgs.un.org.<br>
+              <em>Target pertumbuhan ekonomi dan pekerjaan yang layak, menjadi landasan sosial proyek ini.</em>
+            </div>
+            <span class="tag tag-data">Global Report</span>
+          </div>
+        </a>
+
+        <a href="https://www.bps.go.id/" target="_blank" class="ref-card">
+          <div class="ref-number">[5]</div>
+          <div class="ref-content">
+            <div class="ref-title">Laporan Keadaan Ketenagakerjaan Indonesia</div>
+            <div class="ref-meta">
+              <strong>Badan Pusat Statistik (BPS).</strong> (2024).<br>
+              <em>Data statistik pengangguran terbuka dan angkatan kerja yang mendasari urgensi solusi.</em>
+            </div>
+            <span class="tag tag-data">National Stats</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="ref-group">
+      <div class="group-title">💻 Technical Documentation</div>
+      <div class="ref-list">
+        
+        <a href="https://nextjs.org/docs" target="_blank" class="ref-card">
+          <div class="ref-number">[6]</div>
+          <div class="ref-content">
+            <div class="ref-title">Next.js Documentation</div>
+            <div class="ref-meta">
+              <strong>Vercel.</strong><br>
+              <em>Panduan arsitektur App Router dan Server Actions yang digunakan dalam pengembangan prototype.</em>
+            </div>
+            <span class="tag tag-tech">Framework</span>
+          </div>
+        </a>
+
+        <a href="#" class="ref-card">
+          <div class="ref-number">[7]</div>
+          <div class="ref-content">
+            <div class="ref-title">System Design Primer</div>
+            <div class="ref-meta">
+              <strong>Xu, D.</strong> (GitHub Repository).<br>
+              <em>Best practice untuk merancang sistem yang scalable dan reliable.</em>
+            </div>
+            <span class="tag tag-tech">Architecture</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <a href="index.html" class="back-btn">← Kembali ke Halaman Utama</a>
   </div>
 </div>
 
